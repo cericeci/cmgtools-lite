@@ -55,3 +55,10 @@ b2lss_bt: nBJetMedium25 >= 2 ; Disable=True
 fakeIsMu : if3((nLepFO>1)*(LepGood1_isLepTight+LepGood2_isLepTight==1),if3(LepGood1_isLepTight,(abs(LepGood2_pdgId)==13),(abs(LepGood1_pdgId)==13)),0); Disable=True
 fakeIsEl : if3((nLepFO>1)*(LepGood1_isLepTight+LepGood2_isLepTight==1),if3(LepGood1_isLepTight,(abs(LepGood2_pdgId)==11),(abs(LepGood1_pdgId)==11)),0); Disable=True
 muChargeConsistencyThree: (abs(LepGood1_pdgId)!=13 || LepGood1_chargeConsistency>=3) && (abs(LepGood2_pdgId)!=13 || LepGood2_chargeConsistency>=3); Disable=True
+
+#CC Cuts
+barrele : (abs(LepGood1_pdgId)!=11 && abs(LepGood2_pdgId) != 11) || (abs(LepGood1_pdgId)!=11 && abs(LepGood2_eta) < 1.4) || (abs(LepGood2_pdgId)!=11 && abs(LepGood1_eta) < 1.4) || (abs(LepGood1_eta) < 1.4 && abs(LepGood2_eta) < 1.4); Disable=True
+5j: nJet25>=5; Disable=True
+pt2525: LepGood1_conePt>25 && LepGood2_conePt>25; Disable=True
+testconvs : mindr_lep1_jet > 1.9 && mindr_lep1_jet < 2.1; Disable = True
+testflips : mindr_lep1_jet > 0.6 && mindr_lep1_jet < 1.0; Disable = True

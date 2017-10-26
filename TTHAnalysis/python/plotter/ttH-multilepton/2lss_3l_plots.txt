@@ -15,7 +15,7 @@ debug_triggerFired_3cross : HLT_DoubleMuEl || HLT_DoubleElMu : 2,-0.5,1.5; XTitl
 badMuonFilter : Flag_badMuonMoriond2017 || Flag_badCloneMuonMoriond2017 : 2,-0.5,1.5; XTitle = "Bad muon event", Logy
 
 nJet25:	    	nJet25					: [1.5,2.5,3.5,4.5,5.5,6.5,7.5] ; XTitle='N(jet\, p_{T} > 25 GeV)', XNDdiv=505, xBinLabels="2\,3\,4\,5\,6\,#geq 7"
-nJet25_from4:  	nJet25					: [3.5,4.5,5.5,6.5,7.5] ; XTitle='N(jet\, p_{T} > 25 GeV)', XNDdiv=505, xBinLabels="4\,5\,6\,#geq 7"
+nJet25_from4:  	nJet25					: [3.5,4.5,5.5,6.5,7.5,8.5,9.5] ; XTitle='N(jet\, p_{T} > 25 GeV)', XNDdiv=505, xBinLabels="4\,5\,6\,#geq 7"
 nBJetLoose25:	nBJetLoose25				: [-0.5,0.5,1.5,2.5,3.5,4.5,5.5] ; XTitle='N(jet\, p_{T} > 25 GeV\, CSVL)', XNDdiv=505
 nBJetMedium25:	nBJetMedium25				: [-0.5,0.5,1.5,2.5,3.5,4.5,5.5] ; XTitle='N(jet\, p_{T} > 25 GeV\, CSVM)', XNDdiv=505
 
@@ -75,7 +75,7 @@ htJet25j:   	htJet25j 				: 40,0,1000 ; XTitle="H_{T}(jet p_{T} > 25) [GeV]"
 mhtJet25:   	mhtJet25 				: 40,0,400 ; XTitle="H_{T}^{miss}(p_{T} > 25) [GeV]"
 met: 		met_pt					: 40,0,400 ; XTitle="E_{T}^{miss} [GeV]"
 metLD:		met_pt*0.00397 + mhtJet25*0.00265  	: 40,0,2; XTitle="MET LD"
-minMllAFAS:	minMllAFAS				: 40,0,320; XTitle="min M_{ll} [GeV]", Legend='TR'
+minMllAFAS:	minMllAFAS				: 40,0,400; XTitle="min M_{ll} [GeV]", Legend='TR'
 minMllAFOS:     minMllAFOS                              : 40,0,320; XTitle="min M_{ll}\, AF/OS [GeV]", Legend='TR'
 minMllSFOS:     minMllSFOS                              : 40,0,320; XTitle="min M_{ll}\, SF/OS [GeV]", Legend='TR'
 mZ1:		mZ1					: 80,50,130; XTitle="Best Z candidate mass [GeV]"
@@ -86,10 +86,10 @@ nVert:		nVert					: 40,-0.5,41.5; XTitle="N_{vtx}"
 #kinMVA_opt_2lss_2Dplot : kinMVA_2lss_ttV\:kinMVA_2lss_ttbar : 40,-1,1,40,-1,1; XTitle="BDT (ttH\,tt)", YTitle="BDT (ttH\,ttV)"
 #kinMVA_opt_3l_2Dplot : kinMVA_3l_ttV\:kinMVA_3l_ttbar : 40,-1,1,40,-1,1; XTitle="BDT (ttH\,tt)", YTitle="BDT (ttH\,ttV)"
 
-kinMVA_2lss_ttbar: kinMVA_2lss_ttbar : 40,-1,1 ; XTitle="BDT (ttH\,tt)", MoreY=2.0, Legend='TR'
+kinMVA_2lss_ttbar: kinMVA_2lss_ttbar : 40,-1,1 ; XTitle="BDT (ttH\,tt)", MoreY=2.0, Legend='TL'
 kinMVA_2lss_ttbar_withBDTv8: kinMVA_2lss_ttbar_withBDTv8 : 40,-1,1 ; XTitle="BDT with hadr. top tagger (ttH\,tt)", MoreY=2.0, Legend='TL'
-kinMVA_2lss_ttV: kinMVA_2lss_ttV : 40,-1,1 ; XTitle="BDT (ttH\,ttV)", MoreY=2.0, Legend='TR'
-kinMVA_2lss_ttV_withHj: kinMVA_2lss_ttV_withHj : 40,-1,1 ; XTitle="BDT with Hj tagger (ttH\,ttV)", MoreY=2.0, Legend='TR'
+kinMVA_2lss_ttV: kinMVA_2lss_ttV : 40,-1,1 ; XTitle="BDT (ttH\,ttV)", MoreY=2.0, Legend='TL'
+kinMVA_2lss_ttV_withHj: kinMVA_2lss_ttV_withHj : 40,-1,1 ; XTitle="BDT with Hj tagger (ttH\,ttV)", MoreY=2.0, Legend='TL'
 
 kinMVA_2lss_bins7_oldBinning: ttH_MVAto1D_7_2lss_Marco(kinMVA_2lss_ttbar,kinMVA_2lss_ttV) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5]; XTitle="BDT (ttH\,tt/ttV) bin", MoreY=2.0, Legend='TR'
 kinMVA_2lss_bins7_withBDTv8_withHj_oldBinning: ttH_MVAto1D_7_2lss_Marco(kinMVA_2lss_ttbar_withBDTv8,kinMVA_2lss_ttV_withHj) : [0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5]; XTitle="BDT (ttH\,tt/ttV) bin", MoreY=2.0, Legend='TR'
@@ -136,7 +136,7 @@ nLepTight:   nLepTight : [-0.5,0.5,1.5,2.5,3.5,4.5,5.5] ; XTitle="Number of tigh
 
 lep1_pt: 	 LepGood1_pt					 : 40,0,200; XTitle="Leading lepton p_{T} [GeV]"
 lep1_conePt: 	 LepGood1_conePt				 : 40,0,200; XTitle="Leading lepton cone p_{T} [GeV]"
-lep1_eta: 	 LepGood1_eta					 : 40,-2.5,2.5; XTitle="Leading lepton #eta"
+lep1_eta: 	 LepGood1_eta					 : 40,-2.5,2.5; XTitle="Leading lepton #eta", MoreY = 2.0
 lep1_phi: 	 LepGood1_phi					 : 20,-3.14,3.14; XTitle="Leading lepton #phi"
 lep1_pdgId:	 0.5*LepGood1_pdgId/abs(LepGood1_pdgId)*(abs(LepGood1_pdgId)-10) : [-2,-1,0,1,2]; XTitle="Leading lepton PDG ID (#mu^{-}/e^{-}/e^{+}/#mu^{+})", XNDdiv=505
 lep1_charge:	 LepGood1_charge				 : [-1.5,-0.5,0.5,1.5]; XTitle="Leading lepton charge", XNDdiv=505, Legend='TL', MoreY=2.0
@@ -160,7 +160,7 @@ lep1_relIso03:	 LepGood1_relIso03				 : 40,0,0.5; XTitle="Leading lepton relIso0
 
 lep2_pt: 	 LepGood2_pt					 : 40,0,200; XTitle="Sub-leading lepton p_{T} [GeV]"
 lep2_conePt: 	 LepGood2_conePt				 : 40,0,100; XTitle="Sub-leading lepton cone p_{T} [GeV]"
-lep2_eta: 	 LepGood2_eta					 : 40,-2.5,2.5; XTitle="Sub-leading lepton #eta"
+lep2_eta: 	 LepGood2_eta					 : 40,-2.5,2.5; XTitle="Sub-leading lepton #eta", MoreY = 2.0
 lep2_phi: 	 LepGood2_phi					 : 20,-3.14,3.14; XTitle="Sub-leading lepton #phi"
 lep2_pdgId:	 0.5*LepGood2_pdgId/abs(LepGood2_pdgId)*(abs(LepGood2_pdgId)-10) : [-2,-1,0,1,2]; XTitle="Sub-leading lepton PDG ID (#mu^{-}/e^{-}/e^{+}/#mu^{+})", XNDdiv=505
 lep2_charge:	 LepGood2_charge				 : [-1.5,-0.5,0.5,1.5]; XTitle="Sub-leading lepton charge", XNDdiv=505, Legend='TL', MoreY=2.0

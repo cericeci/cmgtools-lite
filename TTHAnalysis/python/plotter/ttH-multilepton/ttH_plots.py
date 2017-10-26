@@ -5,13 +5,14 @@ import os
 
 ODIR=sys.argv[1]
 
-dowhat = "plots" 
+#dowhat = "plots" 
 #dowhat = "dumps" 
-#dowhat = "yields" 
+dowhat = "yields" 
 #dowhat = "ntuple" # syntax: python ttH-multilepton/ttH_plots.py no 2lss_SR_extr outfile_{cname}.root --sP var1,var2,...
 
 TREES = "--Fs {P}/1_recleaner_230217_v6 --Fs {P}/5_triggerDecision_230217_v6 --Fs {P}/6_bTagSF_v6 --Fs {P}/7_tauTightSel_v6"
-TREESONLYSKIM = "-P /data1/peruzzi/TREES_TTH_250117_Summer16_JECV3_noClean_qgV2_skimOnlyMC_v6 --Fs {P}/4_BDTv8_Hj_230217_v6 --Fs {P}/3_kinMVA_BDTv8_230217_v6  --Fs {P}/2_eventVars_230217_v6"
+#TREESONLYSKIM = "-P /afs/cern.ch/work/c/cericeci/private/tthTrees/TREES_TTH_250117_Summer16_JECV3_noClean_qgV2_skimOnlyMC_v6/ --Fs {P}/3_kinMVA_BDTv8_230217_v6  --Fs {P}/2_eventVars_230217_v6"
+TREESONLYSKIM = "-P /afs/cern.ch/work/p/peruzzi/tthtrees/TREES_TTH_250117_Summer16_JECV3_noClean_qgV2_skimOnlyMC_v6 --Fs {P}/3_kinMVA_BDTv8_230217_v6  --Fs {P}/2_eventVars_230217_v6"
 TREESONLYFULL = "-P /data1/peruzzi/TREES_TTH_250117_Summer16_JECV3_noClean_qgV2"
 
 def base(selection):
@@ -20,7 +21,7 @@ def base(selection):
     if 'cmsco01' not in os.environ['HOSTNAME']: CORE = CORE.replace('/data1/peruzzi','/afs/cern.ch/work/p/peruzzi/tthtrees')
 
     CORE+=" -f -j 8 -l 35.9 --s2v -L ttH-multilepton/functionsTTH.cc --tree treeProducerSusyMultilepton --mcc ttH-multilepton/lepchoice-ttH-FO.txt --mcc ttH-multilepton/ttH_2lss3l_triggerdefs.txt"# --neg"
-    if dowhat == "plots": CORE+=" --lspam '#bf{CMS} #it{Preliminary}' --legendWidth 0.20 --legendFontSize 0.035 --showRatio --maxRatioRange 0 2 --fixRatioRange  --showMCError --rebin 4 --xP 'nT_.*' --xP 'debug_.*'"
+    if dowhat == "plots": CORE+=" --lspam '#bf{CMS} #it{Preliminary}' --legendWidth 0.20 --legendFontSize 0.035 --showRatio --maxRatioRange 0 2 --fixRatioRange  --showMCError --xP 'nT_.*' --xP 'debug_.*'"
 
     if selection=='2lss':
         GO="%s ttH-multilepton/mca-2lss-mc.txt ttH-multilepton/2lss_tight.txt "%CORE
@@ -71,7 +72,6 @@ allow_unblinding = True
 if __name__ == '__main__':
 
     torun = sys.argv[2]
-
     if (not allow_unblinding) and '_data' in torun and (not any([re.match(x.strip()+'$',torun) for x in ['.*_appl.*','cr_.*']])): raise RuntimeError, 'You are trying to unblind!'
 
     if '2lss_' in torun:
@@ -80,6 +80,8 @@ if __name__ == '__main__':
         if '_1fo' in torun:
             x = add(x,"-A alwaystrue 1FO 'LepGood1_isLepTight+LepGood2_isLepTight==1'")
             x = x.replace("--xP 'nT_.*'","")
+	if "_only12" in torun:
+	    x = x.replace("ttH-multilepton/2lss_3l_plots.txt", "ttH-multilepton/singleVarPlots.txt")
         if '_2fo' in torun: x = add(x,"-A alwaystrue 2FO 'LepGood1_isLepTight+LepGood2_isLepTight==0'")
         if '_relax' in torun: x = add(x,'-X ^TT ')
         if '_extr' in torun:
@@ -96,6 +98,8 @@ if __name__ == '__main__':
             if '_table' in torun:
                 x = x.replace('mca-2lss-mcdata-frdata.txt','mca-2lss-mcdata-frdata-table.txt')
 
+	if '_allPrompt' in torun:
+	    x = x.replace('mca-2lss-mc.txt','mca-2lss-allprompt.txt')
         if '_mll200' in torun:
             x = add(x,"-E ^mll200 ")
 
@@ -158,7 +162,8 @@ if __name__ == '__main__':
                 x = x.replace('mca-3l-mcdata-frdata.txt','mca-3l-mcdata-frdata-table.txt')
         if '_table' in torun:
             x = x.replace('mca-3l-mc.txt','mca-3l-mc-table.txt')
-
+	if "_only12" in torun:
+	    x = x.replace("ttH-multilepton/2lss_3l_plots.txt", "ttH-multilepton/singleVarPlots.txt")
         if '_closuretest' in torun:
             x = x.replace('mca-3l-mc.txt','mca-3l-mc-closuretest.txt')
             #x = x.replace("--maxRatioRange 0 3","--maxRatioRange 0.5 1.5")
@@ -194,6 +199,8 @@ if __name__ == '__main__':
         x = base('4l')
         if '_appl' in torun: x = add(x,'-I ^TTTT ')
         if '_relax' in torun: x = add(x,'-X ^TTTT ')
+	if "_only12" in torun:
+	    x = x.replace("ttH-multilepton/2lss_3l_plots.txt", "ttH-multilepton/singleVarPlots.txt")
         if '_data' in torun: x = x.replace('mca-4l-mc.txt','mca-4l-mcdata.txt')
         if '_frdata' in torun:
             raise RuntimeError, 'Fakes estimation not implemented for 4l'

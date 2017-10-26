@@ -1,0 +1,28 @@
+nJet25_from2:  	nJet25					: [1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5] ; XTitle='N(jet\, p_{T} > 25 GeV)', XNDdiv=505, xBinLabels="4\,5\,6\,#geq 7"
+htJet25j:   	htJet25j 				: 20,0,1200 ; XTitle="H_{T}(jet p_{T} > 25) [GeV]"
+met: 		met_pt					: 20,0,400 ; XTitle="E_{T}^{miss} [GeV]"
+kinMVA_2lss_ttbar_withBDTv8: kinMVA_2lss_ttbar_withBDTv8 : 20,-1,1 ; XTitle="BDT with hadr. top tagger (ttH\,tt)", MoreY=2.0, Legend='TL'
+kinMVA_2lss_ttV_withHj: kinMVA_2lss_ttV_withHj : 20,-1,1 ; XTitle="BDT with Hj tagger (ttH\,ttV)", MoreY=2.0, Legend='TL'
+kinMVA_input_max_Lep_eta: max(abs(LepGood1_eta),abs(LepGood2_eta)) : 18,0,2.5 ; XTitle="max lepton |#eta|"
+lep1_pt: 	 LepGood1_pt					 : 16,0,300; XTitle="Leading lepton p_{T} [GeV]"
+lep1_eta: 	 abs(LepGood1_eta)					 : 18,0.,2.5; XTitle="Leading lepton #eta", MoreY = 2.0
+lep2_pt: 	 LepGood2_pt					 : 18,0,300; XTitle="Sub-leading lepton p_{T} [GeV]"
+lep2_eta: 	 abs(LepGood2_eta)					 : 18,0.,2.5; XTitle="Sub-leading lepton #eta", MoreY = 2.0
+kinMVA_input_mindr_lep1_jet: mindr_lep1_jet : 20,0,3; XTitle="min #DeltaR(lep1\,jet)"
+kinMVA_input_mindr_lep2_jet: mindr_lep2_jet : 18,0,3; XTitle="min #DeltaR(lep2\,jet)"
+
+
+
+
+nJet25_from4_moreBins:  	nJet25					: [3.5,4.5,5.5,6.5,7.5,8.5,9.5] ; XTitle='N(jet\, p_{T} > 25 GeV)', XNDdiv=505, xBinLabels="4\,5\,6\,#geq 7"
+htJet25j_moreBins:   	htJet25j 				: 60,0,1200 ; XTitle="H_{T}(jet p_{T} > 25) [GeV]"
+met_moreBins: 		met_pt					: 60,0,400 ; XTitle="E_{T}^{miss} [GeV]"
+kinMVA_2lss_ttbar_withBDTv8_moreBins: kinMVA_2lss_ttbar_withBDTv8 : 60,-1,1 ; XTitle="BDT with hadr. top tagger (ttH\,tt)", MoreY=2.0, Legend='TL'
+kinMVA_2lss_ttV_withHj_moreBins: kinMVA_2lss_ttV_withHj : 60,-1,1 ; XTitle="BDT with Hj tagger (ttH\,ttV)", MoreY=2.0, Legend='TL'
+kinMVA_input_max_Lep_eta_moreBins: max(abs(LepGood1_eta),abs(LepGood2_eta)) : 54,0,2.5 ; XTitle="max lepton |#eta|"
+lep1_pt_moreBins: 	 LepGood1_pt					 : 48,0,300; XTitle="Leading lepton p_{T} [GeV]"
+lep1_eta_moreBins: 	 abs(LepGood1_eta)					 : 54,0.,2.5; XTitle="Leading lepton #eta", MoreY = 2.0
+lep2_pt_moreBins: 	 LepGood2_pt					 : 54,0,300; XTitle="Sub-leading lepton p_{T} [GeV]"
+lep2_eta_moreBins: 	 abs(LepGood2_eta)					 : 54,0.,2.5; XTitle="Sub-leading lepton #eta", MoreY = 2.0
+kinMVA_input_mindr_lep1_jet_moreBins: mindr_lep1_jet : 60,0,3; XTitle="min #DeltaR(lep1\,jet)"
+kinMVA_input_mindr_lep2_jet_moreBins: mindr_lep2_jet : 54,0,3; XTitle="min #DeltaR(lep2\,jet)"

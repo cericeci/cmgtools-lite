@@ -209,6 +209,712 @@ float mass_3_cheap(float pt1, float eta1, float pt2, float eta2, float phi2, flo
 
 void functions() {}
 
+#include "TMath.h"
+
+//DR1//
+
+Int_t DR12Dto1D_10(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   10;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR12Dto1D_8(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   8;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR12Dto1D_6(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   6;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR12Dto1D_4(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   4;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR12Dto1D_12(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   12;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR12Dto1D_14(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   14;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR12Dto1D_16(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   16;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR12Dto1D_18(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   18;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR12Dto1D_20(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   20;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+//DR2//
+
+
+Int_t DR22Dto1D_10(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   10;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR22Dto1D_8(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   8;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR22Dto1D_6(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   6;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR22Dto1D_4(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   4;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR22Dto1D_12(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   12;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR22Dto1D_14(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   14;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR22Dto1D_16(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   16;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR22Dto1D_18(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   18;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t DR22Dto1D_20(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  3.;
+	float nbins  =   20;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+//NJET//
+
+Int_t NJet2Dto1D_10(Double_t x, Double_t y){
+	float minval =  0.5;
+	float maxval =  10.5;
+	float nbins  =   10;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t NJet2Dto1D_5(Double_t x, Double_t y){
+	float minval =  0.5;
+	float maxval =  10.5;
+	float nbins  =   5;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t NJet2Dto1D_2(Double_t x, Double_t y){
+	float minval =  0.5;
+	float maxval =  10.5;
+	float nbins  =  2;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+// MLL
+
+Int_t MLL2Dto1D_4(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   4;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MLL2Dto1D_6(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   6;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MLL2Dto1D_8(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   8;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MLL2Dto1D_10(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   10;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MLL2Dto1D_12(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   12;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MLL2Dto1D_14(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   14;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MLL2Dto1D_16(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   16;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MLL2Dto1D_18(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   18;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MLL2Dto1D_20(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   20;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+//Max(ETA)//
+
+Int_t MaxEta2Dto1D_4(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  2.5;
+	float nbins  =   4;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MaxEta2Dto1D_6(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  2.5;
+	float nbins  =   6;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MaxEta2Dto1D_8(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  2.5;
+	float nbins  =   8;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MaxEta2Dto1D_10(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  2.5;
+	float nbins  =   10;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MaxEta2Dto1D_12(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  2.5;
+	float nbins  =   12;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MaxEta2Dto1D_14(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  2.5;
+	float nbins  =   14;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MaxEta2Dto1D_16(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  2.5;
+	float nbins  =   16;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MaxEta2Dto1D_18(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  2.5;
+	float nbins  =   18;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MaxEta2Dto1D_20(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  2.5;
+	float nbins  =   20;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+//HT//
+
+Int_t HT2Dto1D_20(Double_t x, Double_t y){
+	float minval = 0.;
+	float maxval = 1200.;
+	float nbins  =   20;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t HT2Dto1D_4(Double_t x, Double_t y){
+	float minval = 0.;
+	float maxval = 1200.;
+	float nbins  =   4;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t HT2Dto1D_6(Double_t x, Double_t y){
+	float minval = 0.;
+	float maxval = 1200.;
+	float nbins  =   6;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t HT2Dto1D_8(Double_t x, Double_t y){
+	float minval = 0.;
+	float maxval = 1200.;
+	float nbins  =   8;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t HT2Dto1D_10(Double_t x, Double_t y){
+	float minval = 0.;
+	float maxval = 1200.;
+	float nbins  =   10;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t HT2Dto1D_12(Double_t x, Double_t y){
+	float minval = 0.;
+	float maxval = 1200.;
+	float nbins  =   12;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t HT2Dto1D_14(Double_t x, Double_t y){
+	float minval = 0.;
+	float maxval = 1200.;
+	float nbins  =   14;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t HT2Dto1D_16(Double_t x, Double_t y){
+	float minval = 0.;
+	float maxval = 1200.;
+	float nbins  =   16;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t HT2Dto1D_18(Double_t x, Double_t y){
+	float minval = 0.;
+	float maxval = 1200.;
+	float nbins  =   18;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+//MET//
+
+Int_t MET2Dto1D_4(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   4;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MET2Dto1D_6(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   6;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MET2Dto1D_8(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   8;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MET2Dto1D_10(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   10;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MET2Dto1D_12(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   12;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MET2Dto1D_14(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   14;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MET2Dto1D_16(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   16;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MET2Dto1D_18(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   18;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t MET2Dto1D_20(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  400.;
+	float nbins  =   20;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+//PT1//
+
+Int_t PT12Dto1D_4(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  300.;
+	float nbins  =   4;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT12Dto1D_6(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  300.;
+	float nbins  =   6;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT12Dto1D_8(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  300.;
+	float nbins  =   8;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT12Dto1D_10(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  300.;
+	float nbins  =   10;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT12Dto1D_12(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  300.;
+	float nbins  =   12;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT12Dto1D_14(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  300.;
+	float nbins  =   14;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT12Dto1D_16(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  300.;
+	float nbins  =   16;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT12Dto1D_18(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  300.;
+	float nbins  =   18;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT12Dto1D_20(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  300.;
+	float nbins  =   20;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+
+//PT2//
+
+Int_t PT22Dto1D_4(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  200.;
+	float nbins  =   4;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT22Dto1D_6(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  200.;
+	float nbins  =   6;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT22Dto1D_8(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  200.;
+	float nbins  =   8;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT22Dto1D_10(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  200.;
+	float nbins  =   10;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT22Dto1D_12(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  200.;
+	float nbins  =   12;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT22Dto1D_14(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  200.;
+	float nbins  =   14;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT22Dto1D_16(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  200.;
+	float nbins  =   16;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT22Dto1D_18(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  200.;
+	float nbins  =   18;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t PT22Dto1D_20(Double_t x, Double_t y){
+	float minval =  0.;
+	float maxval =  200.;
+	float nbins  =   20;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+// BDT //
+
+Int_t BDT2Dto1D_20(Double_t x, Double_t y){
+	float minval =  -1.;
+	float maxval =  1.;
+	float nbins  =   20;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t BDT2Dto1D_18(Double_t x, Double_t y){
+	float minval =  -1.;
+	float maxval =  1.;
+	float nbins  =   18;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t BDT2Dto1D_16(Double_t x, Double_t y){
+	float minval =  -1.;
+	float maxval =  1.;
+	float nbins  =   16;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t BDT2Dto1D_14(Double_t x, Double_t y){
+	float minval =  -1.;
+	float maxval =  1.;
+	float nbins  =   14;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t BDT2Dto1D_12(Double_t x, Double_t y){
+	float minval =  -1.;
+	float maxval =  1.;
+	float nbins  =   12;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t BDT2Dto1D_10(Double_t x, Double_t y){
+	float minval =  -1.;
+	float maxval =  1.;
+	float nbins  =   10;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t BDT2Dto1D_8(Double_t x, Double_t y){
+	float minval =  -1.;
+	float maxval =  1.;
+	float nbins  =   8;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t BDT2Dto1D_6(Double_t x, Double_t y){
+	float minval =  -1.;
+	float maxval =  1.;
+	float nbins  =   6;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t BDT2Dto1D_4(Double_t x, Double_t y){
+	float minval =  -1.;
+	float maxval =  1.;
+	float nbins  =   4;
+	float dbin = (maxval-minval)/nbins;
+	return TMath::Floor( (x-minval)/dbin+ 1.);
+}
+
+Int_t Counts(Double_t x, Double_t y){
+	return 1.;
+}
+
+
+
+
+
+
+
 
 
 
