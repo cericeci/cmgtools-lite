@@ -403,7 +403,7 @@ class HistoWithNuisances:
 def mergePlots(name,plots):
     one = plots[0].Clone(name)
     for p in plots[1:]:
-        one+=p
+        one += p
     return one
 
 def listAllNuisances(histWithNuisanceMap):
