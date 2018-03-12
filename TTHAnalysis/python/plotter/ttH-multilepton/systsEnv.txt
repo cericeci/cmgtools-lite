@@ -126,4 +126,3 @@ CMS_ttHl16_Clos_m_bl_shape : data_fakes  : .*3l.*      	: 1.0 : shapeOnly2D_1.10
 
 # Charge flip uncertainty
 CMS_ttHl_QF     : data_flips  : .* : 1.3
-

@@ -403,7 +403,10 @@ class HistoWithNuisances:
 def mergePlots(name,plots):
     one = plots[0].Clone(name)
     for p in plots[1:]:
-        one+=p
+        for i in range(1,one.GetNbinsX()+1):
+            for j in range(1,one.GetNbinsY()+1):
+                one.SetBinContent(i,j, one.GetBinContent(i,j) + p.GetBinContent(i,j))
+        #one = one.Add(p)#Somehow crashing
     return one
 
 def listAllNuisances(histWithNuisanceMap):

@@ -383,6 +383,7 @@ for name in systsEnv.keys():
                                 systsEnv2["%s_%s_%s_bin%d_%d"%(name,truebinname,p,binx,biny)] = (dict([(_p,"1" if _p==p else "-") for _p in procs]),dict([(_p,"1" if _p==p else "-") for _p in procs]),"templates")
                                 break # otherwise you apply more than once to the same bin if more regexps match
         elif mode in ["templates","templatesShapeOnly"]:
+            #print report
             nominal = report[p]
             p0Up = report["%s_%s_Up" % (p, effect)]
             p0Dn = report["%s_%s_Dn" % (p, effect)]

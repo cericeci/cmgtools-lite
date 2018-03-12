@@ -71,6 +71,7 @@ class MCAnalysis:
                         extra[key] = eval(val)
                     else: extra[setting] = True
             for k,v in addExtras.iteritems():
+                #print k,v, extra
                 if k in extra: raise RuntimeError, 'You are trying to overwrite an extra option already set'
                 extra[k] = v
             field = [f.strip() for f in line.split(':')]
@@ -383,7 +384,7 @@ class MCAnalysis:
                         unc[var] = (up.Integral(),dn.Integral())
                     thisret[k].append(copy(unc))
             formatted_report.append((cn,copy(thisret)))
-        print formatted_report
+        #print formatted_report
         return formatted_report
     def getPlotsRaw(self,name,expr,bins,cut,process=None,nodata=False,makeSummary=False,closeTreeAfter=False):
         return self.getPlots(PlotSpec(name,expr,bins,{}),cut,process=process,nodata=nodata,makeSummary=makeSummary,closeTreeAfter=closeTreeAfter)
@@ -405,6 +406,7 @@ class MCAnalysis:
         for (k,v) in retlist: 
             if k not in mergemap: mergemap[k] = []
             mergemap[k].append(v)
+        #print mergemap
         ret = dict([ (k,mergePlots(plotspec.name+"_"+k,v)) for k,v in mergemap.iteritems() ])
 
         rescales = []
