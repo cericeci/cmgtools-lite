@@ -25,6 +25,13 @@ leptonTypeSusy = NTupleObjectType("leptonSusy", baseObjectTypes = [ leptonType ]
     NTupleVariable("jetBTagCSV", lambda lepton : lepton.jet.btag('pfCombinedInclusiveSecondaryVertexV2BJetTags') if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99, help="CSV btag of nearest jet"),
     NTupleVariable("jetBTagCMVA", lambda lepton : lepton.jet.btag('pfCombinedMVABJetTags') if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99, help="CMA btag of nearest jet"),
     NTupleVariable("jetBTagDeepCSV", lambda lepton : (lambda x: -99 if isnan(x) else x)(lepton.jet.btag('pfDeepCSVJetTags:probb')+lepton.jet.btag('pfDeepCSVJetTags:probbb') if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99), help="DeepCSV btag of nearest jet, BvsAll = b+bb"),
+    NTupleVariable("jetBTagDeepFlavorB", lambda lepton : (lambda x: -99 if isnan(x) else x)(lepton.jet.btag('pfDeepFlavourJetTags:probb')+lepton.jet.btag('pfDeepFlavourJetTags:probbb')+lepton.jet.btag('pfDeepFlavourJetTags:problepb') if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99), help="DeepFlavor btag of nearest jet"),
+    NTupleVariable("jetBTagDeepFlavorbb", lambda lepton : (lambda x: -99 if isnan(x) else x)(lepton.jet.btag('pfDeepFlavourJetTags:probbb') if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99), help="DeepFlavor btag bb of nearest jet"),
+    NTupleVariable("jetBTagDeepFlavorhadb", lambda lepton : (lambda x: -99 if isnan(x) else x)(lepton.jet.btag('pfDeepFlavourJetTags:probb') if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99), help="DeepFlavor btag hadb of nearest jet"),
+    NTupleVariable("jetBTagDeepFlavorlepb", lambda lepton : (lambda x: -99 if isnan(x) else x)(lepton.jet.btag('pfDeepFlavourJetTags:problepb') if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99), help="DeepFlavor btag lepb of nearest jet"),
+
+
+
     NTupleVariable("jetBTagDeepCSVCvsB", lambda lepton : (lambda x: -99 if isnan(x) else x)((lepton.jet.btag('pfDeepCSVJetTags:probc')/(lepton.jet.btag('pfDeepCSVJetTags:probc')+lepton.jet.btag('pfDeepCSVJetTags:probb')+lepton.jet.btag('pfDeepCSVJetTags:probbb'))) if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99), help="DeepCSV btag of nearest jet, CvsB = c/(c+b+bb)"),
     NTupleVariable("jetBTagDeepCSVCvsL", lambda lepton : (lambda x: -99 if isnan(x) else x)((lepton.jet.btag('pfDeepCSVJetTags:probc')/(lepton.jet.btag('pfDeepCSVJetTags:probc')+lepton.jet.btag('pfDeepCSVJetTags:probudsg'))) if hasattr(lepton,'jet') and hasattr(lepton.jet, 'btag') else -99), help="DeepCSV btag of nearest jet, CvsL = c/(c+udsg)"),
     NTupleVariable("jetDR",      lambda lepton : deltaR(lepton.eta(),lepton.phi(),lepton.jet.eta(),lepton.jet.phi()) if hasattr(lepton,'jet') else -1, help="deltaR(lepton, nearest jet)"),
@@ -167,6 +174,13 @@ jetTypeSusy = NTupleObjectType("jetSusy",  baseObjectTypes = [ jetTypeExtra ], v
     NTupleVariable("ctagCsvB", lambda x : x.btag('pfCombinedCvsBJetTags'), float, help="CsvB discriminator"),
     NTupleVariable("btagDeepCSVCvsB", lambda x : (lambda y : -99 if isnan(y) else y)(x.btag('pfDeepCSVJetTags:probc')/(x.btag('pfDeepCSVJetTags:probc')+x.btag('pfDeepCSVJetTags:probb')+x.btag('pfDeepCSVJetTags:probbb'))), help="DeepCSV discriminator, CvsB = c/(c+b+bb)"),
     NTupleVariable("btagDeepCSVCvsL", lambda x : (lambda y : -99 if isnan(y) else y)(x.btag('pfDeepCSVJetTags:probc')/(x.btag('pfDeepCSVJetTags:probc')+x.btag('pfDeepCSVJetTags:probudsg'))), help="DeepCSV discriminator, CvsL = c/(c+udsg)"),
+    NTupleVariable("bTagDeepFlavorB", lambda x : (lambda y : -99 if isnan(y) else y)(x.btag('pfDeepFlavourJetTags:probb')+x.btag('pfDeepFlavourJetTags:probbb')+x.btag('pfDeepFlavourJetTags:problepb')), help="DeepFlavor discriminator, b + bb +lepb"),
+    NTupleVariable("btagDeepFlavorbb", lambda x : (lambda y : -99 if isnan(y) else y)(x.btag('pfDeepFlavourJetTags:probbb')), help="DeepFlavor discriminator, bb"),
+    NTupleVariable("btagDeepFlavorhadb", lambda x : (lambda y : -99 if isnan(y) else y)(x.btag('pfDeepFlavourJetTags:probb')), help="DeepFlavor discriminator, hadb"),
+    NTupleVariable("btagDeepFlavorlepb", lambda x : (lambda y : -99 if isnan(y) else y)(x.btag('pfDeepFlavourJetTags:problepb')), help="DeepFlavor discriminator, lepb"),
+    NTupleVariable("btagDeepFlavorC", lambda x : (lambda y : -99 if isnan(y) else y)(x.btag('pfDeepFlavourJetTags:probc')), help="DeepFlavor discriminator, C"),
+    NTupleVariable("btagDeepFlavorUDS", lambda x : (lambda y : -99 if isnan(y) else y)(x.btag('pfDeepFlavourJetTags:probuds')), help="DeepFlavor discriminator, UDS"),
+    NTupleVariable("btagDeepFlavorG", lambda x : (lambda y : -99 if isnan(y) else y)(x.btag('pfDeepFlavourJetTags:probg')), help="DeepFlavor discriminator, G"),
 ])
 
 jetTypeSusyExtraLight = NTupleObjectType("jetSusyExtraLight",  baseObjectTypes = [ jetTypeSusy ], variables = [
