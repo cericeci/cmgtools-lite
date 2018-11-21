@@ -57,7 +57,7 @@ isoTrackAna.setOff=False
 if analysis=='susy':
     susyCoreSequence.insert(susyCoreSequence.index(ttHLepSkim)+1,globalSkim)
     susyCoreSequence.remove(ttHLepSkim)
-    globalSkim.selections=["2lep5",'1lep5_1tau18',"1lep5[maxObj1]"] #'2tau18', -> not used
+    globalSkim.selections=["1lep5"] #'2tau18', -> not used
 
 # Run miniIso
 lepAna.doMiniIsolation = True
@@ -77,6 +77,7 @@ if analysis=='susy':
     jetAna.cleanJetsFromLeptons=False
     jetAna.cleanSelectedLeptons=True
     jetAna.storeLowPtJets=True
+    jetAna.jetPt = 10
     jetAna.jetEtaCentral = jetAna.jetEta
     jetAna.mcGT = "Fall17_17Nov2017_V6_MC"    
     if dataEra==2016:
@@ -574,41 +575,17 @@ if runSMS:
 #from CMGTools.RootTools.samples.samples_13TeV_RunIISpring16MiniAODv1 import *
 #from CMGTools.RootTools.samples.samples_13TeV_RunIISpring16MiniAODv2 import *
 #from CMGTools.RootTools.samples.samples_13TeV_RunIISummer16MiniAODv2 import *
-from CMGTools.RootTools.samples.samples_13TeV_RunIIFall17_230218 import *
+#from CMGTools.RootTools.samples.samples_13TeV_RunIIFall17_230218 import *
+from CMGTools.RootTools.samples.samples_13TeV_Apr2018 import *
 #from CMGTools.RootTools.samples.samples_13TeV_signals import *
 #from CMGTools.RootTools.samples.samples_13TeV_80X_susySignalsPriv import *
 #from CMGTools.RootTools.samples.samples_13TeV_DATA2016 import *
 from CMGTools.RootTools.samples.configTools import printSummary, configureSplittingFromTime, cropToLumi, prescaleComponents, insertEventSelector
 
-selectedComponents = [TTZToLLNuNu]
+#selectedComponents = [WWW,WWZ,WZZ,ZZZ,tZW,TTJets_SingleLeptonFromT, TTJets]
 
 if analysis=='susy':
-    samples = [TTJets_SingleLeptonFromT] #mcSamples #[TTZToLLNuNu] #mcSamples #[TTZToLLNuNu, TTZ_LO, tZq_ll, WZTo3LNu_amcatnlo,TTHnobb,TTHnobb_pow]#DYJetsToLL_M10to50, DYJetsToLL_M50, DYJetsToLL_M10to50_LO, DYJetsToLL_M50_LO, GGHZZ4L, TBarToLeptons_tch_powheg, TBar_tWch, TGJets, TTGJets, TTJets, TTJets_DiLepton, TTJets_SingleLeptonFromT, 
-               #TTJets_SingleLeptonFromTbar, TTTT, TT_pow_ext4, TToLeptons_sch_amcatnlo, TToLeptons_tch_amcatnlo, TToLeptons_tch_powheg, T_tWch, VHToNonbb, WGToLNuG, WJetsToLNu, WJetsToLNu_LO, 
-               #WWDouble, WWTo2L2Nu, WWW, WWZ, WZTo3LNu, WZTo3LNu_amcatnlo, WZZ, WpWpJJ, ZGTo2LG, ZZTo4L, ZZZ, tZq_ll]
-   
-    samples_LHE = []#[TTHnobb_pow, TTLLJets_m1to10, TTWToLNu, TTW_LO, TTZToLLNuNu, TTZ_LO,]
-    
-    #samples_2l = [TTW_LO,TTZ_LO,WZTo3LNu_amcatnlo,DYJetsToLL_M10to50,DYJetsToLL_M50,WWTo2L2Nu,ZZTo2L2Q,WZTo3LNu,TTWToLNu,TTZToLLNuNu,TTJets_DiLepton,TTHnobb_mWCutfix_ext1,TTHnobb_pow]
-    #samples_1l = [WJetsToLNu,TTJets_SingleLeptonFromT,TTJets_SingleLeptonFromTbar,TBarToLeptons_tch_powheg,TToLeptons_sch_amcatnlo,TBar_tWch,T_tWch]
-    
-    if not getHeppyOption("keepLHEweights",False):
-        selectedComponents = samples #samples_2l +samples_1l
-    else:
-        selectedComponents = samples_LHE
-
-    if int(group)==0:
-        selectedComponents=[GGHZZ4L,GGHZZ4L_ext,DYJetsToLL_M10to50_LO,TBar_tWch_noFullHad,TBar_tWch_noFullHad_ext,TTGJets,TTZ_LO,TToLeptons_sch_amcatnlo,T_tWch,VBF_HToZZTo4L,WWTo2L2Nu,ZZTo4L,TBar_tWch,WWTo1L1Nu2Q]
-    if int(group)==1:
-        selectedComponents=[DYJetsToLL_M50,TBar_tch_powheg,TTJets_SingleLeptonFromT,TTTT,TTTT_ext,TTZZ,T_tch_powheg,ZZTo2L2Nu]
-    if int(group)==2:
-        selectedComponents=[DYJetsToLL_M50_LO,TTWToLNu,TTWW,TTWZ,TTW_LO,TTZH,T_tWch_noFullHad,WJetsToLNu_LO]
-    if int(group)==3:
-        selectedComponents=[GluGluToContinToZZTo2e2nu,GluGluToContinToZZTo2e2tau,GluGluToContinToZZTo2mu2nu,GluGluToContinToZZTo2mu2tau,TTJets]
-    if int(group)==4:
-        selectedComponents=[TTHnobb,TTHnobb_pow,TTLLJets_m1to10,TTZToLLNuNu,WZTo3LNu_amcatnlo,tZq_ll]
-
-
+    samples = [WZTo3LNu_amcatnlo, WZTo3LNu_powheg, TT_94_Dil, TT_94_Semi, TT_94_Had, TTH_nobb, TTH_incl, TTZ]
     if runSMS:
         selectedComponents=[TChiSlepSnu,T1tttt_2016,T5qqqqVV_2016]
         #ttHLepSkim.minLeptons = 0
@@ -617,7 +594,7 @@ if analysis=='susy':
         susyScanAna.useLumiInfo=True
         for c in selectedComponents:
             c.splitFactor = len(c.files)
-
+    selectedComponents=samples
 elif analysis=='SOS':
 
     selectedComponents = selectedComponents
@@ -692,16 +669,16 @@ if runData:# and not isTest: # For running on data
         dataChunks.append((json,processing,short,run_ranges,useAAA))
     if dataEra==2017:
         print "processing 2017 data"
-        processing = "Run2017B-17Nov2017-v1"; short = "Run2017B_17Nov2017_v1"; run_ranges = [(297046,299329)]; useAAA=True;#for DoubleEG
+        processing = "Run2017B-31Mar2018-v1"; short = "Run2017B_31Mar2018_v1"; run_ranges = [(297046,299329)]; useAAA=True;#for DoubleEG
         dataChunks.append((json,processing,short,run_ranges,useAAA))
-        processing = "Run2017C-17Nov2017-v1"; short = "Run2017C_17Nov2017_v1"; run_ranges = [(299368,302029)]; useAAA=True;
+        processing = "Run2017C-31Mar2018-v1"; short = "Run2017C_31Mar2018_v1"; run_ranges = [(299368,302029)]; useAAA=True;
         dataChunks.append((json,processing,short,run_ranges,useAAA))
-        #processing = "Run2017D-17Nov2017-v1"; short = "Run2017D_17Nov2017_v1"; run_ranges = [(302030,303434)]; useAAA=True;
-        #dataChunks.append((json,processing,short,run_ranges,useAAA))
-        #processing = "Run2017E-17Nov2017-v1"; short = "Run2017E_17Nov2017_v1"; run_ranges = [(303824,304797)]; useAAA=True;
-        #dataChunks.append((json,processing,short,run_ranges,useAAA))
-        #processing = "Run2017F-17Nov2017-v1"; short = "Run2017F_17Nov2017_v1"; run_ranges = [(305040,306462)]; useAAA=True;
-        #dataChunks.append((json,processing,short,run_ranges,useAAA))
+        processing = "Run2017D-31Mar2018-v1"; short = "Run2017D_31Mar2018_v1"; run_ranges = [(302030,303434)]; useAAA=True;
+        dataChunks.append((json,processing,short,run_ranges,useAAA))
+        processing = "Run2017E-31Mar2018-v1"; short = "Run2017E_31Mar2018_v1"; run_ranges = [(303824,304797)]; useAAA=True;
+        dataChunks.append((json,processing,short,run_ranges,useAAA))
+        processing = "Run2017F-31Mar2018-v1"; short = "Run2017F_31Mar2018_v1"; run_ranges = [(305040,306462)]; useAAA=True;
+        dataChunks.append((json,processing,short,run_ranges,useAAA))
 
 
     compSelection = ""; compVeto = ""
@@ -725,8 +702,8 @@ if runData:# and not isTest: # For running on data
             DatasetsAndTriggers.append( ("DoubleEG",   ["HLT_Ele%d_CaloIdM_TrackIdM_PFJet30_v*" % pt for pt in (8,12)]) )
             DatasetsAndTriggers.append( ("JetHT",   triggers_FR_jet) )
     else:
-        DatasetsAndTriggers.append( ("DoubleMuon", triggers_mumu_iso + triggers_mumu_ss + triggers_mumu_ht + triggers_3mu + triggers_3mu_alt + triggers_FR_1mu_iso + triggers_FR_1mu_noiso) )
-        DatasetsAndTriggers.append( ("DoubleEG",   triggers_ee + triggers_ee_ht + triggers_3e + triggers_FR_1e_noiso + triggers_FR_1e_iso) )
+        DatasetsAndTriggers.append( ("DoubleMuon", triggers_mumu_iso + triggers_mumu_ss + triggers_mumu_ht + triggers_3mu + triggers_3mu_alt) )
+        DatasetsAndTriggers.append( ("DoubleEG",   triggers_ee + triggers_ee_ht + triggers_3e ) )
         DatasetsAndTriggers.append( ("MuonEG",     triggers_mue + triggers_mue_ht + triggers_2mu1e + triggers_2e1mu ) )
         if analysis=='susy':
             DatasetsAndTriggers.append( ("SingleMuon", triggers_leptau + triggers_1mu_iso + triggers_1mu_noniso) )
@@ -808,7 +785,7 @@ if runData:# and not isTest: # For running on data
                     from CMGTools.Production.promptRecoRunRangeFilter import filterComponent
                     filterComponent(comp, verbose=1)
                 print "Will process %s (%d files)" % (comp.name, len(comp.files))
-                comp.splitFactor = len(comp.files)/8
+                comp.splitFactor = len(comp.files)/4
                 comp.fineSplitFactor = 1
                 selectedComponents.append( comp )
             if exclusiveDatasets: vetos += triggers
@@ -1151,8 +1128,8 @@ elif test == '94X-Data':
     what = getHeppyOption("sample","DoubleMuon")
     if what == "DoubleMuon":
         json = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/Final/Cert_294927-306462_13TeV_PromptReco_Collisions17_JSON.txt'
-        DoubleMuon = kreator.makeDataComponent("DoubleMuon_Run2017C_run299649", "/DoubleMuon/Run2017C-17Nov2017-v1/MINIAOD", "CMS", ".*root", run_range = (299649,299649), triggers = [])
-        DoubleMuon.files = [ 'root://eoscms//eos/cms/store/data/Run2017C/DoubleMuon/MINIAOD/17Nov2017-v1/50000/00519DC1-7ED3-E711-96E1-008CFAFBE5E0.root'  ]
+        DoubleMuon = kreator.makeDataComponent("DoubleMuon_Run2017C_run299649", "/DoubleMuon/Run2017C-31Mar2018-v1/MINIAOD", "CMS", ".*root", run_range = (299649,299649), triggers = [])
+        DoubleMuon.files = [ 'root://eoscms//eos/cms/store/data/Run2017C/DoubleMuon/MINIAOD/31Mar2018-v1/50000/00519DC1-7ED3-E711-96E1-008CFAFBE5E0.root'  ]
         selectedComponents = [ DoubleMuon ]
     for comp in selectedComponents:
         comp.json = json
