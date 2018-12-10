@@ -18,6 +18,19 @@ TT_94_Dil    = kreator.makeMCComponent("TT_Dil_Powheg"      ,        "/TTTo2L2Nu
 TT_94_Semi   = kreator.makeMCComponent("TT_SingleLep_Powheg", "/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v2/MINIAODSIM", "CMS", ".*root", 831.76*(3*0.108)*(1-3*0.108))
 TT_94_Had    = kreator.makeMCComponent("TT_Had_Powheg"      ,     "/TTToHadronic_TuneCP5_13TeV-powheg-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM", "CMS", ".*root", 831.76*(1-3*0.108)*(1-3*0.108))
 
+TT_94_SemT    = kreator.makeMCComponent("TT_SingleLepFromT_madgraph"      ,        "/TTJets_SingleLeptFromT_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM", "CMS", ".*root", 831.76*(1-3*0.108)*(3*0.108))
+TT_94_SemTb    = kreator.makeMCComponent("TT_SingleLepFromTbar_madgraph"      ,        "/TTJets_SingleLeptFromTbar_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM", "CMS", ".*root", 831.76*(1-3*0.108)*(3*0.108))
+TT_94_DilM    = kreator.makeMCComponent("TT_Dil_madgraph"      ,     "/TTJets_DiLept_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM", "CMS", ".*root", 831.76*(3*0.108)*(3*0.108))
+
+
+WJets_MLM     = kreator.makeMCComponent("WJets_MLM"      ,        "/WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v2/MINIAODSIM", "CMS", ".*root",3* 20508.9)
+DYJets_aMC    = kreator.makeMCComponent("DYJets_M-50_aMCatNLO"      ,        "/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM", "CMS", ".*root", 2008.*3)
+DYJets_aMC_ext    = kreator.makeMCComponent("DYJets_M-50_aMCatNLO_ext"      ,        "/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14_ext1-v1/MINIAODSIM", "CMS", ".*root", 2008.*3)
+
+
+
+
+
 TTH_nobb     = kreator.makeMCComponent("TTHnobb_Powheg"      ,        "/ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM", "CMS", ".*root", 0.5085*(1-0.577))
 TTH_incl     = kreator.makeMCComponent("TTHincl_Powheg"      ,        "/ttH_M125_TuneCP5_13TeV-powheg-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM", "CMS", ".*root", 0.5085)
 TTZ          = kreator.makeMCComponent("TTZToLLNuNu_amcatnlo",        "/TTZToLLNuNu_M-10_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM", "CMS", ".*root", 0.2529)

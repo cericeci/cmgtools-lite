@@ -37,7 +37,7 @@ isTest = getHeppyOption("test",None) != None and not re.match("^\d+$",getHeppyOp
 selectedEvents=getHeppyOption("selectEvents","")
 group=getHeppyOption("mcGroup",-1)
 siggroup=int(getHeppyOption("sigGroup",-1))
-
+sergioDoSkim=getHeppyOption("sergioDoSkim",False)
 
 sample = "main"
 #if runDataQCD or runFRMC: sample="qcd1l"
@@ -450,6 +450,27 @@ if analysis=="susy" and not getHeppyOption("doNotTrimNtuple",False):
 #sys.exit(0)
 ##==========================================================
 
+if sergioDoSkim: #Sergio just needs LepGood
+     susyMultilepton_collections.pop("genleps")
+     susyMultilepton_collections.pop("gentauleps")
+     susyMultilepton_collections.pop("gentaus")
+     susyMultilepton_collections.pop("generatorSummary")
+     susyMultilepton_collections.pop("gentopquarks")
+     susyMultilepton_collections.pop("selectedTaus")
+     susyMultilepton_collections.pop("otherTaus")
+     susyMultilepton_collections.pop("cleanJets")
+     susyMultilepton_collections.pop("cleanJetsFwd")
+     susyMultilepton_collections.pop("discardedJets")
+     susyMultilepton_collections.pop("ivf")
+     susyMultilepton_collections.pop("LHE_weights")
+     susyMultilepton_collections.pop("selectedPhotons")
+     susyMultilepton_collections.pop("discardedLeptons")
+     susyMultilepton_collections.pop("otherLeptons")
+     susyMultilepton_collections.pop("selectedIsoTrack")
+     susyMultilepton_collections.pop("fatJets")
+
+
+
 ## Tree Producer
 treeProducer = cfg.Analyzer(
      AutoFillTreeProducer, name='treeProducerSusyMultilepton',
@@ -584,8 +605,9 @@ from CMGTools.RootTools.samples.configTools import printSummary, configureSplitt
 
 #selectedComponents = [WWW,WWZ,WZZ,ZZZ,tZW,TTJets_SingleLeptonFromT, TTJets]
 
+
 if analysis=='susy':
-    samples = [WZTo3LNu_amcatnlo, WZTo3LNu_powheg, TT_94_Dil, TT_94_Semi, TT_94_Had, TTH_nobb, TTH_incl, TTZ]
+    samples = [WJets_MLM, DYJets_aMC, DYJets_aMC_ext] #[TT_94_SemT,TT_94_SemTb,TT_94_DilM]#[WZTo3LNu_amcatnlo]#, WZTo3LNu_powheg, TT_94_Dil, TT_94_Semi, TT_94_Had, TTH_nobb, TTH_incl, TTZ]
     if runSMS:
         selectedComponents=[TChiSlepSnu,T1tttt_2016,T5qqqqVV_2016]
         #ttHLepSkim.minLeptons = 0
@@ -785,7 +807,7 @@ if runData:# and not isTest: # For running on data
                     from CMGTools.Production.promptRecoRunRangeFilter import filterComponent
                     filterComponent(comp, verbose=1)
                 print "Will process %s (%d files)" % (comp.name, len(comp.files))
-                comp.splitFactor = len(comp.files)/4
+                comp.splitFactor = len(comp.files)/4.
                 comp.fineSplitFactor = 1
                 selectedComponents.append( comp )
             if exclusiveDatasets: vetos += triggers
