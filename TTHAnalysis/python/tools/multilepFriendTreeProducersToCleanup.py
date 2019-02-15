@@ -236,23 +236,9 @@ MODULES.append( ('bosonPolarizationGEN', lambda : bosonPolarizationGEN()))
 from CMGTools.TTHAnalysis.tools.bosonPolarizationGEN_TotalTruth import bosonPolarizationGEN_TotalTruth
 MODULES.append( ('bosonPolarizationGEN_TotalTruth', lambda : bosonPolarizationGEN_TotalTruth()))
 
-from CMGTools.TTHAnalysis.tools.WZReweight import WZReweight
-MODULES.append( ('WZReweight', lambda : WZReweight()))
-
-from CMGTools.TTHAnalysis.tools.WZReweight_v2 import WZReweight_v2
-MODULES.append( ('WZReweight_v2', lambda : WZReweight_v2()))
 
 from CMGTools.TTHAnalysis.tools.lepgenVarsWZSM import lepgenVarsWZSM
 MODULES.append( ('lepgenVarsWZSM', lambda : lepgenVarsWZSM("Recl")))
-
-from CMGTools.TTHAnalysis.tools.lepgenVarsWZSM_AlsoHeavy import lepgenVarsWZSM_AlsoHeavy
-MODULES.append( ('lepgenVarsWZSM_AlsoHeavy', lambda : lepgenVarsWZSM_AlsoHeavy("Recl")))
-
-from CMGTools.TTHAnalysis.tools.lepTauWZSM import lepTauWZSM
-MODULES.append( ('lepTauWZSM', lambda : lepTauWZSM("Recl")))
-
-from CMGTools.TTHAnalysis.tools.hPtmuonTester import hPtmuonTester
-MODULES.append( ('hPtmuonTester', lambda : hPtmuonTester("Recl")))
 
 #--- Tau builder instances
 from CMGTools.TTHAnalysis.tools.TauFakesBuilder import TauFakesBuilder
@@ -405,5 +391,5 @@ MODULES.append( ('LepMVAFriendJetLessIVFNOTAU_SIGDY', lambda: LepMVAFriend((os.e
                                                                     os.environ["CMSSW_BASE"]+"/src/CMGTools/TTHAnalysis/data/leptonMVA/jetless/SoftJetLessIVFNOTAU_SIGDY_%s_BDTG.weights.xml",),
                                                                    training="SoftJetLessIVF", label="JetLessIVFNOTAU_SIGDY")) )
 
-from CMGTools.TTHAnalysis.tools.JetPhotonPrefiring import JetPhotonPrefiring
-MODULES.append( ('JetPhotonPrefiring',lambda : JetPhotonPrefiring() ) )
+#from CMGTools.TTHAnalysis.tools.JetPhotonPrefiring import JetPhotonPrefiring
+#MODULES.append( ('JetPhotonPrefiring',lambda : JetPhotonPrefiring() ) )
