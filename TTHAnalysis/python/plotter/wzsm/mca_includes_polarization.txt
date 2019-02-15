@@ -1,0 +1,212 @@
+## Data
+## -----------------------------------------------------------
+incl_data : + ; IncludeMca="wzsm/includes/mca_data.txt"
+
+
+
+## MC WZ and backgrounds
+## ----------------------------------------------------------- 
+prompt_WZ_WfL+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15
+
+prompt_WZ_WfR+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15
+
+prompt_WZ_WfO+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15
+
+prompt_WZ_UM               : WZTo3LNu                        : 1*xsec: ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15
+
+incl_fakes_appldata     : + ; IncludeMca="wzsm/includes/mca_fakesappl.txt"
+incl_prompts            : + ; IncludeMca="wzsm/includes/mca_prompts.txt"
+incl_promptsub          : + ; IncludeMca="wzsm/includes/mca_promptsub.txt"
+
+
+
+
+
+
+
+## Systematics
+## -----------------------------------------------------------
+incl_sys_puw            : + ; IncludeMca="wzsm/includes/mca_sys_puw.txt"
+incl_sys_ewk            : + ; IncludeMca="wzsm/includes/mca_sys_ewk.txt"
+incl_sys_ewk_mc         : + ; IncludeMca="wzsm/includes/mca_sys_ewk_mc.txt"
+incl_sys_jec            : + ; IncludeMca="wzsm/includes/mca_sys_jec.txt"
+#incl_sys_lepSF          : + ; IncludeMca="wzsm/includes/mca_sys_lepSF.txt"
+incl_sys_lepSFMu          : + ; IncludeMca="wzsm/includes/mca_sys_lepSFMu.txt"
+incl_sys_lepSFEl          : + ; IncludeMca="wzsm/includes/mca_sys_lepSFEl.txt"
+incl_sys_lepscaleMu       : + ; IncludeMca="wzsm/includes/mca_sys_lepscaleMu.txt"
+incl_sys_lepscaleEl       : + ; IncludeMca="wzsm/includes/mca_sys_lepscaleEl.txt"
+#incl_sys_scales          : + ; IncludeMca="wzsm/includes/mca_sys_lepscale.txt"
+incl_sys_bTagHF         : + ; IncludeMca="wzsm/includes/mca_sys_bTagHF.txt"
+incl_sys_bTagLF         : + ; IncludeMca="wzsm/includes/mca_sys_bTagLF.txt"
+
+
+
+
+##BTag
+prompt_WZ_WfL_bTagHF_Up+               : WZTo3LNu                        : 1*xsec: bTagWeight_HF_Up/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfR_bTagHF_Up+               : WZTo3LNu                        : 1*xsec: bTagWeight_HF_Up/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfO_bTagHF_Up+               : WZTo3LNu                        : 1*xsec: bTagWeight_HF_Up/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_UM_bTagHF_Up               : WZTo3LNu                        : 1*xsec: bTagWeight_HF_Up/bTagWeight*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15, SkipMe=True
+
+
+prompt_WZ_WfL_bTagHF_Dn+               : WZTo3LNu                        : 1*xsec: bTagWeight_HF_Dn/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfR_bTagHF_Dn+               : WZTo3LNu                        : 1*xsec: bTagWeight_HF_Dn/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfO_bTagHF_Dn+               : WZTo3LNu                        : 1*xsec: bTagWeight_HF_Dn/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_UM_bTagHF_Dn               : WZTo3LNu                        : 1*xsec: bTagWeight_HF_Dn/bTagWeight*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15, SkipMe=True
+
+
+prompt_WZ_WfL_bTagLF_Up+               : WZTo3LNu                        : 1*xsec: bTagWeight_LF_Up/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfR_bTagLF_Up+               : WZTo3LNu                        : 1*xsec: bTagWeight_LF_Up/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfO_bTagLF_Up+               : WZTo3LNu                        : 1*xsec: bTagWeight_LF_Up/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_UM_bTagLF_Up               : WZTo3LNu                        : 1*xsec: bTagWeight_LF_Up/bTagWeight*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15, SkipMe=True
+
+
+prompt_WZ_WfL_bTagLF_Dn+               : WZTo3LNu                        : 1*xsec: bTagWeight_LF_Dn/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfR_bTagLF_Dn+               : WZTo3LNu                        : 1*xsec: bTagWeight_LF_Dn/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfO_bTagLF_Dn+               : WZTo3LNu                        : 1*xsec: bTagWeight_LF_Dn/bTagWeight*1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_UM_bTagLF_Dn               : WZTo3LNu                        : 1*xsec: bTagWeight_LF_Dn/bTagWeight*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15, SkipMe=True
+
+
+
+###JEC
+
+prompt_WZ_WfL_jec_Up+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15, FakeRate="wzsm/fakerate_standard_jecUp.txt", SkipMe=True
+
+prompt_WZ_WfR_jec_Up+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15, FakeRate="wzsm/fakerate_standard_jecUp.txt", SkipMe=True
+
+prompt_WZ_WfO_jec_Up+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15, FakeRate="wzsm/fakerate_standard_jecUp.txt", SkipMe=True
+
+prompt_WZ_UM_jec_Up               : WZTo3LNu                        : 1*xsec: ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15, FakeRate="wzsm/fakerate_standard_jecUp.txt", SkipMe=True
+
+
+prompt_WZ_WfL_jec_Dn+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15, FakeRate="wzsm/fakerate_standard_jecDn.txt", SkipMe=True
+
+prompt_WZ_WfR_jec_Dn+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15, FakeRate="wzsm/fakerate_standard_jecDn.txt", SkipMe=True
+
+prompt_WZ_WfO_jec_Dn+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15, FakeRate="wzsm/fakerate_standard_jecDn.txt", SkipMe=True
+
+prompt_WZ_UM_jec_Dn               : WZTo3LNu                        : 1*xsec: ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15, FakeRate="wzsm/fakerate_standard_jecDn.txt", SkipMe=True
+
+
+###PUW
+
+prompt_WZ_WfL_puw_Up+               : WZTo3LNu                        : 1*xsec: puw_nInt_Moriond(nTrueInt,1)*1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfR_puw_Up+               : WZTo3LNu                        : 1*xsec: puw_nInt_Moriond(nTrueInt,1)*1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfO_puw_Up+               : WZTo3LNu                        : 1*xsec: puw_nInt_Moriond(nTrueInt,1)*1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_UM_puw_Up               : WZTo3LNu                        : puw_nInt_Moriond(nTrueInt,1)*1*xsec: ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15, SkipMe=True
+
+
+prompt_WZ_WfL_puw_Dn+               : WZTo3LNu                        : 1*xsec: puw_nInt_Moriond(nTrueInt,-1)*1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfR_puw_Dn+               : WZTo3LNu                        : 1*xsec: puw_nInt_Moriond(nTrueInt,-1)*1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfO_puw_Dn+               : WZTo3LNu                        : 1*xsec: puw_nInt_Moriond(nTrueInt,-1)*1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_UM_puw_Dn               : WZTo3LNu                        : 1*xsec: puw_nInt_Moriond(nTrueInt,-1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15, SkipMe=True
+
+
+
+
+
+###MUSF
+
+prompt_WZ_WfL_lepSFMu_Up+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,1,13)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,1,13)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,1,13))*1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfR_lepSFMu_Up+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,1,13)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,1,13)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,1,13))*1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfO_lepSFMu_Up+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,1,13)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,1,13)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,1,13))*1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_UM_lepSFMu_Up               : WZTo3LNu                        : (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,1,13)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,1,13)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,1,13))*1*xsec: ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15, SkipMe=True
+
+
+prompt_WZ_WfL_lepSFMu_Dn+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,-1,13)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,-1,13)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,-1,13))*1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfR_lepSFMu_Dn+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,-1,13)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,-1,13)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,-1,13))*1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_WfO_lepSFMu_Dn+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,-1,13)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,-1,13)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,-1,13))*1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15, SkipMe=True
+
+prompt_WZ_UM_lepSFMu_Dn               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,-1,13)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,-1,13)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,-1,13))*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15, SkipMe=True
+
+
+
+###ElSF
+
+prompt_WZ_WfL_lepSFEl_Up+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,1,11)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,1,11)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,1,11))*1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15 , SkipMe=True
+
+prompt_WZ_WfR_lepSFEl_Up+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,1,11)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,1,11)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,1,11))*1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15 , SkipMe=True
+
+prompt_WZ_WfO_lepSFEl_Up+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,1,11)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,1,11)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,1,11))*1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15 , SkipMe=True
+
+prompt_WZ_UM_lepSFEl_Up               : WZTo3LNu                        : (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,1,11)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,1,11)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,1,11))*1*xsec: ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15 , SkipMe=True
+
+
+prompt_WZ_WfL_lepSFEl_Dn+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,-1,11)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,-1,11)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,-1,11))*1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15 , SkipMe=True
+
+prompt_WZ_WfR_lepSFEl_Dn+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,-1,11)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,-1,11)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,-1,11))*1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15 , SkipMe=True
+
+prompt_WZ_WfO_lepSFEl_Dn+               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,-1,11)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,-1,11)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,-1,11))*1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15 , SkipMe=True
+
+prompt_WZ_UM_lepSFEl_Dn               : WZTo3LNu                        : 1*xsec: (getLepSFSplit(LepSel1_pt,LepSel1_eta,LepSel1_pdgId,LepSel1_isTight,1,-1,11)*getLepSFSplit(LepSel2_pt,LepSel2_eta,LepSel2_pdgId,LepSel2_isTight,1,-1,11)*getLepSFSplit(LepSel3_pt,LepSel3_eta,LepSel3_pdgId,LepSel3_isTight,1,-1,11))*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15 , SkipMe=True
+
+
+
+#Mu Scale
+
+
+prompt_WZ_WfL_muscale_Up+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_muonScaleUp.txt"
+
+prompt_WZ_WfR_muscale_Up+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_muonScaleUp.txt"
+
+prompt_WZ_WfO_muscale_Up+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_muonScaleUp.txt"
+
+prompt_WZ_UM_muscale_Up               : WZTo3LNu                        : 1*xsec: ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_muonScaleUp.txt"
+
+
+prompt_WZ_WfL_muscale_Dn+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_muonScaleDn.txt"
+
+prompt_WZ_WfR_muscale_Dn+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_muonScaleDn.txt"
+
+prompt_WZ_WfO_muscale_Dn+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_muonScaleDn.txt"
+
+prompt_WZ_UM_muscale_Dn               : WZTo3LNu                        : 1*xsec: ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_muonScaleDn.txt"
+
+
+
+
+#El Scale
+
+
+prompt_WZ_WfL_elscale_Up+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_elecScaleUp.txt"
+
+prompt_WZ_WfR_elscale_Up+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_elecScaleUp.txt"
+
+prompt_WZ_WfO_elscale_Up+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_elecScaleUp.txt"
+
+prompt_WZ_UM_elscale_Up               : WZTo3LNu                        : 1*xsec: ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_elecScaleUp.txt"
+
+
+prompt_WZ_WfL_elscale_Dn+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, -1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange-1  , Label="WZ\, W_{L}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_elecScaleDn.txt"
+
+prompt_WZ_WfR_elscale_Dn+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 1)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange+1  , Label="WZ\, W_{R}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_elecScaleDn.txt"
+
+prompt_WZ_WfO_elscale_Dn+               : WZTo3LNu                        : 1*xsec: 1*WZ_weight_W(cos_genThetaWDn_HE, 0)*((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE != -99)  ;  FillColor=ROOT.kOrange  , Label="WZ\, W_{0}", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_elecScaleDn.txt"
+
+prompt_WZ_UM_elscale_Dn               : WZTo3LNu                        : 1*xsec: ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))*(genThetaWDn_HE == -99)  ;  FillColor=ROOT.kOrange+5  , Label="WZ (taus)", NormSystematic=0.15 , SkipMe=True, FakeRate="wzsm/fakerate_elecScaleDn.txt"
+
+
+

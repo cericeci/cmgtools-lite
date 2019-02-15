@@ -131,4 +131,31 @@ Float_t scaleLepton(Float_t pt, Int_t pdgId, Float_t var, Int_t refId){
   }
 }
 
+
+
+Float_t WZ_weight_W(Float_t c, Int_t mode)
+{
+    Float_t fLSM = 0.54863; Float_t fRSM = 0.29125; Float_t fOSM = 0.16012;
+    Float_t den = 3./8. *( (1 -c)*(1-c)*fLSM + (1+c)*(1+c)*fRSM + 2*(1-c*c)*fOSM);
+    if (mode ==  0) return 3./4.*(1-c*c)*fOSM/den;
+    if (mode == -1) return 3./8.*(1-c)*(1-c)*fLSM/den;
+    if (mode ==  1) return 3./8.*(1+c)*(1+c)*fRSM/den;
+}
+
+Float_t WZ_weight_Z(Float_t c, Int_t mode)
+{
+    Float_t fLSM = 0.55498; Float_t fRSM = 0.28587; Float_t fOSM = 0.16012;
+    Float_t alpha = 0.213;
+    Float_t den = 3./8. *( (1 -2*c*alpha + c*c)*fLSM + (1 +2*c*alpha + c*c)*fRSM + 2*(1-c*c)*fOSM);
+    if (mode ==  0) return 3./4.*(1-c*c)*fOSM/den;
+    if (mode == -1) return 3./8.*(1 -2*c*alpha + c*c)*fLSM/den;
+    if (mode ==  1) return 3./8.*(1 +2*c*alpha + c*c)*fRSM/den;
+}
+
+float unrealnessW(Float_t ptl, Float_t etal, Float_t phil, Float_t ptnu, Float_t phinu){
+   Float_t muVal = (80.385)*(80.385)/2. + ptl*ptnu*TMath::Cos(phil-phinu);
+   Float_t disc  = (muVal*muVal*ptl*ptl*TMath::SinH(etal)*TMath::SinH(etal)/(ptl*ptl*ptl*ptl) - ((ptl*ptl*TMath::CosH(etal)*TMath::CosH(etal))*ptnu*ptnu - muVal*muVal)/ptl*ptl);        
+   return disc;
+}
+
 void functionsWZ() {}

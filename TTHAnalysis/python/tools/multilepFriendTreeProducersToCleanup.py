@@ -30,7 +30,7 @@ bTagEventWeightFullSim2L = lambda : bTagWeightAnalyzer(btagsf_payload_fullsim, b
 bTagEventWeightFastSim2L = lambda : bTagWeightAnalyzer(btagsf_payload_fastsim, btag_efficiency_fastsim, recllabel='Recl', isFastSim=True)
 MODULES.append( ('bTagEventWeightFullSim2L', bTagEventWeightFullSim2L ))
 MODULES.append( ('bTagEventWeightFastSim2L', bTagEventWeightFastSim2L ))
-bTagEventWeightFullSimWZ = lambda : bTagWeightAnalyzer(btagsf_payload_fullsim, btag_efficiency_fullsim, recllabel='Recl')
+bTagEventWeightFullSimWZ = lambda : bTagWeightAnalyzer(btagsf_payload_fullsim, btag_efficiency_fullsim, recllabel='Recl', wp=0)
 bTagEventWeightFastSimWZ = lambda : bTagWeightAnalyzer(btagsf_payload_fastsim, btag_efficiency_fastsim, recllabel='Recl', isFastSim=True)
 MODULES.append( ('bTagEventWeightFullSimWZ', bTagEventWeightFullSimWZ ))
 MODULES.append( ('bTagEventWeightFastSimWZ', bTagEventWeightFastSimWZ ))
@@ -195,11 +195,11 @@ MODULES.append( ('leptonJetReCleanerTTH', lambda : LeptonJetReCleaner("Recl", # 
 
 MODULES.append( ('leptonJetReCleanerWZSM', lambda : LeptonJetReCleaner("Recl", 
                    looseLeptonSel = lambda lep : lep.miniRelIso < 0.4 and _ewkino_2lss_lepId_IPcuts(lep) and _ewkino_2lss_lepId_CBloose(lep),
-                   cleaningLeptonSel = lambda lep : lep.pt>10 and lep.conept>10 and (_ewkino_2lss_lepId_num(lep) or _ewkino_2lss_lepId_FO(lep)), # cuts on top of loose
+                   cleaningLeptonSel = lambda lep : lep.pt>10 and lep.conept>10 and _ewkino_2lss_lepId_num(lep) and lep.miniRelIso < 0.4 and _ewkino_2lss_lepId_IPcuts(lep) and _ewkino_2lss_lepId_CBloose(lep), # cuts on top of loose
                    FOLeptonSel = lambda lep,ht : lep.pt>10 and lep.conept>10 and (_ewkino_2lss_lepId_num(lep) or _ewkino_2lss_lepId_FO(lep)), # cuts on top of loose
                    tightLeptonSel = lambda lep,ht : lep.pt>10 and lep.conept>10 and _ewkino_2lss_lepId_num(lep), # on top of loose 
                    cleanJet = lambda lep,jet,dr : dr<0.4,
-                   selectJet = lambda jet: abs(jet.eta)<2.4,
+                   selectJet = lambda jet: abs(jet.eta)<4.7,
                    cleanTau = lambda lep,tau,dr: dr<0.4,
                    looseTau = lambda tau: _susyEWK_tauId_CBloose(tau), # used in cleaning
                    tightTau = lambda tau: _susyEWK_tauId_CBtight(tau), # on top of loose
@@ -209,7 +209,7 @@ MODULES.append( ('leptonJetReCleanerWZSM', lambda : LeptonJetReCleaner("Recl",
                    doVetoLMf = False,
                    doVetoLMt = True,
                    jetPt = 30,
-                   bJetPt = 25,
+                   bJetPt = 20,
                    coneptdef = lambda lep: conept_SSDL(lep)
                  ) ))
 
@@ -226,8 +226,33 @@ MODULES.append( ('leptonBuilderRA7', lambda : LeptonBuilderRA7("Mini")))
 from CMGTools.TTHAnalysis.tools.leptonBuilderWZSM import LeptonBuilderWZSM
 MODULES.append( ('leptonBuilderWZSM', lambda : LeptonBuilderWZSM("Recl")))
 
+
+from CMGTools.TTHAnalysis.tools.bosonPolarizationWZ import bosonPolarizationWZ
+MODULES.append( ('bosonPolarizationWZ', lambda : bosonPolarizationWZ()))
+
+from CMGTools.TTHAnalysis.tools.bosonPolarizationGEN import bosonPolarizationGEN
+MODULES.append( ('bosonPolarizationGEN', lambda : bosonPolarizationGEN()))
+
+from CMGTools.TTHAnalysis.tools.bosonPolarizationGEN_TotalTruth import bosonPolarizationGEN_TotalTruth
+MODULES.append( ('bosonPolarizationGEN_TotalTruth', lambda : bosonPolarizationGEN_TotalTruth()))
+
+from CMGTools.TTHAnalysis.tools.WZReweight import WZReweight
+MODULES.append( ('WZReweight', lambda : WZReweight()))
+
+from CMGTools.TTHAnalysis.tools.WZReweight_v2 import WZReweight_v2
+MODULES.append( ('WZReweight_v2', lambda : WZReweight_v2()))
+
 from CMGTools.TTHAnalysis.tools.lepgenVarsWZSM import lepgenVarsWZSM
 MODULES.append( ('lepgenVarsWZSM', lambda : lepgenVarsWZSM("Recl")))
+
+from CMGTools.TTHAnalysis.tools.lepgenVarsWZSM_AlsoHeavy import lepgenVarsWZSM_AlsoHeavy
+MODULES.append( ('lepgenVarsWZSM_AlsoHeavy', lambda : lepgenVarsWZSM_AlsoHeavy("Recl")))
+
+from CMGTools.TTHAnalysis.tools.lepTauWZSM import lepTauWZSM
+MODULES.append( ('lepTauWZSM', lambda : lepTauWZSM("Recl")))
+
+from CMGTools.TTHAnalysis.tools.hPtmuonTester import hPtmuonTester
+MODULES.append( ('hPtmuonTester', lambda : hPtmuonTester("Recl")))
 
 #--- Tau builder instances
 from CMGTools.TTHAnalysis.tools.TauFakesBuilder import TauFakesBuilder
@@ -380,4 +405,5 @@ MODULES.append( ('LepMVAFriendJetLessIVFNOTAU_SIGDY', lambda: LepMVAFriend((os.e
                                                                     os.environ["CMSSW_BASE"]+"/src/CMGTools/TTHAnalysis/data/leptonMVA/jetless/SoftJetLessIVFNOTAU_SIGDY_%s_BDTG.weights.xml",),
                                                                    training="SoftJetLessIVF", label="JetLessIVFNOTAU_SIGDY")) )
 
-
+from CMGTools.TTHAnalysis.tools.JetPhotonPrefiring import JetPhotonPrefiring
+MODULES.append( ('JetPhotonPrefiring',lambda : JetPhotonPrefiring() ) )
