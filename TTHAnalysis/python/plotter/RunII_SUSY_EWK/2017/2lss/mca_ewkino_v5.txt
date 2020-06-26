@@ -1,0 +1,22 @@
+## Data
+## -----------------------------------------------------------
+incl_data      : + ; IncludeMca="RunII_SUSY_EWK/2017/2lss/includes/mca_data_2017_nanoAODv5.txt"
+
+## Signals
+incl_signals : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt"
+
+## Backgrounds
+## -----------------------------------------------------------
+incl_prompts        : + ; IncludeMca="RunII_SUSY_EWK/2017/2lss/includes/mca_prompts_nanoAODv5.txt"
+incl_datafakes      : + ; IncludeMca="RunII_SUSY_EWK/2017/2lss/includes/mca_datafakes_nanoAODv5.txt"
+incl_promptsub      : + ; IncludeMca="RunII_SUSY_EWK/2017/2lss/includes/mca_promptsub_nanoAODv5.txt"
+incl_dataflips      : + ; IncludeMca="RunII_SUSY_EWK/2017/2lss/includes/mca_dataflips_nanoAODv5.txt"
+#incl_dataflipsub    : + ; IncludeMca="RunII_SUSY_EWK/2017/2lss/includes/mca_dataflipsub_nanoAODv5.txt"
+
+#incl_flips          : + ; IncludeMca="RunII_SUSY_EWK/2017/2lss/includes/mca_mcflips_nanoAODv5.txt"
+#incl_fakes          : + ; IncludeMca="RunII_SUSY_EWK/2017/2lss/includes/mca_mcfakes_nanoAODv5.txt"
+
+#TChiSlepSnu_x0p05_300_250+ : TChiSelpSnu_x0p05_300_250 : 2.49667*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", FillColor=ROOT.kBlack, LineColor=ROOT.kBlack, LineStyle=3,  Label="FD SlepSnu_x0p05_300_250"
+#TChiSlepSnu_x0p05_500_1+ : TChiSelpSnu_x0p05_500_1 : 20.1372*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt",  FillColor=ROOT.kRed, LineColor=ROOT.kRed, LineStyle=3, Label="FD SlepSnu_x0p05_500_1"
+
+

@@ -1,0 +1,30 @@
+#Flat uncertainties
+
+#Lumi uncertainties as per https://twiki.cern.ch/twiki/bin/view/CMS/TWikiLUM
+lumi_2016_ML       : prompt_.*|convs   : .*                : 1.022
+lumi_XY_ML         : prompt_.*|convs   : .*                : 1.009
+lumi_bbd_ML        : prompt_.*|convs   : .*                : 1.004
+lumi_dbeta_ML      : prompt_.*|convs   : .*                : 1.005
+lumi_ghosts_ML     : prompt_.*|convs   : .*                : 1.004
+
+#Trigger efficiency measurements performed by ourselves
+#Bias comes from ref trigger which follows the same strat, so correlated:
+trigeffbias_ML    : prompt_.*|convs   : .*                : 0.005
+#Uncertainty from statistics our own measurement, so decorrelated:
+trigeffstat_2016_ML    : prompt_.*|convs   : .*                : 0.99/1.01
+
+
+#All background normalization uncertainties are correlated for obvious reasons
+fakes_ML      : fakes_.*                           : .*                : 1.3
+convs_ML      : convs                              : .*                : 1.2
+
+normZZ_ML     : prompt_.*ZZ                        : .*                : 1.07
+normVVV_ML    : prompt_VVV                         : .*                : 1.5
+normVH_ML     : prompt_VH                          : .*                : 1.25
+normtZq_ML    : prompt_TZQ                         : .*                : 1.35
+normTTX_ML    : prompt_TT.*                        : .*                : 1.15
+normWZ_ML     : prompt_.*WZ.*                      : .*                : 1.09
+
+
+commonShapes : .* : .* : 1.06
+shapeWZ_ML    : prompt_.*WZ.* : .* : wzshape : templates

@@ -1,0 +1,15 @@
+alwaystrue: 1
+trigger   : $DATA{Triggers_ee || Triggers_mm || Triggers_em || Triggers_e || Triggers_m} $MC{Triggers_ee || Triggers_mm || Triggers_em || Triggers_e || Triggers_m} $FASTSIM{1} 
+3l        : nLepSel >= 3
+lowmass   : minMllSFOS_Mini > 12 || minMllSFOS_Mini == -1
+sanity    : passPtMll && is_3l && LepSel_conePt[0] >= (20 + 5*(abs(LepSel_pdgId[0])==11)) && LepSel_conePt[1] >= (10 + 5*(abs(LepSel_pdgId[1])==11)) && LepSel_conePt[2] >= (10 + 0*(abs(LepSel_pdgId[3])==11)) 
+SRevent   : allTight(LepSel_isTight[0], LepSel_isTight[1], LepSel_isTight[2])
+veto      : LepSel_isTight[3] == 0
+bJetVeto  : nBJetTight25_Mini == 0 
+met       : METFixEE2017_pt_nom > 50
+convVeto  : (m3L - 91.16) >= 15
+lightlep  : abs(LepSel_pdgId[0]) < 15 && abs(LepSel_pdgId[1]) < 15 && abs(LepSel_pdgId[2]) < 15 && abs(LepSel_pdgId[0]) >= 11 && abs(LepSel_pdgId[1]) >= 11 && abs(LepSel_pdgId[2]) >= 11
+CRWZ      : METFixEE2017_pt_nom > 50 && METFixEE2017_pt_nom < 100 && mT_3l > 50 && mT_3l < 100 && mll_3l > 75 && mll_3l < 105; Disable=True
+CRconv    : METFixEE2017_pt_nom < 50 && mll_3l < 75 && abs(m3L - 91.16) <= 15; Disable=True
+SR3lA     : nOSSF_3l > 0; Disable=True
+SR3lB     : nOSSF_3l == 0; Disable=True

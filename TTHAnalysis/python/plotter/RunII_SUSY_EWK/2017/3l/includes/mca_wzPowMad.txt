@@ -1,0 +1,4 @@
+prompt_WZ_pow : WZTo3LNu_powv2 : xsec*1.145 ; FillColor=ROOT.kOrange , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt.txt", Label="WZ POWHEG", NormSystematic=0.12
+
+prompt_WZ_mad+ : WZTo3LNuv2_part0 + WZTo3LNuv2_part1 + WZTo3LNuv2_part2: xsec*0.9510 ; FillColor=ROOT.kRed , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt.txt", Label="WZ MADGRAPH", NormSystematic=0.12
+

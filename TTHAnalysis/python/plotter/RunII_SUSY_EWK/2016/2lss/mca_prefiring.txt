@@ -1,0 +1,11 @@
+TChiSelpSnu_x0p05_300_250 : TChiSelpSnu_x0p05_300_250 : 386.936*0.5/1000./(weight_PrefiringJets*weight_PrefiringPhotons); isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="SlepSnu_FD_x0p05_300_250", LineColor=ROOT.kRed, FillColor=ROOT.kRed
+
+#TChiSlepSnu_x0p05_500_1+ : TChiSlepSnu_x0p05_500_1 : 46.3533*0.5/1000./(weight_PrefiringJets*weight_PrefiringPhotons); isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="SlepSnu_FD_x0p05_500_1", LineColor=ROOT.kRed, FillColor=ROOT.kWhite
+
+
+TChiSelpSnu_x0p05_300_250_pref+ : TChiSelpSnu_x0p05_300_250 : 386.936*0.5/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="SlepSnu_FD_x0p05_300_250 Weighted", LineColor=ROOT.kBlack, FillColor=ROOT.kBlack
+
+#TChiSlepSnu_x0p05_500_1_pref : TChiSlepSnu_x0p05_500_1 : 46.3533*0.5/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="SlepSnu_FD_x0p05_500_1  
+Weighted", LineColor=ROOT.kRed, FillColor=ROOT.kRed
+
+

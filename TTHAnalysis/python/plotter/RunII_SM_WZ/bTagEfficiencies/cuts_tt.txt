@@ -1,0 +1,6 @@
+alwaystrue: 1
+#trigger   : $DATA{Triggers_ee || Triggers_em || Triggers_mm } $MC{Triggers_ee || Triggers_em || Triggers_mm} $FASTSIM{1}
+3l        : nLepTight_Mini >= 2 && nLepGood >= 2
+lowmass   : minMllAFAS_Mini > 20
+sanity    :  LepGood_conePt[0] >= 25 && LepGood_conePt[1] >= 20
+SRevent   :  (LepGood_pdgId[0]*LepGood_pdgId[1]) == (-11*13)

@@ -1,0 +1,121 @@
+## Data
+## -----------------------------------------------------------
+incl_data      : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_data_2017_nanoAODv5.txt"
+
+## Signals
+incl_signals : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt"
+
+
+#TChiTESlepSnu_x0p05_900_1+ : TChiTESlepSnu_x0p05_900_1 : 2.49667*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TE SlepSnu_x0p05_900_1", FillColor=ROOT.kBlack, LineColor=ROOT.kBlack
+#TChiTESlepSnu_x0p05_600_300+ : TChiTESlepSnu_x0p05_600_300 : 20.1372*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TE SlepSnu_x0p05_600_300", FillColor=ROOT.kRed, LineColor=ROOT.kRed
+#TChiTESlepSnu_x0p05_500_400+ : TChiTESlepSnu_x0p05_500_400 : 46.3533*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TE SlepSnu_x0p05_500_400", FillColor=ROOT.kBlue, LineColor=ROOT.kBlue
+
+#TChiTESlepSnu_x0p5_900_1+ : TChiTESlepSnu_x0p5_900_1 : 2.49667*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TE SlepSnu_x0p5_900_1", FillColor=ROOT.kBlack, LineColor=ROOT.kBlack, LineStyle=3
+#TChiTESlepSnu_x0p5_600_300+ : TChiTESlepSnu_x0p5_600_300 : 20.1372*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TE SlepSnu_x0p5_600_300", FillColor=ROOT.kRed, LineColor=ROOT.kRed, LineStyle=3
+#TChiTESlepSnu_x0p5_500_400+ : TChiTESlepSnu_x0p5_500_400 : 46.3533*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TE SlepSnu_x0p5_500_400", FillColor=ROOT.kBlue, LineColor=ROOT.kBlue, LineStyle=3
+
+#TChiStau_x0p5_500_1+ : TChiStau_x0p5_500_1 : 46.3533*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TD SlepSnu_x0p5_500_1", FillColor=ROOT.kBlack, LineColor=ROOT.kBlack
+#TChiStau_x0p5_225_125+ : TChiStau_x0p5_225_125 : 1165.09*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TD SlepSnu_x0p5_225_125", FillColor=ROOT.kRed, LineColor=ROOT.kRed
+
+
+## Backgrounds
+## -----------------------------------------------------------
+incl_prompts        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt"
+#incl_fakes          : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_mcfakes_nanoAODv5.txt"
+incl_datafakes      : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_datafakes_nanoAODv5.txt"
+incl_promptsub      : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_promptsub_nanoAODv5.txt"
+
+## MET shape for WZ only
+prompt_WZ_wzshape_Up : WZTo3LNu_powv2 : xsec*1.145 : wzweight17(METFixEE2017_pt_nom,mT_3l,1) ; FillColor=ROOT.kOrange , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt.txt", Label="WZ (k=1.15)", NormSystematic=0.12, SkipMe=True
+prompt_WZ_wzshape_Dn : WZTo3LNu_powv2 : xsec*1.145 : wzweight17(METFixEE2017_pt_nom,mT_3l,-1) ; FillColor=ROOT.kOrange , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt.txt", Label="WZ (k=1.15)", NormSystematic=0.12, SkipMe=True
+
+#Pile Up Weights
+incl_prompts_puwUp        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="puWeightUp/puWeight", SkipMe=True, PostFix="_puw_Up"
+incl_prompts_puwDn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="puWeightDown/puWeight", SkipMe=True, PostFix="_puw_Dn"
+
+#Lepton SF Mu
+incl_prompts_lepSFMu_Up        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,(abs(LepSel_pdgId[0]) == 13)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[1]) == 13)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[2]) == 13)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMu_Up"
+incl_prompts_lepSFMu_Dn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-(abs(LepSel_pdgId[0]) == 13)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[1]) == 13)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[2]) == 13)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMu_Dn"
+
+#Lepton SF Elec
+incl_prompts_lepSFEl_Up        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,(abs(LepSel_pdgId[0]) == 11)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[1]) == 11)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[2]) == 11)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFEl_Up"
+incl_prompts_lepSFEl_Dn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-(abs(LepSel_pdgId[0]) == 11)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[1]) == 11)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[2]) == 11)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFEl_Dn"
+
+#Lepton SF Mu Stat
+incl_prompts_lepSFMu_Up        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[0]) == 13)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[1]) == 13)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[2]) == 13)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMuStat2017_Up"
+incl_prompts_lepSFMu_Dn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[0]) == 13)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[1]) == 13)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[2]) == 13)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMuStat2017_Dn"
+
+#Lepton SF Elec  Stat
+incl_prompts_lepSFEl_Up        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[0]) == 11)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[1]) == 11)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[2]) == 11)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFElStat2017_Up"
+incl_prompts_lepSFEl_Dn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[0]) == 11)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[1]) == 11)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[2]) == 11)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFElStat2017_Dn"
+
+#B tag Weights HF
+incl_prompts_bTag_HF_Up        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_HF_Up/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagHF_Up"
+incl_prompts_bTag_HF_Dn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_HF_Dn/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagHF_Dn"
+
+#B tag Weights LF
+incl_prompts_bTag_LF_Up        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_LF_Up/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagLF_Up"
+incl_prompts_bTag_LF_Dn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagLF_Dn"
+
+#JEC, correlated
+incl_prompts_jeccorr_Up        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_jecCorrUp.txt", SkipMe=True, PostFix="_jescorr_Up"
+incl_prompts_jeccorr_Dn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_jecCorrDn.txt", SkipMe=True, PostFix="_jescorr_Dn"
+
+#JEC, decorrelated
+incl_prompts_jecuncorr_Up        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_jecUnCorrUp.txt", SkipMe=True, PostFix="_jesuncorr_Up"
+incl_prompts_jecuncorr_Dn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_jecUnCorrDn.txt", SkipMe=True, PostFix="_jesuncorr_Dn"
+
+#Electron Scale
+incl_prompts_elscale_Up        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_elecScaleUp.txt", SkipMe=True, PostFix="_elscale_Up"
+incl_prompts_elscale_Dn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_elecScaleDn.txt", SkipMe=True, PostFix="_elscale_Dn"
+
+#Muon Scale
+incl_prompts_muscale_Up        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_muonScaleUp.txt", SkipMe=True, PostFix="_muscale_Up"
+incl_prompts_muscale_Dn        : + ; IncludeMca="RunII_SUSY_EWK/2017/3l1tau/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_muonScaleDn.txt", SkipMe=True, PostFix="_muscale_Dn"
+
+
+## FASTSIM ##
+
+#PUW
+incl_signals_puwUp        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="puWeightUp/puWeight", SkipMe=True, PostFix="_puw_Up"
+incl_signals_puwDn        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="puWeightDown/puWeight", SkipMe=True, PostFix="_puw_Dn"
+
+#Lepton SF Muon
+incl_signal_lepSFMu_Up        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="getLeptonSF_v4(0\,(abs(LepSel_pdgId[0]) == 13)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[1]) == 13)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[2]) == 13)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMu_Up"
+incl_signal_lepSFMu_Dn        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="getLeptonSF_v4(0\,-(abs(LepSel_pdgId[0]) == 13)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[1]) == 13)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[2]) == 13)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMu_Dn"
+
+
+#Lepton SF Elec
+incl_signal_lepSFEl_Up        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="getLeptonSF_v4(0\,(abs(LepSel_pdgId[0]) == 11)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[1]) == 11)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[2]) == 11)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFEl_Up"
+incl_signal_lepSFEl_Dn        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="getLeptonSF_v4(0\,-(abs(LepSel_pdgId[0]) == 11)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[1]) == 11)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[2]) == 11)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFEl_Dn"
+
+#Lepton SF Mu Stat
+incl_signal_lepSFMu_Up        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[0]) == 13)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[1]) == 13)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[2]) == 13)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMuStat2017_Up"
+incl_signal_lepSFMu_Dn        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[0]) == 13)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[1]) == 13)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[2]) == 13)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMuStat2017_Dn"
+
+#Lepton SF Elec  Stat
+incl_signal_lepSFEl_Up        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[0]) == 11)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[1]) == 11)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[2]) == 11)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFElStat2017_Up"
+incl_signal_lepSFEl_Dn        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[0]) == 11)\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[1]) == 11)\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[2]) == 11)\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2017\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2017\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFElStat2017_Dn"
+
+
+#B tag Weights HF
+incl_signal_bTag_HFFS_Up        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="bTagWeightDeepCSVT_HF_Up/bTagWeightDeepCSVT", SkipMe=True, PostFix="_bTagHFFS_Up"
+incl_signal_bTag_HFFS_Dn        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT", SkipMe=True, PostFix="_bTagHFFS_Dn"
+
+#B tag Weights LF
+incl_signal_bTag_LFFS_Up        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="bTagWeightDeepCSVT_LF_Up/bTagWeightDeepCSVT", SkipMe=True, PostFix="_bTagLFFS_Up"
+incl_signal_bTag_LFFS_Dn        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT", SkipMe=True, PostFix="_bTagLFFS_Dn"
+
+
+#JES
+incl_signal_jecFS_Up        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_jecUp.txt", SkipMe=True, PostFix="_jecFS_Up"
+incl_signal_jecFS_Dn        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_jecDn.txt", SkipMe=True, PostFix="_jecFS_Dn"
+
+#ISR
+incl_signal_isr_Up        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="ISR_weight", SkipMe=True, PostFix="_isr_Up"
+incl_signal_isr_Dn        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", AddWeight="1./ISR_weight" , SkipMe=True, PostFix="_isr_Dn"
+
+#MET
+incl_signal_met_Up        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", SkipMe=True, ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_metUp.txt", PostFix="_met_Up"
+incl_signal_met_Dn        : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt", SkipMe=True, ExtraFakeRate="RunII_SUSY_EWK/common/fakerate_standard_metDown.txt", PostFix="_met_Dn"
+

@@ -1,0 +1,20 @@
+## Data
+## -----------------------------------------------------------
+incl_data      : + ; IncludeMca="RunII_SUSY_EWK/2017/4l/includes/mca_data_2017_nanoAODv5.txt"
+
+## Signals
+incl_signals : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_17.txt"
+
+## Backgrounds
+## -----------------------------------------------------------
+incl_prompts        : + ; IncludeMca="RunII_SUSY_EWK/2017/4l/includes/mca_prompts_nanoAODv5.txt"
+incl_datafakes      : + ; IncludeMca="RunII_SUSY_EWK/2017/4l/includes/mca_datafakes_nanoAODv5.txt"
+incl_promptsub      : + ; IncludeMca="RunII_SUSY_EWK/2017/4l/includes/mca_promptsub_nanoAODv5.txt"
+
+TChiZZ_300_1+ : TChiZZ_300_1 : 284.856933594*0.01/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TChiZZ_300_1", LineColor=ROOT.kBlack, FillColor=ROOT.kBlack
+TChiZZ_400_1+ : TChiZZ_400_1 : 88.7433776855*0.01/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TChiZZ_400_1", LineColor=ROOT.kRed, FillColor=ROOT.kRed
+TChiZZ_350_1+ : TChiZZ_350_1 : 153.834671021*0.01/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TChiZZ_350_1", LineColor=ROOT.kBlue, FillColor=ROOT.kBlue
+
+#TChiHZ_150_1+ : TChiHZ_150_1 : 3832.30737305*0.0305/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TChiHZ_150_1", LineColor=ROOT.kRed, FillColor=ROOT.kRed
+#TChiHH_150_1+ : TChiHH_150_1 : 3832.30737305*0.09/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim.txt", Label="TChiHH_150_1", LineColor=ROOT.kBlue, FillColor=ROOT.kBlue
+

@@ -1,0 +1,4 @@
+prompt_altWZ_Pow+ : WZTo3LNu_pow_part0+WZTo3LNu_pow_part1 : xsec : 1 ; Label="WZ_Powheg"
+prompt_altWZ_aMC  : WZTo3LNu_part0+WZTo3LNu_part1+WZTo3LNu_part2+WZTo3LNu_part3+WZTo3LNu_part4+WZTo3LNu_part5+WZTo3LNu_part6     : xsec : 1 ; Label="WZ_aMCAtNLO"
+#prompt_altWZ_aMC  : WZTo3LNu_ext : xsec : 1 ; Label="WZ_aMCAtNLO"
+# prompt_altWZ_Inc (Pythia) to be produced

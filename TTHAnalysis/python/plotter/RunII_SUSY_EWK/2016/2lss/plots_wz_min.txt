@@ -1,0 +1,18 @@
+SR2lss :  SR_ewk_ss2l_v6_plot(mt2davis(LepSel_conePt[0], LepSel_eta[0],LepSel_phi[0], LepSel_conePt[1], LepSel_eta[1],LepSel_phi[1], MET_pt_nom, MET_phi_nom), MET_pt, LepSel_conePt[0]+LepSel_conePt[1], pt_2(LepSel_conePt[0], LepSel_phi[0], LepSel_conePt[1], LepSel_phi[1]), min(mt_2(LepSel_conePt[0],LepSel_phi[0],MET_pt_nom,MET_phi_nom),mt_2(LepSel_conePt[1],LepSel_phi[1],MET_pt_nom,MET_phi_nom)),2 * (LepSel_pdgId[0] < 0) -1) : 20,0.5,20.5; XTitle="SR-2lss", IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+mll2l : mass_2(LepSel_conePt[0],LepSel_eta[0],LepSel_phi[0],LepSel_mass[0],LepSel_conePt[1],LepSel_eta[1],LepSel_phi[1],LepSel_mass[1]) : 20,0,200 ; XTitle = "M_{ll}^{SS} (GeV)", LegendCutoff=1e-4, Logy, Legend="TL", YMin=1, YMax=100000, Legend="TR"
+
+SS_met : MET_pt_nom : 10,0,200 ; XTitle="p_{T}^{miss} (GeV)", LegendCutoff=1e-4, Logy, YMin=0.01, YMax=100000, Legend="TR"
+SS_ptdil : pt_2(LepSel_conePt[0], LepSel_phi[0], LepSel_conePt[1], LepSel_phi[1]) : 30,0,300; XTitle="p_{T}(ll) (GeV)", LegendCutoff=1e-4, Logy, YMin=1, YMax=100000, Legend="TR"
+SS_mt2l : mt2davis(LepSel_conePt[0], LepSel_eta[0],LepSel_phi[0], LepSel_conePt[1], LepSel_eta[1],LepSel_phi[1], MET_pt_nom, MET_phi_nom) : 20,0,200 ;  XTitle="M_{T2}(ll) (GeV)", LegendCutoff=1e-4, Logy, YMin=1, YMax=100000, Legend="TR"
+
+lep1_pt          : LepSel_conePt[0]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lep. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep2_pt          : LepSel_conePt[1]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lep. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+
+lep1_eta         : LepSel_eta[0]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lep. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep2_eta         : LepSel_eta[1]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lep. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+
+lep1_phi         : LepSel_phi[0]         : 10,-3.15,3.5 ; YTitle="Leptons", XTitle="#phi(lep. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep2_phi         : LepSel_phi[1]         : 10,-3.15,3.5 ; YTitle="Leptons", XTitle="#phi(lep. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+
+dphi_ll : deltaPhi(LepSel_phi[0],LepSel_phi[1]) : 10,-3.15,3.15; YTitle="Events", XTitle="#Delta#phi(ll)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy

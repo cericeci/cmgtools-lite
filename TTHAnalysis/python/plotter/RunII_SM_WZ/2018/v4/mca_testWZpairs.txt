@@ -1,0 +1,11 @@
+prompt_WZ_bad : WZTo3LNu_pow : xsec*1.124 : (LepGood_mcUCSX_v2[max(iW,0)] < 9) && ! (abs(GenPart_pdgId[GenPart_genPartIdxMother[Alt$(LepGood_genPartIdx[max(iW,0)],0)]])==24 && abs(GenPart_pdgId[GenPart_genPartIdxMother[GenPart_genPartIdxMother[Alt$(LepGood_genPartIdx[max(iW,0)],0)]]])==24 || abs(GenPart_pdgId[GenPart_genPartIdxMother[GenPart_genPartIdxMother[GenPart_genPartIdxMother[Alt$(LepGood_genPartIdx[max(iW,0)],0)]]]])==24); FillColor=ROOT.kRed , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", Label="Bad match", NormSystematic=0.12
+
+prompt_WZ_tau : WZTo3LNu_pow : xsec*1.124 : LepGood_mcUCSX_v2[max(iW,0)] >= 9; FillColor=ROOT.kOrange , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", Label="From tau", NormSystematic=0.12
+
+prompt_WZ_good : WZTo3LNu_pow : xsec*1.124 : (LepGood_mcUCSX_v2[max(iW,0)] < 9) && (abs(GenPart_pdgId[GenPart_genPartIdxMother[Alt$(LepGood_genPartIdx[max(iW,0)],0)]])==24 && abs(GenPart_pdgId[GenPart_genPartIdxMother[GenPart_genPartIdxMother[Alt$(LepGood_genPartIdx[max(iW,0)],0)]]])==24 || abs(GenPart_pdgId[GenPart_genPartIdxMother[GenPart_genPartIdxMother[GenPart_genPartIdxMother[Alt$(LepGood_genPartIdx[max(iW,0)],0)]]]])==24); FillColor=ROOT.kGreen , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", Label="Good match", NormSystematic=0.12
+
+#An alternative to check the bias
+#TChiWZ_600_100+ : TChiWZ_600_100 : 1 ; FillColor=ROOT.kBlue, Label="TChiWZ 600-100"
+#TChiWZ_250_150+ : TChiWZ_250_150 : 1 ; FillColor=ROOT.kBlack, Label="TChiWZ 250-150"
+#TChiWZ_400_300+ : TChiWZ_400_300 : 1 ; FillColor=ROOT.kCyan, Label="TChiWZ 400-300"
+

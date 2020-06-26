@@ -1,0 +1,41 @@
+diboson+ : WZTo3LNu_pow : xsec*1.124 ; FillColor=ROOT.kOrange , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="WZ (k-NNLO)", NormSystematic=0.12
+
+
+
+prompt_hZZ : HZZ : 0.01212 ; FillColor=ROOT.kGreen-1, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="hZZ", NormSystematic=0.07
+prompt_ZZ : ZZTo4L : xsec ; FillColor=ROOT.kGreen+1, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="qqZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo2e2mu   : xsec ; FillColor=ROOT.kGreen, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo2e2nu   : xsec ; FillColor=ROOT.kGreen, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo2e2tau  : xsec ; FillColor=ROOT.kGreen, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo2mu2nu  : xsec ; FillColor=ROOT.kGreen, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo2mu2tau : xsec ; FillColor=ROOT.kGreen, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo4e      : xsec ; FillColor=ROOT.kGreen, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo4mu     : xsec ; FillColor=ROOT.kGreen, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo4tau    : xsec ; FillColor=ROOT.kGreen, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+
+
+prompt_TTX : TTHnonbb_part0 + TTHnonbb_part1 : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttH", NormSystematic=0.15
+prompt_TTX : TTWToLNu               : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttW", NormSystematic=0.15
+prompt_TTX : TTZToLLNuNu : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttZ", NormSystematic=0.15
+prompt_TTX : TTGJets : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttG", NormSystematic=0.15
+
+prompt_TTX : TTZToQQ                                       : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttZ", NormSystematic=0.15
+
+prompt_TZQ : tZq_ll_part0 + tZq_ll_part1 + tZq_ll_part2 + tZq_ll_part3    : xsec ; FillColor=ROOT.kCyan , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="tZq", NormSystematic=0.35
+
+prompt_VH : VHToNonbb : xsec ; FillColor=ROOT.kRed-1, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="VH", NormSystematic=0.25
+
+#prompt_VVV : WWW : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="VVV", NormSystematic=0.50
+prompt_VVV : WWZ : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="VVV", NormSystematic=0.50
+prompt_VVV : WZZ : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="VVV", NormSystematic=0.50
+#prompt_VVV : ZZZ : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="VVV", NormSystematic=0.50
+prompt_VVV : WZG : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="VVV", NormSystematic=0.50
+
+
+prompt_TTXX : TTHH                                          : xsec ; FillColor=ROOT.kViolet , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttXX", NormSystematic=0.15
+prompt_TTXX : TTTT                                          : xsec ; FillColor=ROOT.kViolet , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttXX", NormSystematic=0.15
+prompt_TTXX : TTWH                                          : xsec ; FillColor=ROOT.kViolet , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttXX", NormSystematic=0.15
+prompt_TTXX : TTWZ                                          : xsec ; FillColor=ROOT.kViolet , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttXX", NormSystematic=0.15
+prompt_TTXX : TTZH                                          : xsec ; FillColor=ROOT.kViolet , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttXX", NormSystematic=0.15
+prompt_TTXX : TTZZ                                          : xsec ; FillColor=ROOT.kViolet , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt\,RunII_SM_WZ/2016/fakerate_load_isprompt.txt", Label="ttXX", NormSystematic=0.15
+

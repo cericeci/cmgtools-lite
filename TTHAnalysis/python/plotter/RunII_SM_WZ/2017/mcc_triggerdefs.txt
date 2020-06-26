@@ -1,0 +1,7 @@
+METfilters\b  : Flag_EcalDeadCellTriggerPrimitiveFilter && Flag_HBHENoiseIsoFilter && Flag_HBHENoiseFilter && Flag_eeBadScFilter && Flag_goodVertices && Flag_globalTightHalo2016Filter && Flag_badChargedHadronFilter && Flag_badMuonMoriond2017 && Flag_badCloneMuonMoriond2017 ; AlsoData
+Triggers_ee\b : HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ ; AlsoData
+Triggers_mm\b :  HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8  ; AlsoData
+Triggers_em\b :  HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ || HLT_Mu8_DiEle12_CaloIdL_TrackIdL  ; AlsoData
+Triggers_e\b : HLT_Ele35_WPTight_Gsf; AlsoData
+Triggers_m\b : (HLT_IsoMu24 && run < 30504) || HLT_IsoMu27; AlsoData
+

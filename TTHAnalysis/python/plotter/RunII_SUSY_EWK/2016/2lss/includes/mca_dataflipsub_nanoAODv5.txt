@@ -1,0 +1,47 @@
+data_flipsub : DoubleEG_Run2016B_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleEG_Run2016B_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleEG_Run2016C ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleEG_Run2016D ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleEG_Run2016E ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleEG_Run2016F ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleEG_Run2016G_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleEG_Run2016G_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleEG_Run2016H_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleEG_Run2016H_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+
+data_flipsub : DoubleMuon_Run2016B_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016B_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016C ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016D_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016D_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016E_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016E_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016F ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016G_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016G_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016H_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : DoubleMuon_Run2016H_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+
+data_flipsub : MuonEG_Run2016B ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : MuonEG_Run2016C ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : MuonEG_Run2016D ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : MuonEG_Run2016E ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : MuonEG_Run2016F ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : MuonEG_Run2016G ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : MuonEG_Run2016H ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+
+data_flipsub : SingleElectron_Run2016B ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleElectron_Run2016C ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleElectron_Run2016D ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleElectron_Run2016E ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleElectron_Run2016F ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleElectron_Run2016G ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleElectron_Run2016H ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+
+data_flipsub : SingleMuon_Run2016B ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleMuon_Run2016C ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleMuon_Run2016D ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleMuon_Run2016E ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleMuon_Run2016F ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleMuon_Run2016G ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite
+data_flipsub : SingleMuon_Run2016H ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2016/2lss/fakerate_fakeflipappl.txt", FillColor=ROOT.kWhite

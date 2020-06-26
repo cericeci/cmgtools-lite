@@ -1,0 +1,18 @@
+flips_DY : DYJetsToLL_M10to50 : xsec ; FillColor=ROOT.kGray , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips DY", NormSystematic=0.30
+flips_DY : DYJetsToLL_M50: xsec ; FillColor=ROOT.kGray , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips DY", NormSystematic=0.30
+
+flips_TT : TTTo2L2Nu_part0 + TTTo2L2Nu_part1 + TTTo2L2Nu_part2 + TTTo2L2Nu_part3 + TTTo2L2Nu_part4 + TTTo2L2Nu_part5 + TTTo2L2Nu_part6 + TTTo2L2Nu_part7 + TTTo2L2Nu_part8  : xsec; FillColor=ROOT.kGray+2 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips TT", NormSystematic=0.30
+flips_TT : TTJets_SingleLeptFromT_part0 + TTJets_SingleLeptFromT_part1 : xsec ; FillColor=ROOT.kGray+2 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips TT", NormSystematic=0.30
+flips_TT : TTJets_SingleLeptFromTbar_part0 + TTJets_SingleLeptFromTbar_part1 : xsec ; FillColor=ROOT.kGray+2 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips TT", NormSystematic=0.30
+
+flips_T : TW : xsec ; FillColor=ROOT.kGray-2 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips ST", NormSystematic=0.30
+flips_T : TbarW : xsec ; FillColor=ROOT.kGray-2 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips ST", NormSystematic=0.30
+flips_T : T_tch_part0 + T_tch_part1 : xsec ; FillColor=ROOT.kGray-2 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips ST", NormSystematic=0.30
+flips_T : Tbar_tch : xsec ; FillColor=ROOT.kGray-2 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips ST", NormSystematic=0.30
+
+
+flips_VV : WWTo2L2Nu_part0 + WWTo2L2Nu_part1 : xsec ; FillColor=ROOT.kGray+9 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips VV", NormSystematic=0.30
+flips_VV : WZTo2L2Q_part0 + WZTo2L2Q_part1 + WZTo2L2Q_part2 + WZTo2L2Q_part3 + WZTo2L2Q_part4 : xsec ; FillColor=ROOT.kGray+9 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips VV", NormSystematic=0.30
+flips_VV : ZZTo2L2Q_part0 : xsec ; FillColor=ROOT.kGray+9 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips VV", NormSystematic=0.30
+flips_VV : ZZTo2L2Nu_part0 + ZZTo2L2Nu_part1 : xsec ; FillColor=ROOT.kGray+9 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isflip.txt", Label="Flips VV", NormSystematic=0.30
+

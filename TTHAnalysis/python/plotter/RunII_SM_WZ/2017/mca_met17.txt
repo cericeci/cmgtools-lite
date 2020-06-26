@@ -1,0 +1,3 @@
+prompt_WZ_nominal : WZTo3LNu_powv2 : xsec*1.124 ; FillColor=ROOT.kRed , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="WZ PfMET", NormSystematic=0.12
+prompt_WZ_weights+ : WZTo3LNu_powv2 : xsec*1.124 ; FillColor=ROOT.kBlack , FakeRate="RunII_SM_WZ/common/fakerate_standard_central_metoriginal17.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="WZ METv2", NormSystematic=0.12
+

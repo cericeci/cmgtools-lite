@@ -1,0 +1,4 @@
+convs : TTGJets  : xsec ; FillColor=ROOT.kOrange-3 , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isconv.txt", Label="X+g", NormSystematic=0.20
+convs : WGToLNuG : xsec ; FillColor=ROOT.kOrange-3 , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isconv.txt", Label="X+g", NormSystematic=0.20
+convs : WZG      : xsec ; FillColor=ROOT.kOrange-3 , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isconv.txt", Label="X+g", NormSystematic=0.20
+convs : ZGTo2LG_part1 + ZGTo2LG_part2 + ZGTo2LG_part0 : xsec ; FillColor=ROOT.kOrange-3 , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isconv.txt", Label="X+g", NormSystematic=0.20

@@ -1,0 +1,20 @@
+weight : EWK3L_fakeTransfer(3, EWK3L_fakeRate(LepGood_conePt[0],LepGood_eta[0],LepGood_pdgId[0], 3, 44), !LepGood_isTight_Mini[0], EWK3L_fakeRate(TauSel_Mini_pt[1],TauSel_Mini_eta[1],15,3),TauSel_Mini_reclTauId[1] < 2, EWK3L_fakeRate(TauSel_Mini_pt[0],TauSel_Mini_eta[0],15,3),TauSel_Mini_reclTauId[0] < 2)
+
+cut-change : allTight : !allTight
+
+change    : LepGood1_(\w+)  : LepGood_\1[0]
+change    : LepGood2_(\w+)  : LepGood_\1[1]
+change    : LepGood3_(\w+)  : LepGood_\1[2]
+change    : LepGood4_(\w+)  : LepGood_\1[3]
+change    : nJet30\b       : nJet30_Mini
+change    : nJet25\b       : nJet25_Mini
+change    : htJet25j\b     : htJet25j_Mini
+change    : htJet30j\b     : htJet30j_Mini
+change    : nBJetMedium25\b: nBJetMedium25_Mini
+change    : nBJetTight25\b : nBJetTight25_Mini
+change    : nBJetLoose25\b : nBJetLoose25_Mini
+
+
+load-histo     : FR3_el        : $DATA/fakeRateMaps/fakeRateMap_data_electron_2016_mT.root        : fakeRate_electron_2016
+load-histo     : FR3_mu        : $DATA/fakeRateMaps/fakeRateMap_data_muon_2016_mT.root            : fakeRate_muon_2016
+load-histo     : FR3_tau       : $DATA/fakeRateMaps/DATA2016/fakeRateTau_2016.root                : fakeRateTau

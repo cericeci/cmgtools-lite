@@ -1,0 +1,5 @@
+prompt_ZZ_nominal : ZZTo4Lv2_part0 + ZZTo4Lv2_part1 + ZZTo4Lv2_part2 + ZZTo4Lv2_part3 : xsec*1.124 ; FillColor=ROOT.kRed , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="ZZ no weight", NormSystematic=0.12,AddWeight="1/(weight_PrefiringJets*weight_PrefiringPhotons)"
+prompt_ZZ_weights+ : ZZTo4Lv2_part0 + ZZTo4Lv2_part1 + ZZTo4Lv2_part2 + ZZTo4Lv2_part3: xsec*1.124 ; FillColor=ROOT.kBlack , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="ZZ pref. weight", NormSystematic=0.12
+
+
+

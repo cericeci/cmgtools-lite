@@ -1,0 +1,26 @@
+prompt_hZZ : HZZ : xsec*1.7 ; FillColor=ROOT.kGreen-1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="hZZ", NormSystematic=0.07
+prompt_ZZ : ZZTo4L_part0 + ZZTo4L_part1 : xsec ; FillColor=ROOT.kGreen+1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="qqZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo2e2mu   : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo2e2nu   : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo2e2tau  : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo2mu2nu  : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo2mu2tau : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo4e      : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo4mu     : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+prompt_ggZZ : GluGluToContinToZZTo4tau    : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ggZZ", NormSystematic=0.07
+
+
+prompt_TTX : TTHnonbb_part0 + TTHnonbb_part1 : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ttX", NormSystematic=0.15
+prompt_TTX : TTZToLLNuNu_part0 + TTZToLLNuNu_part1 + TTZToLLNuNu_part2 + TTZToLLNuNu_part3 : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ttX", NormSystematic=0.15
+prompt_TTX : TTGJets : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ttG", NormSystematic=0.15
+prompt_TTX : TTZToLLNuNu_m1to10 : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="ttX", NormSystematic=0.15
+
+
+prompt_VH : VHToNonbb : xsec ; FillColor=ROOT.kRed-1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="VH", NormSystematic=0.25
+
+prompt_VVV : WWW : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="VVV", NormSystematic=0.50
+prompt_VVV : WWZ : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="VVV", NormSystematic=0.50
+prompt_VVV : WZZ : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="VVV", NormSystematic=0.50
+prompt_VVV : ZZZ : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load4l_isprompt.txt", Label="VVV", NormSystematic=0.50
+
+

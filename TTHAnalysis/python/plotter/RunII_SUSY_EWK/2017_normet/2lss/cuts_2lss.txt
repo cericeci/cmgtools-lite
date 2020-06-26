@@ -1,0 +1,12 @@
+alwaystrue: 1
+trigger   : $DATA{Triggers_ee || Triggers_em || Triggers_mm || Triggers_e || Triggers_m} $MC{Triggers_ee || Triggers_em || Triggers_mm || Triggers_e || Triggers_m} $FASTSIM{1}
+2l        : nLepSel >= 2
+lowmass   : minMllSFOS_Mini > 12 || minMllSFOS_Mini == -1
+sanity    : LepSel_conePt[0] >= (20 + 5*(abs(LepSel_pdgId[0])==11)) && LepSel_conePt[1] >= (10 + 5*(abs(LepSel_pdgId[1])==11)) 
+SRevent   : allTight(LepSel_isTight[0], LepSel_isTight[1])
+veto      : LepSel_isTight[2] == 0
+samesign  : LepSel_pdgId[0]*LepSel_pdgId[1] > 0
+bJetVeto  : nBJetTight25_Mini == 0
+met       : METFixEE2017_pt_nom >= 60
+jetveto   : nJet30_Mini <= 1
+lightlep  : abs(LepSel_pdgId[0]) < 15 && abs(LepSel_pdgId[1]) < 15 &&  abs(LepSel_pdgId[0]) > 10 && abs(LepSel_pdgId[1]) > 10

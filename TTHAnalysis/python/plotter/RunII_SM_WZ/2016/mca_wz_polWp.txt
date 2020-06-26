@@ -1,0 +1,151 @@
+## Data
+## -----------------------------------------------------------
+#incl_data      : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_data_2016_nanoAODv5.txt"
+
+## Backgrounds
+## -----------------------------------------------------------
+incl_signal         : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt"
+incl_prompts        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt"
+incl_convs          : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt"
+incl_fakes          : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_mcfakes_nanoAODv5.txt"
+
+
+##### PROMPTS #####
+#Pile Up Weights
+incl_prompts_puwUp        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="puWeightUp/puWeight", SkipMe=True, PostFix="_puw_Up"
+incl_prompts_puwDn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="puWeightDown/puWeight", SkipMe=True, PostFix="_puw_Dn"
+
+#Lepton SF Mu
+incl_prompts_lepSFMu_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMu_Up"
+incl_prompts_lepSFMu_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMu_Dn"
+
+#Lepton SF Elec
+incl_prompts_lepSFEl_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFEl_Up"
+incl_prompts_lepSFEl_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFEl_Dn"
+
+#Lepton SF Mu Stat
+incl_prompts_lepSFMu_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMuStat2016_Up"
+incl_prompts_lepSFMu_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMuStat2016_Dn"
+
+#Lepton SF Elec  Stat
+incl_prompts_lepSFEl_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFElStat2016_Up"
+incl_prompts_lepSFEl_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFElStat2016_Dn"
+
+#B tag Weights HF
+incl_prompts_bTag_HF_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_HF_Up/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagHF_Up"
+incl_prompts_bTag_HF_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagHF_Dn"
+
+#B tag Weights LF
+incl_prompts_bTag_LF_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_LF_Up/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagLF_Up"
+incl_prompts_bTag_LF_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagLF_Dn"
+
+#JEC, correlated
+incl_prompts_jeccorr_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecCorrUp.txt", SkipMe=True, PostFix="_jescorr_Up"
+incl_prompts_jeccorr_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecCorrDn.txt", SkipMe=True, PostFix="_jescorr_Dn"
+
+#JEC, decorrelated
+incl_prompts_jecuncorr_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecUnCorrUp.txt", SkipMe=True, PostFix="_jesuncorr_Up"
+incl_prompts_jecuncorr_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecUnCorrDn.txt", SkipMe=True, PostFix="_jesuncorr_Dn"
+
+#Electron Scale
+incl_prompts_elscale_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_elecScaleUp.txt", SkipMe=True, PostFix="_elscale_Up"
+incl_prompts_elscale_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_elecScaleDn.txt", SkipMe=True, PostFix="_elscale_Dn"
+
+#Muon Scale
+incl_prompts_muscale_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_muonScaleUp.txt", SkipMe=True, PostFix="_muscale_Up"
+incl_prompts_muscale_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_prompts_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_muonScaleDn.txt", SkipMe=True, PostFix="_muscale_Dn"
+
+##### CONVS #####
+
+
+#Pile Up Weights
+incl_convs_puwUp        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="puWeightUp/puWeight", SkipMe=True, PostFix="_puw_Up"
+incl_convs_puwDn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="puWeightDown/puWeight", SkipMe=True, PostFix="_puw_Dn"
+
+#Lepton SF Mu
+incl_convs_lepSFMu_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMu_Up"
+incl_convs_lepSFMu_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMu_Dn"
+
+#Lepton SF Elec
+incl_convs_lepSFEl_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFEl_Up"
+incl_convs_lepSFEl_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFEl_Dn"
+
+#Lepton SF Mu Stat
+incl_convs_lepSFMu_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMuStat2016_Up"
+incl_convs_lepSFMu_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMuStat2016_Dn"
+
+#Lepton SF Elec  Stat
+incl_convs_lepSFEl_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFElStat2016_Up"
+incl_convs_lepSFEl_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFElStat2016_Dn"
+
+#B tag Weights HF
+incl_convs_bTag_HF_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_HF_Up/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagHF_Up"
+incl_convs_bTag_HF_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagHF_Dn"
+
+#B tag Weights LF
+incl_convs_bTag_LF_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_LF_Up/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagLF_Up"
+incl_convs_bTag_LF_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", AddWeight="bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagLF_Dn"
+
+#JEC, correlated
+incl_convs_jeccorr_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecCorrUp.txt", SkipMe=True, PostFix="_jescorr_Up"
+incl_convs_jeccorr_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecCorrDn.txt", SkipMe=True, PostFix="_jescorr_Dn"
+
+#JEC, decorrelated
+incl_convs_jecuncorr_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecUnCorrUp.txt", SkipMe=True, PostFix="_jesuncorr_Up"
+incl_convs_jecuncorr_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecUnCorrDn.txt", SkipMe=True, PostFix="_jesuncorr_Dn"
+
+#Electron Scale
+incl_convs_elscale_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_elecScaleUp.txt", SkipMe=True, PostFix="_elscale_Up"
+incl_convs_elscale_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_elecScaleDn.txt", SkipMe=True, PostFix="_elscale_Dn"
+
+#Muon Scale
+incl_convs_muscale_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_muonScaleUp.txt", SkipMe=True, PostFix="_muscale_Up"
+incl_convs_muscale_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_convs_nanoAODv5.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_muonScaleDn.txt", SkipMe=True, PostFix="_muscale_Dn"
+
+##### SIGNAL ##### 
+
+
+#Pile Up Weights
+incl_signal_puwUp        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="puWeightUp/puWeight", SkipMe=True, PostFix="_puw_Up"
+incl_signal_puwDn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="puWeightDown/puWeight", SkipMe=True, PostFix="_puw_Dn"
+
+#Lepton SF Mu
+incl_signal_lepSFMu_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="getLeptonSF_v4(0\,(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMu_Up"
+incl_signal_lepSFMu_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="getLeptonSF_v4(0\,-(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMu_Dn"
+
+#Lepton SF Elec
+incl_signal_lepSFEl_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="getLeptonSF_v4(0\,(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFEl_Up"
+incl_signal_lepSFEl_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="getLeptonSF_v4(0\,-(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFEl_Dn"
+
+#Lepton SF Mu Stat
+incl_signal_lepSFMu_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMuStat2016_Up"
+incl_signal_lepSFMu_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[0]) == 13)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[1]) == 13)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[2]) == 13)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFMuStat2016_Dn"
+
+#Lepton SF Elec  Stat
+incl_signal_lepSFEl_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,2*(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFElStat2016_Up"
+incl_signal_lepSFEl_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[0]) == 11)\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[1]) == 11)\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,-2*(abs(LepSel_pdgId[2]) == 11)\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v4(0\,0\,2016\,LepSel_pt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v4(0\,0\,2016\,LepSel_pt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))", SkipMe=True, PostFix="_lepSFElStat2016_Dn"
+
+#B tag Weights HF
+incl_signal_bTag_HF_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="bTagWeightDeepCSVT_HF_Up/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagHF_Up"
+incl_signal_bTag_HF_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagHF_Dn"
+
+#B tag Weights LF
+incl_signal_bTag_LF_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="bTagWeightDeepCSVT_LF_Up/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagLF_Up"
+incl_signal_bTag_LF_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", AddWeight="bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT_nom", SkipMe=True, PostFix="_bTagLF_Dn"
+
+#JEC, correlated
+incl_signal_jeccorr_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecCorrUp.txt", SkipMe=True, PostFix="_jescorr_Up"
+incl_signal_jeccorr_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecCorrDn.txt", SkipMe=True, PostFix="_jescorr_Dn"
+
+#JEC, decorrelated
+incl_signal_jecuncorr_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecUnCorrUp.txt", SkipMe=True, PostFix="_jesuncorr_Up"
+incl_signal_jecuncorr_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_jecUnCorrDn.txt", SkipMe=True, PostFix="_jesuncorr_Dn"
+
+#Electron Scale
+incl_signal_elscale_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_elecScaleUp.txt", SkipMe=True, PostFix="_elscale_Up"
+incl_signal_elscale_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_elecScaleDn.txt", SkipMe=True, PostFix="_elscale_Dn"
+
+#Muon Scale
+incl_signal_muscale_Up        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_muonScaleUp.txt", SkipMe=True, PostFix="_muscale_Up"
+incl_signal_muscale_Dn        : + ; IncludeMca="RunII_SM_WZ/2016/includes/mca_WZ_nanoAODv5_polWp.txt", ExtraFakeRate="RunII_SM_WZ/common/fakerate_standard_muonScaleDn.txt", SkipMe=True, PostFix="_muscale_Dn"
+

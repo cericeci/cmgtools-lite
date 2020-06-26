@@ -1,0 +1,25 @@
+#Flat uncertainties
+
+lumi_2018_ML       : prompt_.*|diboson.*|convs   : .*                : 1.025
+trigeffbias_ML    : prompt_.*|diboson.*|convs   : .*                : 0.997/1.003
+trigeffstat_2018_ML    : prompt_.*|diboson.*|convs   : .*                : 0.985/1.009
+
+fakes_ML      : fakes_.*                          : .*                : 1.5 
+convs_ML      : convs                             : .*                : 1.2
+
+normZZ_ML     : prompt_.*ZZ                       : .*                : 1.07
+normVVV_ML    : prompt_VVV                         : .*                : 1.5
+normVH_ML     : prompt_VH                          : .*                : 1.25
+normtZq_ML    : prompt_TZQ                         : .*                : 1.35
+normTTX_ML    : prompt_TT.*                        : .*                : 1.15
+
+
+#Templates#
+JES_ML           : prompt_.*|diboson.*|convs          : .* : jec        : templates
+MuScale_ML       : prompt_.*|diboson.*|convs          : .* : muscale    : templates
+ElScale_ML       : prompt_.*|diboson.*|convs          : .* : elscale    : templates
+PUW_ML           : prompt_.*|diboson.*|convs          : .* : puw        : templates
+LepSFMu_ML            : prompt_.*|diboson.*|convs          : .* : lepSFMu : templates 
+LepSFEl_ML            : prompt_.*|diboson.*|convs          : .* : lepSFEl : templates 
+btag_HF_ML       : prompt_.*|diboson.*|convs          : .* : bTagHF     : templates
+btag_LF_ML       : prompt_.*|diboson.*|convs          : .* : bTagLF     : templates

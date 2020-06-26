@@ -1,0 +1,15 @@
+alwaystrue: 1
+trigger   : $DATA{Triggers_ee || Triggers_mm || Triggers_em || Triggers_e || Triggers_m} $MC{Triggers_ee || Triggers_mm || Triggers_em || Triggers_e || Triggers_m} $FASTSIM{1} 
+3l        : nLepSel >= 3
+lowmass   : minMllSFOS_Mini > 12 || minMllSFOS_Mini == -1
+sanity    : passPtMll && is_3l && LepSel_conePt[0] >= (20 + 5*(abs(LepSel_pdgId[0])==11)) && LepSel_conePt[1] >= (10 + 5*(abs(LepSel_pdgId[1])==11)+ 10*(abs(LepSel_pdgId[1])==15)) && LepSel_conePt[2] >= (10 + 0*(abs(LepSel_pdgId[3])==11)+ 10*(abs(LepSel_pdgId[2])==15)) 
+veto      : LepSel_isTight[3] == 0
+bJetVeto  : nBJetTight25_Mini == 0 
+met       : METFixEE2017_pt_nom > 50
+convVeto  : (m3L - 91.16) >= 15; Disable=True
+
+SR3lC     : ((abs(LepSel_pdgId[0]) == 0) + (abs(LepSel_pdgId[1]) == 0) + (abs(LepSel_pdgId[2]) == 0) ) == 1   && (LepGood_pdgId[iL_Mini[1]]== -LepGood_pdgId[iL_Mini[0]]) && allTight(TauSel_Mini_reclTauId[0] >= 2 ,LepGood_isTight_Mini[iL_Mini[0]], LepGood_isTight_Mini[iL_Mini[1]]) && (mll_3l <= 75 || mll_3l >= 105) && (m3L - 91.16) >= 15; Disable=True
+
+SR3lD     : ((abs(LepSel_pdgId[0]) == 0) + (abs(LepSel_pdgId[1]) == 0) + (abs(LepSel_pdgId[2]) == 0) ) == 1   && (LepGood_pdgId[iL_Mini[1]]*LepGood_pdgId[iL_Mini[0]] < 0) && (LepGood_pdgId[iL_Mini[1]] != -LepGood_pdgId[iL_Mini[0]]) && allTight(TauSel_Mini_reclTauId[0] >= 2 ,LepGood_isTight_Mini[iL_Mini[0]], LepGood_isTight_Mini[iL_Mini[1]]); Disable=True
+
+SR3lE     : ((abs(LepSel_pdgId[0]) == 0) + (abs(LepSel_pdgId[1]) == 0) + (abs(LepSel_pdgId[2]) == 0) ) == 1   && (LepGood_pdgId[iL_Mini[1]]*LepGood_pdgId[iL_Mini[0]] > 0) && allTight(TauSel_Mini_reclTauId[0] >= 2 ,LepGood_isTight_Mini[iL_Mini[0]], LepGood_isTight_Mini[iL_Mini[1]]); Disable=True

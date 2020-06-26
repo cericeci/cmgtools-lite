@@ -1,0 +1,44 @@
+alwaystrue: 1
+trigger   : $DATA{Triggers_ee || Triggers_em || Triggers_mm } $MC{Triggers_ee || Triggers_em || Triggers_mm} $FASTSIM{1}
+3l        : nLepSel >= 3
+lowmass   : minMllSFOS_Mini > 12 || minMllSFOS_Mini == -1
+sanity    : passPtMll && is_3l && LepSel_conePt[0] >= (20 + 5*(abs(LepSel_pdgId[0])==11)) && LepSel_conePt[1] >= (10 + 5*(abs(LepSel_pdgId[1])==11)) && LepSel_conePt[2] >= (10 + 0*(abs(LepSel_pdgId[3])==11)) 
+SRevent   : allTight(3, LepSel_isTight[0], LepSel_isTight[1], LepSel_isTight[2])
+veto      : nLepSel == 3
+convveto  : ((BR != 1 && BR != 3) || abs(m3L-91) > 15)
+
+
+
+#specificFconditions : (BR == 6 && LepSel_conePt[0] >= (0 + 30*(abs(LepSel_pdgId[0])==11) + 25*(abs(LepSel_pdgId[0])==13) ) && LepSel_conePt[1] >= (0 + 30*(abs(LepSel_pdgId[1])==11) + 25*(abs(LepSel_pdgId[1])==13) )  && LepSel_conePt[2] >= (0 + 30*(abs(LepSel_pdgId[2])==11) + 25*(abs(LepSel_pdgId[2])==13) ) &&  abs(LepSel_eta[0]) <= (2.5  - 0.4*(abs(LepSel_pdgId[0])==11) - 0.4*(abs(LepSel_pdgId[0])==13) ) && abs(LepSel_eta[1]) <= (2.5 - 0.4*(abs(LepSel_pdgId[1])==11) - 0.4 *(abs(LepSel_pdgId[1])==13) )  && abs(LepSel_eta[2]) <= (2.5 - 0.4*(abs(LepSel_pdgId[2])==11) - 0.4*(abs(LepSel_pdgId[2])==13) )                         ) || BR != 6
+#specificFconditions : (BR == 6 && LepSel_conePt[0] >= (0 + 30*(abs(LepSel_pdgId[0])==11) + 25*(abs(LepSel_pdgId[0])==13) ) && LepSel_conePt[1] >= (0 + 30*(abs(LepSel_pdgId[1])==11) + 25*(abs(LepSel_pdgId[1])==13) )  && LepSel_conePt[2] >= (0 + 30*(abs(LepSel_pdgId[2])==11) + 25*(abs(LepSel_pdgId[2])==13) ) &&  abs(LepSel_eta[0]) <= 2.1  && abs(LepSel_eta[1]) <= 2.1  && abs(LepSel_eta[2]) <= 2.1                         ) || BR != 6
+
+
+met       : met_pt > 50 ; Disable=True
+
+
+bJetVeto  : nBJetMedium25 == 0; Disable=True
+
+
+BR1 : BR == 1 ; Disable=True
+BR2 : BR == 2 ; Disable=True
+BR3 : BR == 3 ; Disable=True
+BR4 : BR == 4 ; Disable=True
+BR5 : BR == 5 ; Disable=True
+BR6 : BR == 6 ; Disable=True
+bJetTightVeto  : nBJetTight25 == 0; Disable=True
+
+mll100 : mllL_3l < 100 ; Disable=True
+mDR3Ll1 : minDeltaR_3l < 1 ; Disable=True
+mDR3Lg1 : minDeltaR_3l >= 1; Disable=True
+
+CSV_L    : maxBTageventBTagSFCSVL < 0.5803 ; Disable=True
+CSV_M    : maxBTageventBTagSFCSVL < 0.8838 ; Disable=True
+CSV_T    : maxBTageventBTagSFCSVL < 0.9693 ; Disable=True
+
+DeepCSV_L    : maxBTageventBTagSFDeepCSVL < 0.1522 ; Disable=True
+DeepCSV_M    : maxBTageventBTagSFDeepCSVL < 0.4941 ; Disable=True
+DeepCSV_T    : maxBTageventBTagSFDeepCSVL < 0.8001 ; Disable=True
+
+DeepFlavor_L    : maxBTageventBTagSFDeepFlavorL < 0.0521 ; Disable=True
+DeepFlavor_M    : maxBTageventBTagSFDeepFlavorL < 0.3033 ; Disable=True
+DeepFlavor_T    : maxBTageventBTagSFDeepFlavorL < 0.7489 ; Disable=True

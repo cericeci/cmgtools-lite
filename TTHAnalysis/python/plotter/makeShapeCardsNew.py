@@ -2,6 +2,7 @@
 from CMGTools.TTHAnalysis.plotter.mcAnalysis import *
 from CMGTools.TTHAnalysis.plotter.histoWithNuisances import _cloneNoDir
 import re, sys, os, os.path
+import copy
 systs = {}
 
 from optparse import OptionParser
@@ -16,6 +17,9 @@ parser.add_option("--infile", dest="infile", action="store_true", default=False,
 parser.add_option("--savefile", dest="savefile", action="store_true", default=False, help="Save histos to file")
 parser.add_option("--categorize", dest="categ", type="string", nargs=3, default=None, help="Split in categories. Requires 3 arguments: expression, binning, bin labels")
 parser.add_option("--regularize", dest="regularize", action="store_true", default=False, help="Regularize templates")
+parser.add_option("--ms", dest="multiSignals", action="store_true", default=False, help="Create a card for each process tagged as signal")
+parser.add_option("--addgmN", dest="addgmN", action="store_true", default=False, help="Create extra process + nuisance for MC with low stats in each bin ")
+
 (options, args) = parser.parse_args()
 options.weight = True
 options.final  = True
@@ -84,6 +88,41 @@ for binname, report in allreports.iteritems():
     for p,h in report.iteritems(): 
       if p not in ("data", "data_obs"):
         h.addBinByBin(namePattern="%s_%s_%s_bin{bin}" % (options.bbb, binname, p), conservativePruning = True)
+  addToProcs = []
+  extrareport = {}
+  if options.addgmN:
+    for p,h in report.iteritems():
+      if p not in ("data", "data_obs"):
+        theW, theBins = h.GetEmptyBins()
+        if theW < 0.25 or "data" in p: continue
+        for b in theBins:
+          extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW] = h.Clone("x_" + p + "_statbin"+str(b) + "_w%1.3f"%theW)
+          extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].gmNWeight = theW
+          extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations[extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].central.GetName()+ "_statbin" + str(b) + "_w%1.3f"%theW] = [extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].central, extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].central]
+          addToProcs.append(p + "_statbin"+str(b) + "_w%1.3f"%theW)
+          for bb in xrange(1,extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].GetNbinsX()+1):
+            if bb != b:
+              extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].SetBinContent(bb, 0)
+              extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].SetBinError(bb, 0)
+              for vv in extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations:
+                extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations[vv][0].SetBinContent(bb,0)
+                extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations[vv][0].SetBinError(bb,0)
+                extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations[vv][1].SetBinContent(bb,0)
+                extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations[vv][1].SetBinError(bb,0)
+
+            else:
+              extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].SetBinContent(bb, 1e-3)
+              extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].SetBinError(bb, 0)
+              for vv in extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations:
+                extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations[vv][0].SetBinContent(bb,1e-3)
+                extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations[vv][0].SetBinError(bb,0)
+                extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations[vv][1].SetBinContent(bb,1e-3)
+                extrareport[p + "_statbin"+str(b) + "_w%1.3f"%theW].variations[vv][1].SetBinError(bb,0)
+
+
+    for p,h in extrareport.iteritems():
+      report[p] = h
+
   for p,h in report.iteritems():
     for b in xrange(1,h.GetNbinsX()+1):
       h.SetBinError(b,min(h.GetBinContent(b),h.GetBinError(b))) # crop all uncertainties to 100% to avoid negative variations
@@ -99,7 +138,14 @@ for binname, report in allreports.iteritems():
     if b not in allyields: continue
     if allyields[b] == 0: continue
     procs.append(b); iproc[b] = i+1
-  #for p in procs: print "%-10s %10.4f" % (p, allyields[p])
+ 
+  for p in addToProcs:
+    i += 1
+    if not(p in procs):
+      procs.append(p)
+      iproc[p] = i + 1
+    
+  for p in procs: print "%-10s %10.4f" % (p, allyields[p])
 
   systs = {}
   for name in nuisances:
@@ -108,6 +154,7 @@ for binname, report in allreports.iteritems():
     for p in procs:
         h = report[p]
         n0 = h.Integral()
+        print p, h, name, h.hasVariation(name)
         if h.hasVariation(name):
             if isShape or h.isShapeVariation(name):
                 if name.endswith("_lnU"): 
@@ -150,38 +197,88 @@ for binname, report in allreports.iteritems():
                 systs[name] = ("lnN", effyield, {})
   # make a new list with only the ones that have an effect
   nuisances = sorted(systs.keys())
-
-  datacard = open(outdir+binname+".card.txt", "w"); 
-  datacard.write("## Datacard for cut file %s\n"%args[1])
-  datacard.write("shapes *        * %s.input.root x_$PROCESS x_$PROCESS_$SYSTEMATIC\n" % binname)
-  datacard.write('##----------------------------------\n')
-  datacard.write('bin         %s\n' % binname)
-  datacard.write('observation %s\n' % allyields['data_obs'])
-  datacard.write('##----------------------------------\n')
-  klen = max([7, len(binname)]+[len(p) for p in procs])
-  kpatt = " %%%ds "  % klen
-  fpatt = " %%%d.%df " % (klen,3)
-  npatt = "%%-%ds " % max([len('process')]+map(len,nuisances))
-  datacard.write('##----------------------------------\n')
-  datacard.write((npatt % 'bin    ')+(" "*6)+(" ".join([kpatt % binname  for p in procs]))+"\n")
-  datacard.write((npatt % 'process')+(" "*6)+(" ".join([kpatt % p        for p in procs]))+"\n")
-  datacard.write((npatt % 'process')+(" "*6)+(" ".join([kpatt % iproc[p] for p in procs]))+"\n")
-  datacard.write((npatt % 'rate   ')+(" "*6)+(" ".join([fpatt % allyields[p] for p in procs]))+"\n")
-  datacard.write('##----------------------------------\n')
-  towrite = [ report[p].raw() for p in procs ] + [ report["data_obs"].raw() ]
-  for name in nuisances:
-    (kind,effmap,effshape) = systs[name]
-    datacard.write(('%s %5s' % (npatt % name,kind)) + " ".join([kpatt % effmap[p]  for p in procs]) +"\n")
-    for p,(hup,hdn) in effshape.iteritems():
+  if not(options.multiSignals):
+    datacard = open(outdir+binname+".card.txt", "w"); 
+    datacard.write("## Datacard for cut file %s\n"%args[1])
+    datacard.write("shapes *        * %s.input.root x_$PROCESS x_$PROCESS_$SYSTEMATIC\n" % binname)
+    datacard.write('##----------------------------------\n')
+    datacard.write('bin         %s\n' % binname)
+    datacard.write('observation %s\n' % allyields['data_obs'])
+    datacard.write('##----------------------------------\n')
+    klen = max([7, len(binname)]+[len(p) for p in procs])
+    kpatt = " %%%ds "  % klen
+    fpatt = " %%%d.%df " % (klen,3)
+    npatt = "%%-%ds " % max([len('process')]+map(len,nuisances))
+    datacard.write('##----------------------------------\n')
+    datacard.write((npatt % 'bin    ')+(" "*6)+(" ".join([kpatt % binname  for p in procs]))+"\n")
+    datacard.write((npatt % 'process')+(" "*6)+(" ".join([kpatt % p        for p in procs]))+"\n")
+    datacard.write((npatt % 'process')+(" "*6)+(" ".join([kpatt % iproc[p] for p in procs]))+"\n")
+    datacard.write((npatt % 'rate   ')+(" "*6)+(" ".join([fpatt % allyields[p] for p in procs]))+"\n")
+    datacard.write('##----------------------------------\n')
+    towrite = [ report[p].raw() for p in procs ] + [ report["data_obs"].raw() ]
+    for name in nuisances:
+      (kind,effmap,effshape) = systs[name]
+      datacard.write(('%s %5s' % (npatt % name,kind)) + " ".join([kpatt % effmap[p]  for p in procs]) +"\n")
+      for p,(hup,hdn) in effshape.iteritems():
         towrite.append(hup.Clone("x_%s_%sUp"   % (p,name)))
         towrite.append(hdn.Clone("x_%s_%sDown" % (p,name)))
-  if options.autoMCStats: 
-    datacard.write('* autoMCStats %d\n' % options.autoMCStatsValue)
+    if options.autoMCStats: 
+      datacard.write('* autoMCStats %d\n' % options.autoMCStatsValue)
 
-  workspace = ROOT.TFile.Open(outdir+binname+".input.root", "RECREATE")
-  for h in towrite:
+    workspace = ROOT.TFile.Open(outdir+binname+".input.root", "RECREATE")
+    for h in towrite:
+        workspace.WriteTObject(h,h.GetName())
+    workspace.Close()
+    print "Wrote to {0}.card.txt and {0}.input.root ".format(outdir+binname)
+  else:
+   towrite = [ report[p].raw() for p in procs ] + [ report["data_obs"].raw() ]
+   for name in nuisances:
+     (kind,effmap,effshape) = systs[name]
+     for p,(hup,hdn) in effshape.iteritems():
+       towrite.append(hup.Clone("x_%s_%sUp"   % (p,name)))
+       towrite.append(hdn.Clone("x_%s_%sDown" % (p,name)))
+
+   for s in mca.listSignals():
+    newprocs = []
+    for key in procs:
+      if (key in mca.listBackgrounds() or key==s): 
+        newprocs.append(key)
+        for p in addToProcs:
+          if not "sig" in p and not(p in newprocs):
+            newprocs.append(p)
+
+    datacard = open(outdir+binname+s+".card.txt", "w");
+    datacard.write("## Datacard for cut file %s\n"%args[1])
+    datacard.write("shapes *        * %s.input.root x_$PROCESS x_$PROCESS_$SYSTEMATIC\n" % binname)
+    datacard.write('##----------------------------------\n')
+    datacard.write('bin         %s\n' % binname)
+    datacard.write('observation %s\n' % allyields['data_obs'])
+    datacard.write('##----------------------------------\n')
+    klen = max([7, len(binname)]+[len(p) for p in newprocs])
+    kpatt = " %%%ds "  % klen
+    fpatt = " %%%d.%df " % (klen,3)
+    npatt = "%%-%ds " % max([len('process')]+map(len,nuisances))
+    datacard.write('##----------------------------------\n')
+    datacard.write((npatt % 'bin    ')+(" "*6)+(" ".join([kpatt % binname  for p in newprocs]))+"\n")
+    datacard.write((npatt % 'process')+(" "*6)+(" ".join([kpatt % p        for p in newprocs]))+"\n")
+    datacard.write((npatt % 'process')+(" "*6)+(" ".join([kpatt % iproc[p] for p in newprocs]))+"\n")
+    datacard.write((npatt % 'rate   ')+(" "*6)+(" ".join([fpatt % allyields[p] for p in newprocs]))+"\n")
+    datacard.write('##----------------------------------\n')
+    for name in nuisances:
+      (kind,effmap,effshape) = systs[name]
+      datacard.write(('%s %5s' % (npatt % name,kind)) + " ".join([kpatt % effmap[p]  for p in newprocs]) +"\n")
+    if options.autoMCStats:
+      datacard.write('* autoMCStats %d\n' % options.autoMCStatsValue)
+    if options.addgmN:
+      for p in newprocs:
+        if "statbin" in p:
+          words = p.split("_")
+          theweight = float(words[-1].replace("w",""))/1e-3
+          
+          datacard.write(('%s lnN ' % (p)) + " ".join([kpatt % "-" if pp!=p else kpatt%("1/%1.4f"%theweight) for pp in newprocs]) +"\n")
+    print "Wrote to %s "%(outdir+s+".card.txt")
+   workspace = ROOT.TFile.Open(outdir+binname+".input.root", "RECREATE")
+   for h in towrite:
       workspace.WriteTObject(h,h.GetName())
-  workspace.Close()
-
-  print "Wrote to {0}.card.txt and {0}.input.root ".format(outdir+binname)
-
+   workspace.Close()
+   print "Wrote to {0}.card.txt and {0}.input.root ".format(outdir+binname)

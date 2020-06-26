@@ -1,0 +1,54 @@
+################ Flat uncertainties
+
+#Lumi uncertainties as per https://twiki.cern.ch/twiki/bin/view/CMS/TWikiLUM
+lumi_2016_ML       : prompt_.*|convs   : .*                : 1.022
+lumi_XY_ML         : prompt_.*|convs   : .*                : 1.009
+lumi_bbd_ML        : prompt_.*|convs   : .*                : 1.004
+lumi_dbeta_ML      : prompt_.*|convs   : .*                : 1.005
+lumi_ghosts_ML     : prompt_.*|convs   : .*                : 1.004
+#Trigger efficiency measurements performed by ourselves
+#Bias comes from ref trigger which follows the same strat, so correlated:
+trigeffbias_ML    : prompt_.*|convs   : .*                : 1.02
+#Uncertainty from statistics our own measurement, so decorrelated:
+trigeffstat_2016_ML    : prompt_.*|convs   : .*                : 1.01
+
+
+############## NORMALIZATION
+fakes_ML      : .*fakes.*                          : .*                : 1.5
+flips_ML      : .*flips.*                          : .*                : 1.25
+normconvs_ML  : convs                              : .*                : 1.10
+normZZ_ML     : prompt_.*ZZ                        : .*                : 1.08
+normVVV_ML    : prompt_VVV                         : .*                : 1.5
+normVH_ML     : prompt_VH                          : .*                : 1.25
+normtZq_ML    : prompt_TZQ                         : .*                : 1.5
+normTTX_ML    : prompt_TT.*                        : .*                : 1.15
+normWZ_ML     : prompt_.*WZ.*                      : .*                : 1.05
+shapeWZ       : prompt_.*WZ.* : .* : wzshape : templates
+
+############## SHAPES
+# Follow JES recommendations as per https://docs.google.com/spreadsheets/d/1JZfk78_9SD225bcUuTWVo4i02vwI5FfeVKH-dwzUdhM/edit#gid=1345121349
+JESCORR_ML           : prompt_.*|convs          : .* : 1.007
+JES2016_ML           : prompt_.*|convs          : .* : 1.007
+
+MuScale_ML       : prompt_.*|convs          : .* : 1.005
+ElScale_ML       : prompt_.*|convs          : .* : 1.005
+
+PUW_ML           : prompt_.*|convs|sig_.*   : .* : puw        : templates
+btag_HF_ML       : prompt_.*|convs          : .* : 1.02
+btag_LF_ML       : prompt_.*|convs          : .* : 1.01
+
+LepSFMu_ML            : prompt_.*|convs|sig.*    : .*        : 1.04
+LepSFEl_ML            : prompt_.*|convs|sig.*    : .*        : 1.04
+LepSFMuStat2016_ML    : prompt_.*|convs|sig.*    : .*        : 1.01
+LepSFElStat2016_ML    : prompt_.*|convs|sig.*    : .*        : 1.01
+
+sigISR_ML : sig.* : .* : isr : templates
+sigMET_ML : sig.* : .* : met : templates
+## TODO:: FIX THIS!
+sigPDF_ML : sig.* : .* : 1.10
+
+#FastSim shapes
+## PUW, lepSF go correlated
+##btag_HFFS_ML       : sig.*          : .* : bTagHFFS     : templates
+##btag_LFFS_ML       : sig.*          : .* : bTagLFFS     : templates
+##JESFS_ML           : sig.*          : .* : jecFS : templates

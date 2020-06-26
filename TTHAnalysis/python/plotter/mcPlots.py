@@ -449,6 +449,22 @@ def doRatioHists(pspec,pmap,total,maxRange,fixRange=False,fitRatio=None,errorsOn
     unityErr0.SetMarkerStyle(1);
     unityErr0.SetMarkerColor(ROOT.kBlue-7);
     ROOT.gStyle.SetErrorX(0.5);
+    if not "data" in pmap:
+       import array
+       x = array.array('d',[0.])
+       y = array.array('d',[0.])
+
+       # Then for the ratio set the unc. at 0
+       for bin in range(1,unity.GetNbinsX()+1):
+          unity.SetBinContent(bin, unity.GetBinContent(bin)-1)
+       for point in range(unityErr.GetN()):
+          unityErr.GetPoint(point,x,y)
+          unityErr.SetPoint(point, x[0], y[0]-1)
+          unityErr0.GetPoint(point,x,y)
+          unityErr0.SetPoint(point, x[0], y[0]-1)
+
+
+
     unity.Draw("AXIS");
     if errorsOnRef:
         unityErr.Draw("E2");
@@ -884,7 +900,7 @@ class PlotMaker:
                 if outputDir: outputDir.WriteTObject(stack)
                 # 
                 if not makeCanvas and not self._options.printPlots: return
-                doRatio = self._options.showRatio and ('data' in pmap or (plotmode != "stack")) and ("TH2" not in total.ClassName())
+                doRatio = self._options.showRatio #and ('data' in pmap or (plotmode != "stack")) and ("TH2" not in total.ClassName())
                 islog = pspec.hasOption('Logy'); 
                 if doRatio: ROOT.gStyle.SetPaperSize(20.,sf*(plotformat[1]+150))
                 else:       ROOT.gStyle.SetPaperSize(20.,sf*plotformat[1])
@@ -989,8 +1005,8 @@ class PlotMaker:
                 if options.showSigShape or options.showIndivSigShapes or options.showIndivSigs: 
                     signorms = doStackSignalNorm(pspec,pmap,options.showIndivSigShapes or options.showIndivSigs,extrascale=options.signalPlotScale, norm=not options.showIndivSigs)
                     for signorm in signorms:
-                        if outputDir: 
-                            signorm.SetDirectory(outputDir); outputDir.WriteTObject(signorm)
+                        #if outputDir: 
+                        #    signorm.SetDirectory(outputDir); outputDir.WriteTObject(signorm)
                         reMax(total,signorm,islog,doWide=doWide)
                 if options.showDatShape: 
                     datnorm = doDataNorm(pspec,pmap)

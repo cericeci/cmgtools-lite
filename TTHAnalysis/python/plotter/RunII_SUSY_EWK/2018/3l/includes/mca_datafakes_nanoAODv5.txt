@@ -1,0 +1,40 @@
+data_fakes : DoubleMuon_Run2018A_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018A_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018A_part2 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018A_part3 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018B_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018B_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018C_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018C_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018D_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018D_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018D_part2 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018D_part3 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018D_part4 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018D_part5 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : DoubleMuon_Run2018D_part6 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+
+data_fakes : EGamma_Run2018A_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : EGamma_Run2018A_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : EGamma_Run2018A_part2 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : EGamma_Run2018B_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : EGamma_Run2018B_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : EGamma_Run2018C_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : EGamma_Run2018C_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : EGamma_Run2018D_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : EGamma_Run2018D_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : EGamma_Run2018D_part2 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : EGamma_Run2018D_part3 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+
+data_fakes : MuonEG_Run2018A ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : MuonEG_Run2018B ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : MuonEG_Run2018C ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : MuonEG_Run2018D ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+
+data_fakes : SingleMuon_Run2018A_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : SingleMuon_Run2018A_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : SingleMuon_Run2018B ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : SingleMuon_Run2018C ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : SingleMuon_Run2018D_part0 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : SingleMuon_Run2018D_part1 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite
+data_fakes : SingleMuon_Run2018D_part2 ; Label="Non prompt", FakeRate="RunII_SUSY_EWK/2018/3l/fakerate_fakeappl.txt", FillColor=ROOT.kWhite

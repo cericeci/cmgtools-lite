@@ -27,7 +27,7 @@ case $YEAR in
     *) echo "Wrong year" $YEAR;;
 esac
 echo "Normalizing to ${LUMI}/fb";
-OPTIONS=" --tree NanoAOD --s2v -j $J -l ${LUMI} -f --WA prescaleFromSkim"
+OPTIONS=" --tree NanoAOD --s2v -j 88 -l ${LUMI} -f --WA prescaleFromSkim"
 test -d cards/$OUTNAME || mkdir -p cards/$OUTNAME
 OPTIONS="${OPTIONS} --od cards/$OUTNAME ";
 
@@ -61,13 +61,18 @@ FUNCTION_SVA_3L="mass_3_cheap(LepGood1_pt,LepGood1_eta,LepGood2_pt,LepGood2_eta,
 ONEBIN="1 1,0.5,1.5"
 
 MCASUFFIX="mcdata-frdata"
-SVA="true"
+SVA="false"
 if [[ "$1" == "SVA" ]]; then
 FUNCTION_2L=${FUNCTION_SVA_2L}
 FUNCTION_3L=${FUNCTION_SVA_3L}
-SVA="true"
-shift
+FUNCTION_4L=${FUNCTION_SVA_4L}
+else
+FUNCTION_2L="$1"
+FUNCTION_3L="$1"
+FUNCTION_4L="$1"
 fi
+shift
+
 if [[ "$2" == "save" ]]; then
 DOFILE="--savefile"
 fi
@@ -88,9 +93,10 @@ if [[ "$1" == "all" || "$1" == "2lss" || "$1" == "2lss_3j" ]]; then
     if [[ "$1" == "2lss_3j" ]]; then
 	OPT_2L="${OPT_2L} -X ^4j -E ^x3j"
 	CATPOSTFIX="_3j"
-    fi
-
-    if [[ "$SVA" == "false" ]]; then
+	CATFUNC="1"
+	CATBINS="[0.5,1.5]"
+	CATNAMES="2lss3j"
+    elif [[ "$SVA" == "false" ]]; then
 	CATFUNC="ttH_catIndex_2lss(LepGood1_pdgId,LepGood2_pdgId,LepGood1_charge,nBJetMedium25)"
 	CATBINS="[0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5]"
 	CATNAMES="$(echo ee_{neg,pos}${CATPOSTFIX} {em,mm}_{bl,bt}_{neg,pos}${CATPOSTFIX} | sed 's/ /,/g')"
@@ -146,7 +152,11 @@ if [[ "$1" == "3l_zpeak" || "$1" == "3l_zpeak_btight" ]]; then
 	echo "asking tighter b requirements"
     fi
 
-    if [[ "$SVA" == "false" ]]; then
+    if [[ "$1" == "3l_zpeak" ]]; then
+        CATFUNC="1"
+        CATBINS="[0.5,1.5]"
+        CATNAMES="3l_zpeak"
+    elif [[ "$SVA" == "false" ]]; then
     CATFUNC="ttH_catIndex_3l(LepGood1_charge,LepGood2_charge,LepGood3_charge,nBJetMedium25)"
     CATBINS="[10.5,11.5,12.5,13.5,14.5]"
     CATNAMES="$(echo {bl,bt}_{neg,pos}${CATPOSTFIX} | sed 's/ /,/g')"
@@ -182,7 +192,7 @@ if [[ "$1" == "all" || "$1" == "4l" || "$1" == "4l_crzz"  ]]; then
     fi;
 
     echo "4l${CATPOSTFIX}";
-    python makeShapeCardsNew.py ${DOFILE} ttH-multilepton/mca-4l-${MCASUFFIX}${SPLITDECAYS}.txt ttH-multilepton/4l_tight.txt ${ONEBIN} $SYSTS $OPT_4L --binname ttH_4l${CATPOSTFIX}_${YEAR} --year ${YEAR};
+    python makeShapeCardsNew.py ${DOFILE} ttH-multilepton/mca-4l-${MCASUFFIX}${SPLITDECAYS}.txt ttH-multilepton/4l_tight.txt ${FUNCTION_4L} $SYSTS $OPT_4L --binname ttH_4l${CATPOSTFIX}_${YEAR} --year ${YEAR};
 
    echo "Done at $(date)"
 fi

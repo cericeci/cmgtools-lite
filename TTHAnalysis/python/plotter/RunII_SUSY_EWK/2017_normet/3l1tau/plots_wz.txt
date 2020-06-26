@@ -1,0 +1,143 @@
+## Signal regions
+SRC : SRC_new(METFixEE2017_pt_nom, mt_2(pt_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), phi_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]),METFixEE2017_pt_nom,METFixEE2017_phi_nom),mT2L_3l) : 9,0.5,9.5 ; XTitle="SR 3lC", IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=5000000
+
+
+SRD : SR3lD(mT2L_3l, mT2T_3l, mll_3l, mT_3l, METFixEE2017_pt_nom) : 16,0.5,16.5; XTitle="SR 3lD", IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=5000000 
+
+SRE : SRE_new(mt2davis(LepGood_pt[iL_Mini[0]], LepGood_eta[iL_Mini[0]], LepGood_phi[iL_Mini[0]], TauSel_Mini_pt[0], TauSel_Mini_eta[0], TauSel_Mini_phi[0], METFixEE2017_pt_nom,METFixEE2017_phi_nom), mass_2(LepGood_pt[iL_Mini[0]], LepGood_eta[iL_Mini[0]], LepGood_phi[iL_Mini[0]], LepGood_mass[iL_Mini[0]], TauSel_Mini_pt[0], TauSel_Mini_eta[0], TauSel_Mini_phi[0], TauSel_Mini_mass[0]), METFixEE2017_pt_nom) : 9,0.5,9.5; XTitle="SR 3lE", IncludeOverflows=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+
+## basic lepton observables
+## ----------------------------------------------------------
+
+el_pt     : if3(abs(LepSel_pdgId)==11,LepSel_pt,-1) : 20,0,200    ; YTitle="Electrons", XTitle="p_{T\,cone}(e)"   , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+mu_pt     : if3(abs(LepSel_pdgId)==13,LepSel_pt,-1) : 20,0,200    ; YTitle="Muons"    , XTitle="p_{T\,cone}(#mu)" , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+el_eta    : if3(abs(LepSel_pdgId)==11,LepSel_eta,-999)  : 10,-2.5,2.5 ; YTitle="Electrons", XTitle="#eta(e)"   , IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=100000
+mu_eta    : if3(abs(LepSel_pdgId)==13,LepSel_eta,-999)  : 10,-2.5,2.5 ; YTitle="Muons"    , XTitle="#eta(#mu)" , IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=100000
+
+el_phi    : if3(abs(LepSel_pdgId)==11,LepSel_phi,-999)  : 10,-3.14,3.14 ; YTitle="Electrons", XTitle="#phi(e)"   , IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+mu_phi    : if3(abs(LepSel_pdgId)==13,LepSel_phi,-999)  : 10,-3.14,3.14 ; YTitle="Muons"    , XTitle="#phi(#mu)" , IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+## further lepton observables
+## ----------------------------------------------------------
+
+lep1_pt          : LepSel_pt[0]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lep. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep2_pt          : LepSel_pt[1]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lep. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep3_pt           : LepSel_pt[2]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lep. 3)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+
+lep1_eta         : LepSel_eta[0]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lep. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep2_eta         : LepSel_eta[1]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lep. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep3_eta         : LepSel_eta[2]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lep. 3)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+
+
+## event observables
+## ----------------------------------------------------------
+
+#nInt       : nTrueInt       : 50,0,50     ; XTitle="N(TrueInt)"                  , LegendCutoff=1e-4
+#nVert      : nVert          : 50,0,50     ; XTitle="N(PV)"                       , LegendCutoff=1e-4
+
+met        : METFixEE2017_pt_nom    : 20,0,400   ; XTitle="p_{T}^{miss}  (GeV)"         , LegendCutoff=1e-4, Logy, YMin=1, YMax=100000, Legend="TR"
+metcrwz    : METFixEE2017_pt_nom    : 10,50,100   ; XTitle="p_{T}^{miss}  (GeV)"         , LegendCutoff=1e-4, Logy, YMin=1, YMax=100000, Legend="TR"
+metcrconv    : METFixEE2017_pt_nom    : 10,0,50   ; XTitle="p_{T}^{miss}  (GeV)"         , LegendCutoff=1e-4, Logy, YMin=1, YMax=100000, Legend="TR"
+
+htJet30j   : htJet30j       : 20,0,200    ; XTitle="H_{T}(jet p_{T} > 30) [GeV]" , LegendCutoff=1e-4, Logy, YMax=50000, YMin=1e-1
+nJet30     : nJet30_Mini         : 10,-0.5,9.5 ; XTitle="N(jet\, p_{T} > 30)"         , LegendCutoff=1e-4, Logy, YMax=50000, YMin=1e-1
+nBJet25    : nBJetTight25_Mini  : 1,-1,1  ; XTitle="N(b-jet\, p_{T} > 25\, DCSVT)", LegendCutoff=1e-4, Logy, YMax=100000, YMin=1
+
+m3l        : m3L            : 10,0,500    ; XTitle="m_{3L} (GeV)"                , LegendCutoff=1e-4, Logy, Legend="TL", YMin=1, YMax=100000, Legend="TR"
+mll3l      : mll_3l        : 30,30,150    ; XTitle="M_{ll} (GeV)"                , LegendCutoff=1e-4, Logy, YMin=1, YMax=5000000, Legend="TR"
+mll3lcrwz  : mll_3l        : 15,75,105    ; XTitle="M_{ll} (GeV)"                , LegendCutoff=1e-4, Logy, YMin=1, YMax=5000000, Legend="TR"
+mll3lcrconv  : mll_3l      : 5,0,75    ; XTitle="M_{ll} (GeV)"                , LegendCutoff=1e-4, Logy, YMin=1, YMax=5000000, Legend="TR"
+
+mtW3l      : mT_3l         : 20,0,200    ; XTitle="M_{T} (GeV)"                 , LegendCutoff=1e-4, Logy, YMin=1, YMax=500000, Legend="TR"
+mtW3lcrwz  : mT_3l         : 10,50,100    ; XTitle="M_{T} (GeV)"                 , LegendCutoff=1e-4, Logy, YMin=1, YMax=500000, Legend="TR"
+mtW3lcrconv  : mT_3l         : 8,0,160    ; XTitle="M_{T} (GeV)"                 , LegendCutoff=1e-4, Logy, YMin=1, YMax=500000, Legend="TR"
+
+
+flavor3l   : (abs(LepSel1_pdgId)+abs(LepSel2_pdgId)+abs(LepSel3_pdgId)-33)/2  : 20,-10.5,9.5 ; XTitle="flavor", xBinLabels="eee\,ee#mu\,e#mu#mu\,#mu#mu#mu", Legend="TL", LegendCutoff=1e-4, MoreY=3.0
+flavorl1   : abs(LepSel_pdgId[0])*(1 - LepSel_isTight[0]*2)  : 51,-25.5,25.5 ; XTitle="flavor", xBinLabels="eee\,ee#mu\,e#mu#mu\,#mu#mu#mu", Legend="TL", LegendCutoff=1e-4, MoreY=3.0
+flavorl2   : abs(LepSel_pdgId[1])*(1 - LepSel_isTight[1]*2)  : 51,-25.5,25.5 ; XTitle="flavor", xBinLabels="eee\,ee#mu\,e#mu#mu\,#mu#mu#mu", Legend="TL", LegendCutoff=1e-4, MoreY=3.0
+flavorl3   : abs(LepSel_pdgId[2])*(1 - LepSel_isTight[2]*2)  : 51,-25.5,25.5 ; XTitle="flavor", xBinLabels="eee\,ee#mu\,e#mu#mu\,#mu#mu#mu", Legend="TL", LegendCutoff=1e-4, MoreY=3.0
+
+charge3l   : if3(LepSel1_pdgId>0,-1,1)+if3(LepSel2_pdgId>0,-1,1)+if3(LepSel3_pdgId>0,-1,1) : 1,-1,1 ; XTitle="charge", Legend="TL", LegendCutoff=1e-4, MoreY=3.0
+
+
+
+
+
+
+## jet stuff
+## ----------------------------------------------------------
+
+
+
+
+#jet1_pt  : if3(nJetSel_Mini>0, Jet_pt[iJSel_Mini[0]], -99) : 40,0,400 ; XTitle="p_{T}(leading jet) [GeV]", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+#jet2_pt  : if3(nJetSel_Mini>1, Jet_pt[iJSel_Mini[1]], -99) : 40,0,400 ; XTitle="p_{T}(subleading jet) [GeV]", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+#jet3_pt  : if3(nJetSel_Mini>2, Jet_pt[iJSel_Mini[2]], -99) : 40,0,400 ; XTitle="p_{T}(third jet) [GeV]", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+#jet4_pt  : if3(nJetSel_Mini>3, Jet_pt[iJSel_Mini[3]], -99) : 40,0,400 ; XTitle="p_{T}(fourth jet) [GeV]", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+#jet1_eta  : if3(nJetSel_Mini>0, Jet_eta[iJSel_Mini[0]], -99) : 20,-2.4,2.4 ; XTitle="p_{T}(leading jet) [GeV]", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+#jet2_eta  : if3(nJetSel_Mini>1, Jet_eta[iJSel_Mini[1]], -99) : 20,-2.4,2.4 ; XTitle="p_{T}(subleading jet) [GeV]", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+#jet3_eta  : if3(nJetSel_Mini>2, Jet_eta[iJSel_Mini[2]], -99) : 20,-2.4,2.4 ; XTitle="p_{T}(third jet) [GeV]", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+#jet4_eta  : if3(nJetSel_Mini>3, Jet_eta[iJSel_Mini[3]], -99) : 20,-2.4,2.4 ; XTitle="p_{T}(fourth jet) [GeV]", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+
+#jet1_csv  : if3(nJetSel_Mini>0, Jet_btagDeepB[iJSel_Mini[0]], -99) : 10,0,1 ; XTitle="DCSV(leading jet)", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+#jet2_csv  : if3(nJetSel_Mini>1, Jet_btagDeepB[iJSel_Mini[1]], -99) : 10,0,1 ; XTitle="DCSV(subleading jet)", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+#jet3_csv  : if3(nJetSel_Mini>2, Jet_btagDeepB[iJSel_Mini[2]], -99) : 10,0,1 ; XTitle="DCSV(third jet)", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+#jet4_csv  : if3(nJetSel_Mini>3, Jet_btagDeepB[iJSel_Mini[3]], -99) : 10,0,1 ; XTitle="DCSV(fourth jet)", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+jet_pt   : if3(nJetSel_Mini>0, Jet_pt[iJSel_Mini], -99) : 20,0,200 ; XTitle="p_{T}(jet) [GeV]", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=500000
+jet_eta  : if3(nJetSel_Mini>0, Jet_eta[iJSel_Mini], -99) : 20,-2.4,2.4 ; XTitle="#eta(jet)", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=500000
+#jet_phi  : if3(nJetSel_Mini>0, Jet_phi[iJSel_Mini], -99) : 20,-3.14,3.14 ; XTitle="#phi(jet)", YTitle="Jets", LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=100000
+
+
+#run: $DATA{run} $MC{-1} : 100, 272000, 285000
+
+
+#phistarZ : phistar(LepZ1_eta, LepZ1_phi, LepZ2_eta, LepZ2_phi) : 20, -4, 4 ; XTitle="#phi*" , Logy, YMin=1, YMax=50000
+
+
+###Old testing Stuff
+#lepZ12_pt          : LepZ2_pt-LepZ1_pt         : 5,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(Z1 lep.)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+
+#lepZ12_eta         : LepZ2_eta-LepZ1_eta          : 5,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(Z1 lep.)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+
+#lepWCharge    : if3( LepW_pdgId>0,-1,1)      : 7,-3.5,3.5 ; XTitle="charge W", Legend="TL", LegendCutoff=1e-4, MoreY=3.0
+
+
+#cosWfromFT_Dn : cos_ThetaWDn_HE :  40,-1,1  ; XTitle="cos(#theta_{W}^{Dn})", Legend='TL', LegendCutoff=1e-5, MoreY=2.0 
+
+#cosWfromFT_Dn_Fit : cos_ThetaWDn_HE :  10,-1,1  ; XTitle="cos(#theta_{W}^{Dn})", Legend='TL', LegendCutoff=1e-5, YMin=0, YMax = 1200, MoreY=2.0 
+
+#cosZfromFT_Dn_Fit : ThetaZDn_HE :  40,0,3.1415  ; XTitle="cos(#theta_{Z}^{Dn})", Legend='TL', LegendCutoff=1e-5, YMin=0, YMax = 1200, MoreY=2.0 
+
+
+#cosW_Dn : cos(ThetaWDn_HE)*((LepW_pdgId < 0)*2 -1) :  40,-1,1  ; XTitle="cos(#theta_{W}^{Dn})", Legend='TL', LegendCutoff=1e-5
+#cosW_Up : cos(ThetaWUp_HE)*((LepW_pdgId < 0)*2 -1) :  40,-1,1  ; XTitle="cos(#theta_{W}^{Up})", Legend='TL', LegendCutoff=1e-5
+
+#thetaW_Dn : ThetaWDn_HE :  40,-3.14,3.14  ; XTitle="#theta_{W}^{Dn}", Legend='TL', LegendCutoff=1e-5
+#thetaW_Up : ThetaWUp_HE :  40,-3.14,3.14  ; XTitle="#theta_{W}^{Up}", Legend='TL', LegendCutoff=1e-5
+
+#RecWphiPL: abs(deltaPhi(sump4(2, LepW_pt, LepW_eta, LepW_phi, LepW_mass, $DATA{MET_pt} $MC{MET_pt_central} , 0, MET_phi, 0),LepW_phi))  : [0.0, 0.1505, 0.2905, 0.4375, 0.5775, 0.742, 0.9380000000000001, 1.1795, 1.5330000000000001, 2.1350000000000002, 3.5]; XTitle="#Delta_{#phi}(W^{+}\,l_{W}) ", Legend='TL', LegendCutoff=1e-5, MoreY=2.5 
+#RecWetaPL: abs(sump4(1, LepW_pt, LepW_eta, LepW_phi, LepW_mass, $DATA{MET_pt} $MC{MET_pt_central} , 0, MET_phi, 0)-LepW_eta)  : [0.0, 0.036, 0.08099999999999999, 0.13499999999999998, 0.19799999999999998, 0.26999999999999996, 0.3555, 0.45449999999999996, 0.5984999999999999, 0.8684999999999999, 4.5]; XTitle="#Delta_{#eta}(W^{+}\,l_{W})", Legend='TL', LegendCutoff=1e-5, MoreY=2.5 
+#RecWphiMn: abs(deltaPhi(sump4(2, LepW_pt, LepW_eta, LepW_phi, LepW_mass, $DATA{MET_pt} $MC{MET_pt_central} , 0, MET_phi, 0),LepW_phi))  : [0.0, 0.1505, 0.2905, 0.4375, 0.5775, 0.742, 0.9380000000000001, 1.1795, 1.5330000000000001, 2.1350000000000002, 3.5]; XTitle="#Delta_{#phi}(W^{-}\,l_{W})", Legend='TL', LegendCutoff=1e-5, MoreY=2.5 
+#RecWetaMn: abs(sump4(1, LepW_pt, LepW_eta, LepW_phi, LepW_mass, $DATA{MET_pt} $MC{MET_pt_central} , 0, MET_phi, 0)-LepW_eta)  : [0.0, 0.036, 0.08099999999999999, 0.13499999999999998, 0.19799999999999998, 0.26999999999999996, 0.3555, 0.45449999999999996, 0.5984999999999999, 0.8684999999999999, 4.5]; XTitle="#Delta_{#eta}(W^{-}\,l_{W})", Legend='TL', LegendCutoff=1e-5, MoreY=2.5 
+#DeltaRPL: sqrt((deltaPhi(sump4(2, LepW_pt, LepW_eta, LepW_phi, LepW_mass, MET_pt_central, 0, MET_phi, 0),LepW_phi))^2 +abs(sump4(1, LepW_pt, LepW_eta, LepW_phi, LepW_mass, $DATA{MET_pt} $MC{METFixEE2017_pt_nom} , 0, MET_phi, 0)-LepW_eta)^2) : [0.0, 0.3105, 0.45899999999999996, 0.5984999999999999, 0.738, 0.8909999999999999, 1.071, 1.3005, 1.638, 2.2455, 4.5]; XTitle="#DeltaR^{+}", Legend='TL', LegendCutoff=1e-5, MoreY=2.5 
+#DeltaRMn: sqrt((deltaPhi(sump4(2, LepW_pt, LepW_eta, LepW_phi, LepW_mass, $DATA{MET_pt} $MC{MET_pt_central} , 0, MET_phi, 0),LepW_phi))^2 +abs(sump4(1, LepW_pt, LepW_eta, LepW_phi, LepW_mass, $DATA{MET_pt} $MC{METFixEE2017_pt_nom} , 0, MET_phi, 0)-LepW_eta)^2) : [0.0, 0.3105, 0.45899999999999996, 0.5984999999999999, 0.738, 0.8909999999999999, 1.071, 1.3005, 1.638, 2.2455, 4.5]; XTitle="#DeltaR^{-}", Legend='TL', LegendCutoff=1e-5, MoreY=2.5 
+
+susyMVA_dM90: TChiWZMVA_90 : 20,0,1 ; XTitle="SUSY MVA dM 90 GeV", LegendCutoff=1e-5, MoreY=2.5 , YMin=1, YMax=5000000, Logy
+
+#susyMVA_dM100: TChiWZMVA_100 : 20,0,1 ; XTitle="SUSY MVA dM 100 GeV",  LegendCutoff=1e-5, MoreY=2.5 , YMin=1, YMax=5000000, Logy
+
+susyMVA_dM50: TChiWZMVA_50 : 20,0,1 ; XTitle="SUSY MVA dM 50 GeV", LegendCutoff=1e-5, MoreY=2.5 , YMin=1, YMax=50000, Logy
+
+#susyMVA_dM40: TChiWZMVA_40 : 20,0,1 ; XTitle="SUSY MVA dM 40 GeV", LegendCutoff=1e-5, MoreY=2.5 , YMin=1, YMax=50000, Logy
+
+susyMVA_dM500: TChiWZMVA_500 : 20,0,1 ; XTitle="SUSY MVA dM 500 GeV",  LegendCutoff=1e-5, MoreY=2.5 , YMin=1, YMax=50000, Logy
+
+susyMVA_dM300: TChiWZMVA_300 : 20,0,1 ; XTitle="SUSY MVA dM 300 GeV",  LegendCutoff=1e-5, MoreY=2.5 , YMin=1, YMax=50000, Logy
+
+#SR_3lA : SRcorr(mll_3l, mT_3l, MET_pt_central, htJet30j, 0) : 59,-0.5,58.5 ; XTitle="SR 3lA", LegendCutoff=1e-5, MoreY=2.5 , YMin=1, YMax=5000000, Logy

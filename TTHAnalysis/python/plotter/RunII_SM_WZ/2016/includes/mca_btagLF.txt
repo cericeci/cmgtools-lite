@@ -1,0 +1,4 @@
+prompt_WZ_nominal : WZTo3LNu_pow : xsec*1.124 ; FillColor=ROOT.kOrange , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="WZ nominal"
+prompt_WZ_muSFUp+ : WZTo3LNu_pow : xsec*1.124 ; FillColor=ROOT.kRed , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="WZ MisTag Up",AddWeight="bTagWeightDeepCSVT_LF_Up/bTagWeightDeepCSVT_nom"
+prompt_WZ_muSFDn+ : WZTo3LNu_pow : xsec*1.124 ; FillColor=ROOT.kBlue , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="WZ MisTag Down", AddWeight="bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT_nom"
+

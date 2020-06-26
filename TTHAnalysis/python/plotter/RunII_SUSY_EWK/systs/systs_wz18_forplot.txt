@@ -1,0 +1,57 @@
+################ Flat uncertainties
+
+#Lumi uncertainties as per https://twiki.cern.ch/twiki/bin/view/CMS/TWikiLUM
+lumi_2018_ML       : prompt_.*|convs   : .*             : normSymm   : 1.015
+lumi_XY_ML         : prompt_.*|convs   : .*             : normSymm   : 1.020
+lumi_length_ML     : prompt_.*|convs   : .*             : normSymm   : 1.002
+lumi_bbd_ML        : prompt_.*|convs   : .*             : normSymm   : 1.000
+lumi_dbeta_ML      : prompt_.*|convs   : .*             : normSymm   : 1.000
+lumi_ghosts_ML     : prompt_.*|convs   : .*             : normSymm   : 1.000
+lumi_calib_ML      : prompt_.*|convs   : .*             : normSymm   : 1.002
+
+trigeffbias_ML    : prompt_.*|convs   : .*            : normSymm         : 1.02
+#Uncertainty from statistics our own measurement, so decorrelated:
+trigeffstat_2018_ML    : prompt_.*|convs   : .*       : normSymm              : 1.01
+
+
+############## NORMALIZATION
+fakes_ML      : .*fakes.*                          : .*              : normSymm       : 1.3
+flips_ML      : .*flips.*                          : .*              : normSymm       : 1.25
+normconvs_ML  : convs                              : .*              : normSymm       : 1.10
+normZZ_ML     : prompt_.*ZZ                        : .*              : normSymm       : 1.08
+normVVV_ML    : prompt_VVV                         : .*              : normSymm       : 1.5
+normVH_ML     : prompt_VH                          : .*              : normSymm       : 1.25
+normtZq_ML    : prompt_TZQ                         : .*              : normSymm       : 1.5
+normTTX_ML    : prompt_TT.*                        : .*              : normSymm       : 1.15
+normWZ_ML     : prompt_.*WZ.*                      : .*              : normSymm       : 1.05
+
+shapeWZ_ML    : prompt_.*WZ.* : .* : templateAsymm; AddWeights=["wzweight18(MET_pt_nom\,mT_3l\,1)"\,"wzweight18(MET_pt_nom\,mT_3l\,-1)"]
+
+############## SHAPES
+# Follow JES recommendations as per https://docs.google.com/spreadsheets/d/1JZfk78_9SD225bcUuTWVo4i02vwI5FfeVKH-dwzUdhM/edit#gid=1345121349
+JESCORR_ML           : prompt_.*|convs          : .* : templateAsymm;  FakeRates=["RunII_SUSY_EWK/common/fakerate_standard_jecCorrUp.txt"\,"RunII_SUSY_EWK/common/fakerate_standard_jecCorrDn.txt"]
+JES2018_ML           : prompt_.*|convs          : .* : templateAsymm; FakeRates=["RunII_SUSY_EWK/common/fakerate_standard_jecUnCorrUp.txt"\,"RunII_SUSY_EWK/common/fakerate_standard_jecUnCorrDn.txt"]
+
+MuScale_ML       : prompt_.*|convs          : .* : templateAsymm; FakeRates=["RunII_SUSY_EWK/common/fakerate_standard_muonScaleUp.txt"\,"RunII_SUSY_EWK/common/fakerate_standard_muonScaleDn.txt"]
+ElScale_ML       : prompt_.*|convs          : .* : templateAsymm; FakeRates=["RunII_SUSY_EWK/common/fakerate_standard_elecScaleUp.txt"\,"RunII_SUSY_EWK/common/fakerate_standard_elecScaleDn.txt"]
+
+PUW_ML           : prompt_.*|convs|sig_.*   : .*  : templateAsymm; AddWeights=["puWeightUp/puWeight"\,"puWeightDown/puWeight"] , DoesNotChangeEventSelection=True
+btag_HF_ML       : prompt_.*|convs          : .* : templateAsymm; AddWeights=["bTagWeightDeepCSVT_HF_Up/bTagWeightDeepCSVT_nom"\,"bTagWeightDeepCSVT_HF_Dn/bTagWeightDeepCSVT_nom"] , DoesNotChangeEventSelection=True
+btag_LF_ML       : prompt_.*|convs          : .* : templateAsymm; AddWeights=["bTagWeightDeepCSVT_LF_Up/bTagWeightDeepCSVT_nom"\,"bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT_nom"] , DoesNotChangeEventSelection=True
+
+LepSFTau_ML            : prompt_.*|convs|sig.*          : .* : templateAsymm; AddWeights=["getLeptonSF_v5(2\,(abs(LepSel_pdgId[0]) == 15)\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,(abs(LepSel_pdgId[1]) == 15)\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,(abs(LepSel_pdgId[2]) == 15)\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))"\,"getLeptonSF_v5(2\,-(abs(LepSel_pdgId[0]) == 15)\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,-(abs(LepSel_pdgId[1]) == 15)\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,-(abs(LepSel_pdgId[2]) == 15)\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))"] , DoesNotChangeEventSelection=True
+LepSFMu_ML            : prompt_.*|convs|sig.*          : .* : templateAsymm; AddWeights=["getLeptonSF_v5(2\,(abs(LepSel_pdgId[0]) == 13)\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,(abs(LepSel_pdgId[1]) == 13)\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,(abs(LepSel_pdgId[2]) == 13)\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))"\,"getLeptonSF_v5(2\,-(abs(LepSel_pdgId[0]) == 13)\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,-(abs(LepSel_pdgId[1]) == 13)\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,-(abs(LepSel_pdgId[2]) == 13)\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))"] , DoesNotChangeEventSelection=True
+LepSFEl_ML            : prompt_.*|convs|sig.*          : .* : templateAsymm; AddWeights=["getLeptonSF_v5(2\,(abs(LepSel_pdgId[0]) == 11)\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,(abs(LepSel_pdgId[1]) == 11)\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,(abs(LepSel_pdgId[2]) == 11)\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))"\,"getLeptonSF_v5(2\,-(abs(LepSel_pdgId[0]) == 11)\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,-(abs(LepSel_pdgId[1]) == 11)\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,-(abs(LepSel_pdgId[2]) == 11)\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2])/(getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[0]\,LepSel_eta[0]\,LepSel_pdgId[0])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[1]\,LepSel_eta[1]\,LepSel_pdgId[1])*getLeptonSF_v5(2\,0\,2018\,LepSel_conePt[2]\,LepSel_eta[2]\,LepSel_pdgId[2]))"], DoesNotChangeEventSelection=True
+#LepSFMuStat2018_ML    : prompt_.*|convs|sig.*          : .* : templateAsymm; AddWeights=["puWeightUp/puWeight"\,"puWeightDown/puWeight"]
+#LepSFElStat2018_ML    : prompt_.*|convs|sig.*          : .* : templateAsymm; AddWeights=["puWeightUp/puWeight"\,"puWeightDown/puWeight"] 
+
+sigISR_ML : sig.* : .* : templateAsymm; AddWeights=["ISR_weight"\,"1./ISR_weight"], DoesNotChangeEventSelection=True
+sigMET_ML : sig.* : .* : templateAsymm; FakeRates=["RunII_SUSY_EWK/common/fakerate_standard_metUp.txt"\,"RunII_SUSY_EWK/common/fakerate_standard_metDown.txt"]
+## TODO:: FIX THIS!
+sigPDF_ML : sig.* : .* : normSymm     : 1.10
+
+#FastSim shapes
+## PUW, lepSF go correlated
+btag_HFFS_ML       : sig.*          : .* : templateAsymm; AddWeights=["bTagWeightDeepCSVT_HF_Up/bTagWeightDeepCSVT"\,"bTagWeightDeepCSVT_HF_Dn/bTagWeightDeepCSVT"] , DoesNotChangeEventSelection=True
+btag_LFFS_ML       : sig.*          : .* : templateAsymm; AddWeights=["bTagWeightDeepCSVT_LF_Up/bTagWeightDeepCSVT"\,"bTagWeightDeepCSVT_LF_Dn/bTagWeightDeepCSVT"] , DoesNotChangeEventSelection=True
+JESFS_ML           : sig.*          : .* : templateAsymm; FakeRates=["RunII_SUSY_EWK/common/fakerate_standard_jecUp.txt"\,"RunII_SUSY_EWK/common/fakerate_standard_jecDn.txt"]

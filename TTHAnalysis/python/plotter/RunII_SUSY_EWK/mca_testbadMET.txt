@@ -1,0 +1,7 @@
+prompt_WZ_20   : WZTo3LNu_pow : xsec*1.124 : abs(MET_pt - GenMET_pt) < 20 ; FillColor=ROOT.kGreen , LineColor=ROOT.kGreen, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", Label="d|p_{T}^{miss} | < 20", NormSystematic=0.12
+
+prompt_WZ_40   : WZTo3LNu_pow : xsec*1.124 : abs(MET_pt - GenMET_pt) < 40 && abs(MET_pt - GenMET_pt) > 20; FillColor=5 , LineColor=5, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", Label="20 < d|p_{T}^{miss} | < 40", NormSystematic=0.12
+
+prompt_WZ_60   : WZTo3LNu_pow : xsec*1.124 : abs(MET_pt - GenMET_pt) < 60 && abs(MET_pt - GenMET_pt) > 40; FillColor=ROOT.kOrange, LineColor=ROOT.kOrange , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", Label="40 < d|p_{T}^{miss} | < 60", NormSystematic=0.12
+
+prompt_WZ_tail : WZTo3LNu_pow : xsec*1.124 : abs(MET_pt - GenMET_pt) > 60; FillColor=ROOT.kRed, LineColor=ROOT.kRed , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", Label="d|p_{T}^{miss} | > 60", NormSystematic=0.12

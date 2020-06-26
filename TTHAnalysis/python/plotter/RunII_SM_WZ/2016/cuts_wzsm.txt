@@ -1,0 +1,56 @@
+alwaystrue: 1
+filters   : $DATA{Flag_goodVertices && Flag_globalSuperTightHalo2016Filter && Flag_HBHENoiseFilter && Flag_HBHENoiseIsoFilter && Flag_EcalDeadCellTriggerPrimitiveFilter && Flag_BadPFMuonFilter && Flag_BadChargedCandidateFilter && Flag_eeBadScFilter && Flag_ecalBadCalibFilter} $MC{1} $FASTSIM{1}
+trigger   : Trigger_3l_2016
+3l        : nLepSel >= 3
+BRevent   : abs(LepSel_pdgId[0]) < 15 && abs(LepSel_pdgId[1]) < 15 && abs(LepSel_pdgId[2]) < 15 && nOSSF_3l >= 1
+lowmass   : minMllSFOS_Mini > 12 || minMllSFOS_Mini == -1
+lepPt     : LepZ1_pt >= 25  && LepZ2_pt >= 10  && LepW_pt >= 25 
+AllTight  : LepSel_isTight[0] &&  LepSel_isTight[1] && LepSel_isTight[2]
+
+########### START OPTIONAL CUTS ###########
+#Signal region
+SRWZ      : m3L >= 100 && MET_pt_central  > 30 && abs(mll_3l - 91.16) < 15 && nLepGood < 4 && nBJetTight25_Mini == 0;Disable=True
+
+#Charge splitting
+SRwzPL      : m3L >= 100 && nBJetTight25_Mini == 0 && MET_pt_central > 30  && abs(mll_3l - 91.16) < 15 && nLepGood < 4 && LepW_pdgId < 0; Disable=True
+SRWzMn      : m3L >= 100 && nBJetTight25_Mini == 0 && MET_pt_central > 30  && abs(mll_3l - 91.16) < 15 && nLepGood < 4 && LepW_pdgId > 0; Disable=True
+
+#Control regions
+CRZZ   : m3L >= 100 && nBJetTight25_Mini == 0  && abs(mll_3l - 91.16) < 15 && nLepSel == 4 && LepSel_pt[3] > 10 && MET_pt_central  > 30; Disable=True
+CRTT   : m3L >= 100 && nBJetTight25_Mini > 0   && nLepGood < 4 && MET_pt_central  > 30 && abs(mll_3l - 91.16) < 15; Disable=True
+CRconv : m3L < 100 && nBJetTight25_Mini == 0  && MET_pt_central < 30 && nLepGood < 4; Disable=True
+#CRZZnomet   : m3L >= 100 && nBJetTight25_Mini == 0 &&  nLepSel == 4 && LepSel_pt[3] > 10
+
+
+#Extra additional cuts
+cIn : abs(cos_ThetaWDn_HE) < 0.9; Disable=True
+flav_eee : (abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)-33)/2 == 0; Disable=True
+flav_eem : (abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)-33)/2 == 1; Disable=True
+flav_mme : (abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)-33)/2 == 2; Disable=True
+flav_mmm : (abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)-33)/2 == 3; Disable=True
+flav_xxx : (abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)-33)/2 == 0 || (abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)-33)/2 == 3; Disable=True
+flav_xxy : (abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)-33)/2 == 1 || (abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)-33)/2 == 2; Disable=True
+
+m3lmetblind : $DATA{m3Lmet <= 400} $MC{1} $FASTSIM{1}; Disable=True
+NOallTight  : !(LepSel_isTight[0] &&  LepSel_isTight[1] && LepSel_isTight[2]); Disable= True
+Cha_Tight  : LepGood_tightCharge[0]==2 &&   LepGood_tightCharge[1]==2 &&  LepGood_tightCharge[2]==2; Disable= True
+cha3_Tight  :   LepGood_tightCharge[iW]==2; Disable= True
+chargeplus  : LepW_pdgId < 0 ; Disable=True
+chargeminus : LepW_pdgId > 0 ; Disable=True
+
+runB: $DATA{run < 272007} $MC{1}; Disable=True
+
+runC: $DATA{run > 272007 && run < 275657} $MC{1}; Disable=True
+
+runD: $DATA{run > 275657 && run < 276315} $MC{1}; Disable=True
+
+runE: $DATA{run > 276315 && run < 276831} $MC{1}; Disable=True
+
+runF: $DATA{run > 276831 && run < 277772} $MC{1}; Disable=True
+
+runG: $DATA{run > 277772 && run < 278820} $MC{1}; Disable=True
+
+runH: $DATA{run > 278820 && run < 280919} $MC{1}; Disable=True
+
+runI: $DATA{run > 280919} $MC{1}; Disable=True
+

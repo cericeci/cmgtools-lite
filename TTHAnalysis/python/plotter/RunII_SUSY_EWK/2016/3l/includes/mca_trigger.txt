@@ -1,0 +1,9 @@
+data : MET_Run2016B ; Label="Data", FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt"
+data : MET_Run2016C ; Label="Data", FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt"
+data : MET_Run2016D ; Label="Data", FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt"
+data : MET_Run2016E ; Label="Data", FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt"
+data : MET_Run2016F ; Label="Data", FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt"
+data : MET_Run2016G ; Label="Data", FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt"
+data : MET_Run2016H ; Label="Data", FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt"
+
+prompt_WZ : WZTo3LNu_pow : xsec*1.18; FillColor=ROOT.kOrange , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt.txt", Label="WZ", NormSystematic=0.05

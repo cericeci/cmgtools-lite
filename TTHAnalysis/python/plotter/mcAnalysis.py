@@ -512,6 +512,19 @@ class MCAnalysis:
         regroups = [] # [(compiled regexp,target)]
         self.compilePlotMergeMap(self._options.plotmergemap,regroups)
         for regexp in regroups: ret = self.regroupPlots(ret,regexp,plotspec)
+        if self._options.addPoissonUL:
+          for key in ret:
+            # And also compute upper limits in yields if bins are empty
+            err = ROOT.Double()
+            n = ret[key].GetNbinsX()
+            theInt = ret[key].IntegralAndError(0,n+1,err)
+            #print key, err, theInt
+            if err != 0:
+              # Compute effective MC weight and then UL (w*1.4)
+              upperLim = 1.4* err*err/theInt
+              for iB in range(1, n+1):
+                if ret[key].GetBinContent(iB) == 0 or ret[key].GetBinError(iB) < upperLim/1.4: 
+                   ret[key].SetBinError(iB,upperLim)
 
         # if necessary project to different lumi, energy,
         if self._projection:
@@ -795,7 +808,7 @@ class MCAnalysis:
             stylePlot(plot, pspec, lambda key,default : opts[key] if key in opts else default)
         elif not mayBeMissing:
             raise KeyError, "Process %r not found" % process
-    def _processTasks(self,func,tasks,name=None,chunkTasks=200,verbose=False):
+    def _processTasks(self,func,tasks,name=None,chunkTasks=2048,verbose=False):
         if verbose:
             timer = ROOT.TStopwatch()
             print "Starting job %s with %d tasks, %d threads" % (name,len(tasks),self._options.jobs)
@@ -804,9 +817,22 @@ class MCAnalysis:
         else:
             from multiprocessing import Pool, cpu_count
             retlist = []
+            nChunks = len(tasks)/chunkTasks
+            t0 = time.time()
             for i in xrange(0,len(tasks),chunkTasks):
-                pool = Pool(min(self._options.jobs,cpu_count()))
-                retlist += pool.map(func, tasks[i:(i+chunkTasks)], 1)
+                nDone = 0
+                pool = Pool(self._options.jobs)
+                retemp = pool.map_async(func, tasks[i:(i+chunkTasks)], 1)
+                realtasks = min(chunkTasks, len(tasks)- i)
+                while not retemp.ready():
+                    dt = time.time() - t0
+                    nDone = i+realtasks - retemp._number_left
+                    print("Chunk number %s of %s"%(i/chunkTasks,nChunks))
+                    print("Jobs left: {}".format(retemp._number_left))
+                    print("Time left: %1.1f s"%(dt/(nDone+0.01)*(len(tasks)-nDone)))
+                    print nDone
+                    time.sleep(1)
+                retlist += retemp.get()
                 pool.close()
                 pool.join()
                 del pool
@@ -893,6 +919,8 @@ def addMCAnalysisOptions(parser,addTreeToYieldOnesToo=True):
     parser.add_option("--aefr", "--alt-external-fitResults", dest="altExternalFitResults", type="string", default=[], nargs=2, action="append", help="External fitResult")
     parser.add_option("--aefrl", "--alt-external-fitResult-labels", dest="altExternalFitResultLabels", type="string", default=[], nargs=1, action="append", help="External fitResult")
     parser.add_option("--check-friends-first", dest="checkFriendsFirst", action="store_true", default=False, help="At start, check that all friends are available, and raise an error otherwise.");
+    parser.add_option("--add-Poisson-UL", dest="addPoissonUL", action="store_true", default=False, help="Add Poisson UL in MC yields based on the sample statistics.");
+
 
 if __name__ == "__main__":
     from optparse import OptionParser

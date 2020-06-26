@@ -1,0 +1,10 @@
+alwaystrue: 1
+3l        : nLepSel >= 3
+lowmass   : minMllAFAS_Mini > 12 || minMllAFAS_Mini == -1
+#sanity    : passPtMll && is_3l && LepSel_conePt[0] >= (20 + 5*(abs(LepSel_pdgId[0])==11)) && LepSel_conePt[1] >= (10 + 5*(abs(LepSel_pdgId[1])==11)+ 10*(abs(LepSel_pdgId[1])==15)) && LepSel_conePt[2] >= (10 + 0*(abs(LepSel_pdgId[2])==11) + 10*(abs(LepSel_pdgId[2]==15))) 
+#SRevent   : allTight(LepSel_isTight[0]==1 || abs(LepSel_pdgId[0]) == 15, LepSel_isTight[1]==1 || abs(LepSel_pdgId[1]) == 15, LepSel_isTight[2]==1 || abs(LepSel_pdgId[2]) == 15)
+met       : MET_pt_nom > 50
+isLight   : abs(LepSel_pdgId[0]) < 15 &&  abs(LepSel_pdgId[1]) < 15 &&  abs(LepSel_pdgId[2]) < 15; Disable=True
+is1L2tau  : nTauSel_Mini == 2 && LepSel_conePt[0] >= (25 + 15*(abs(LepSel_pdgId[0])==11)) && LepSel_conePt[1] >= (25 + 15*(abs(LepSel_pdgId[1])==11)- 5*(abs(LepSel_pdgId[1])==15)) && LepSel_conePt[2] >= (25 + 15*(abs(LepSel_pdgId[2])==11) - 5*(abs(LepSel_pdgId[2]==15))) ; Disable=True
+#refTrigger: HLT_PFMETNoMu120_PFMHTNoMu120_IDTight 
+trigger   : HLT_Ele35_WPLoose_Gsf || HLT_IsoMu24 #$DATA{Trigger_3l_2016} $MC{Trigger_3l_2016} $FASTSIM{1}

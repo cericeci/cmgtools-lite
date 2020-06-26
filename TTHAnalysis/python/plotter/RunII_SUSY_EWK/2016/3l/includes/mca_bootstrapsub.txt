@@ -1,0 +1,57 @@
+promptsub_wz : WZTo3LNu_pow : 1993200/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite , FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+
+
+promptsub_zz : HZZ : 999800/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_zz : ZZTo4L_part0 + ZZTo4L_part1 : 6669988/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_zz : GluGluToContinToZZTo2e2mu   : 1469600/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_zz : GluGluToContinToZZTo2e2nu   : 499200/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_zz : GluGluToContinToZZTo2e2tau  : 500000/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_zz : GluGluToContinToZZTo2mu2nu  : 500000/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_zz : GluGluToContinToZZTo2mu2tau : 499800/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_zz : GluGluToContinToZZTo4e      : 978600/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_zz : GluGluToContinToZZTo4mu     : 995200/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_zz : GluGluToContinToZZTo4tau    : 495800/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+
+
+
+
+promptsub_ttx : TTHnonbb : 3981250/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite , FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_ttx : TTWToLNu               : 2160168/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite , FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_ttx : TTZToLLNuNu : 1992438/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite , FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_ttx : TTGJets : 4870911/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite , FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt", Label="ttG", NormSystematic=0.30
+
+promptsub_ttx : TTZToLLNuNu_m1to10 : 246792/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite , FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+
+
+promptsub_ttx : tZq_ll_part0 + tZq_ll_part1 + tZq_ll_part2 + tZq_ll_part3 + tZq_ll_part4 + tZq_ll_part5   : 13656784/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite , FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+
+
+promptsub_vv : VHToNonbb : 1007898/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+
+
+promptsub_vvv : WWW : 240000/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_vvv : WWZ : 250000/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_vvv : WZZ : 246800/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_vvv_vvv : ZZZ : 249237/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30
+
+promptsub_vvv : WZG : 998200/35900. *(-1)*getLeptonSF_v5(3,0,2016,LepSel_conePt[0],LepSel_eta[0],LepSel_pdgId[0])*getLeptonSF_v5(3,0,2016,LepSel_conePt[1],LepSel_eta[1],LepSel_pdgId[1])*getLeptonSF_v5(3,0,2016,LepSel_conePt[2],LepSel_eta[2],LepSel_pdgId[2])/(ge FillColor=ROOT.kWhite, FakeRate="RunII_SUSY_EWK/2016/3l/fakerate_fakeappl.txt",  Label="Non prompt", NormSystematic=0.30

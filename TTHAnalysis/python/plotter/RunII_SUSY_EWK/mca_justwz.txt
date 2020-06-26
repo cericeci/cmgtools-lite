@@ -1,0 +1,2 @@
+prompt_WZ : WZTo3LNu_pow : xsec*1.124 ; FillColor=ROOT.kRed , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", NormSystematic=0.12
+

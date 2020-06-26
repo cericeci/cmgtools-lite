@@ -1,0 +1,38 @@
+alwaystrue : 1
+#Have 3 gen lep, Z ones need to be from hard scat
+3GenLep : (nLepGen_gen ) >= 3 &&  abs(genLepZ1_pdgId) < 14 && abs(genLepZ2_pdgId) < 14 && abs(genLepW_pdgId) < 14
+
+eeeGEN: abs(genLepZ1_pdgId)+abs(genLepZ2_pdgId)+abs(genLepW_pdgId)==33; Disable=True
+eemGEN: abs(genLepZ1_pdgId)+abs(genLepZ2_pdgId)+abs(genLepW_pdgId)==35; Disable=True
+mmeGEN: abs(genLepZ1_pdgId)+abs(genLepZ2_pdgId)+abs(genLepW_pdgId)==37; Disable=True
+mmmGEN: abs(genLepZ1_pdgId)+abs(genLepZ2_pdgId)+abs(genLepW_pdgId)==39; Disable=True
+
+#Request mass window
+onZ30Gen : mll_3l_gen > 60 && mll_3l_gen < 120 && nOSSF_3l_gen > 0
+
+SR : (Triggers_ee || Triggers_mm || Triggers_em || Triggers_e || Triggers_m) && abs(LepZ1_pdgId)<14 && abs(LepZ2_pdgId)<14 && abs(LepW_pdgId)<14 && nLepSel == 3  && LepZ1_isTight && LepZ2_isTight && LepW_isTight  && LepZ1_pt>25 && LepZ2_pt>10 && LepW_pt>25 && nOSSF_3l > 0 && minMllAFAS_Mini > 4 && MET_pt > 30  && abs(91.1876-mll_3l)<15 && m3L > 100   &&  nBJetTight25_Mini == 0 &&  ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))
+
+
+
+
+#pt251520Gen : genLepZ1_pt >  0  && genLepZ2_pt > 0 && genLepW_pt > 0
+#3eta25Gen : abs(genLepZ1_eta) < 2.5 && abs(genLepZ2_eta) < 2.5 && abs(genLepW_eta) < 2.5
+#minMllGen : minmllSFOS_gen > 4
+
+
+
+#Signal region thingies
+#triggers        : (Triggers_ee || Triggers_mm || Triggers_em)
+#light: abs(LepZ1_pdgId)<14 && abs(LepZ2_pdgId)<14 && abs(LepW_pdgId)<14 && nLepSel == 3 
+#tight: LepZ1_isTight && LepZ2_isTight && LepW_isTight 
+#pt: LepZ1_pt>25 && LepZ2_pt>10 && LepW_pt>25
+#onZ: nOSSF_3l && minMllAFAS > 4 && MET_pt > 30  && abs(91.1876-mll_3l)<15 && m3L > 100  
+#noBjets: nBJetTight25_Mini == 0
+
+#eeeRECO: abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)==33; Disable=True
+#eemRECO: abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)==35; Disable=True
+#mmeRECO: abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)==37; Disable=True
+#mmmRECO: abs(LepZ1_pdgId)+abs(LepZ2_pdgId)+abs(LepW_pdgId)==39; Disable=True
+
+#Match to gen leptons
+#match: ((LepSel_mcUCSX[0]==0) && (LepSel_mcUCSX[1]==0) && (LepSel_mcUCSX[2]==0 )) && LepZ1_isMatchingWZ && LepZ2_isMatchingWZ

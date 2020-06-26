@@ -1,0 +1,1 @@
+atleastoneconv: atLeastOneConv(Alt$(LepGood_mcUCSX_v2[0],4), Alt$(LepGood_mcUCSX_v2[1],4), Alt$(LepGood_mcUCSX_v2[2],4), Alt$(LepGood_mcUCSX_v2[3],4), Alt$(TauGood_genPartFlav[iTauSel_Mini[0]],4), Alt$(TauGood_genPartFlav[iTauSel_Mini[1]],4),countTaus(3, LepGood_pdgId[0], LepGood_pdgId[1], LepGood_pdgId[2])) 

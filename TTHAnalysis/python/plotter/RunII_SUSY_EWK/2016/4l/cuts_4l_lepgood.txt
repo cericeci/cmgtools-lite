@@ -1,0 +1,7 @@
+alwaystrue: 1
+trigger   : $DATA{Trigger_3l_2016} $MC{Trigger_3l_2016} $FASTSIM{1}
+4l        : nLepGood >= 4
+
+sanity    : LepGood_pt[0] >= (20 + 5*(abs(LepGood_pdgId[0])==11)) && LepGood_pt[1] >= (10 + 5*(abs(LepGood_pdgId[1])==11)) && LepGood_pt[2] >= (10 + 0*(abs(LepGood_pdgId[2])==11))  && LepGood_pt[3] >= (10 + 0*(abs(LepGood_pdgId[3])==11)) 
+met       : MET_pt_nom >= 50
+lightlep  : abs(LepGood_pdgId[0]) < 15 && abs(LepGood_pdgId[1]) < 15 && abs(LepGood_pdgId[2]) < 15 && abs(LepGood_pdgId[3]) < 15

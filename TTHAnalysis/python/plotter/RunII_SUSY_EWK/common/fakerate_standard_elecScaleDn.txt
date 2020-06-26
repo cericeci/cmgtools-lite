@@ -1,0 +1,70 @@
+weight: 1
+change : minMllAFAS_Mini\b : minMllAFAS_elScaleDown_Mini
+change : minMllAFOS_Mini\b : minMllAFOS_elScaleDown_Mini
+change : minMllAFSS_Mini\b : minMllAFSS_elScaleDown_Mini
+change : minMllSFOS_Mini\b : minMllSFOS_elScaleDown_Mini
+
+#change: MET_pt_central\b: MET_pt_elScaleDown
+#change: MET_pt_nom\b: MET_pt_elScaleDown
+#change: MET_pt\b: MET_pt_elScaleDown
+
+change : imT_3l\b  : imT_3l_elScaleDown
+change : imTL_3l\b : imTL_3l_elScaleDown
+change : imTT_3l\b : imTT_3l_elScaleDown
+change : mT_3l\b   : mT_3l_elScaleDown
+change : mTL_3l\b  : mTL_3l_elScaleDown
+change : mTT_3l\b  : mTT_3l_elScaleDown
+change : mT2L_3l\b : mT2L_3l_elScaleDown
+change : mT2T_3l\b : mTLT_3l_elScaleDown
+change : mT2WZ_3l\b: mT2WZ_3l_elScaleDown
+change : imT_4l\b  : imT_4l_elScaleDown
+change : imTL_4l\b : imTL_4l_elScaleDown
+change : imTT_4l\b : imTT_4l_elScaleDown
+change : mT_4l\b   : mT_4l_elScaleDown
+change : mTL_4l\b  : mTL_4l_elScaleDown
+change : mTT_4l\b  : mTT_4l_elScaleDown
+change : mT2L_4l\b : mT2L_4l_elScaleDown
+change : mT2T_4l\b : mTLT_4l_elScaleDown
+change : mT2WZ_4l\b: mT2WZ_4l_elScaleDown
+
+change : is_3l\b : is_3l_elScaleDown
+change : nOSSF_3l\b : nOSSF_3l_elScaleDown 
+change : nOSSFL_3l\b : nOSSFL_3l_elScaleDown 
+change : nOSSFT_3l\b : nOSSFT_3l_elScaleDown 
+change : nOSLF_3l\b : nOSLF_3l_elScaleDown 
+change : nOSTF_3l\b : nOSTF_3l_elScaleDown 
+change : mll_3l\b   : mll_3l_elScaleDown
+change : mllL_3l\b   : mllL_3l_elScaleDown
+change : mllT_3l\b   : mllT_3l_elScaleDown
+change : m3L\b   : m3L_elScaleDown
+
+change : is_4l\b : is_4l_elScaleDown
+change : nOSSF_4l\b : nOSSF_4l_elScaleDown 
+change : nOSSFL_4l\b : nOSSFL_4l_elScaleDown 
+change : nOSSFT_4l\b : nOSSFT_4l_elScaleDown 
+change : nOSLF_4l\b : nOSLF_4l_elScaleDown 
+change : nOSTF_4l\b : nOSTF_4l_elScaleDown 
+change : mll_4l\b   : mll_4l_elScaleDown
+change : mllL_4l\b   : mllL_4l_elScaleDown
+change : mllT_4l\b   : mllT_4l_elScaleDown
+change : m4L\b   : m4L_elScaleDown
+
+change : is_5l\b : is_5l_elScaleDown
+
+change : minDeltaR_3l\b : minDeltaR_3l_elScaleDown
+change : minDeltaR_4l\b : minDeltaR_4l_elScaleDown
+change : nOS\b : nOS_elScaleDown
+change : mll\b : mll_elScaleDown
+change : mll_i1\b : mll_i1_elScaleDown
+change : mll_i2\b : mll_i2_elScaleDown
+
+change : nLepSel\b : nLepSel_elScaleDown
+change : LepSel_pt\b : LepSel_pt_elScaleDown
+change : LepSel_conePt\b : LepSel_conePt_elScaleDown
+change : LepSel_eta\b : LepSel_eta_elScaleDown
+change : LepSel_phi\b : LepSel_phi_elScaleDown
+change : LepSel_mass\b : LepSel_mass_elScaleDown
+change : LepSel_pdgId\b : LepSel_pdgId_elScaleDown
+change : LepSel_isTight\b : LepSel_isTight_elScaleDown
+change : LepSel_tightCharge\b : LepSel_tightCharge_elScaleDown
+

@@ -1,0 +1,16 @@
+alwaystrue: 1
+trigger: $DATA{(Triggers_ee || Triggers_mm || Triggers_em)} $MC{(Triggers_ee || Triggers_mm || Triggers_em)} $FASTSIM{1}
+cleanup: minMllAFAS > 12
+dilep: nLepFO>=2
+pt2010: LepGood1_conePt>20 && (abs(LepGood1_pdgId)!=11 || LepGood1_conePt>25) && LepGood2_conePt>10 && (abs(LepGood2_pdgId)!=11 || LepGood2_conePt>15)
+pt25:  if3(abs(LepGood1_pdgId)!=13 && abs(LepGood2_pdgId)!=11,LepGood1_conePt>25,1)
+TT: LepGood1_isTight && LepGood2_isTight
+exclusive: nLepTight_Recl<3 && nTightTauSel==0
+same-sign: (LepGood1_charge*LepGood2_charge > 0)
+met: met_pt > 60;  Disable = True
+0bjetM: nBJetMedium25 == 0;  Disable = True
+0and1jet: nJet40_Recl<=1 ; Disable = True
+
+ee: abs(LepGood1_pdgId)==11 && abs(LepGood2_pdgId)==11; Disable=True
+em: abs(LepGood1_pdgId) != abs(LepGood2_pdgId);         Disable=True
+mm: abs(LepGood1_pdgId)==13 && abs(LepGood2_pdgId)==13; Disable=True

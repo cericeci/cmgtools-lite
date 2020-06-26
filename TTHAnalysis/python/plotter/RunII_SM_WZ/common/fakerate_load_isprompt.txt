@@ -1,0 +1,1 @@
+cut-file: RunII_SM_WZ/common/fakerate_isprompt.txt

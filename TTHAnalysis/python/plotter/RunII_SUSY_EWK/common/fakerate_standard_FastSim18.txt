@@ -1,0 +1,5 @@
+weight    : 1
+change    : puWeight\b : vtxWeight2018Nominal
+change    : puWeightDown\b : vtxWeight2018Down
+change    : puWeightUp\b : vtxWeight2018Up
+change    : bTagWeightDeepCSVT_nom : bTagWeightDeepCSVT

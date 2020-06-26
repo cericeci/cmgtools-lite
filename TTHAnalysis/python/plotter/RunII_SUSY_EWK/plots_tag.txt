@@ -1,0 +1,9 @@
+#Good tagged
+mll3l      : mll_3l        : 80,0,200    ; XTitle="M_{ll} (GeV)"                , LegendCutoff=1e-4, Legend="TR"
+mtW3l      : mT_3l         : 80,0,200    ; XTitle="M_{T} (GeV)"                 , LegendCutoff=1e-4, Legend="TR"
+
+#Bad tagged
+
+mll3l_bad  : mBadTag(LepZ1_pdgId, LepZ2_pdgId, LepW_pdgId, mass_2(LepZ1_pt, LepZ1_eta, LepZ1_phi, LepZ1_mass, LepW_pt, LepW_eta, LepW_phi, LepW_mass), mass_2(LepZ2_pt, LepZ2_eta, LepZ2_phi, LepZ2_mass, LepW_pt, LepW_eta, LepW_phi, LepW_mass)) : 80,0,200 ; XTitle = "M_{ll}^{bad} (GeV)"
+
+mtW3l_bad  : mTBadTag(LepZ1_pdgId, LepZ2_pdgId, LepW_pdgId, mt_2(LepZ1_pt, LepZ1_phi, MET_pt, MET_phi), mt_2(LepZ2_pt, LepZ2_phi, MET_pt, MET_phi)) : 80,0,200 ; XTitle = "M_{T}^{bad} (GeV)"

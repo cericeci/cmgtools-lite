@@ -1,0 +1,62 @@
+fakes_DY : DYJetsToLL_M10to50 : xsec ; FillColor=ROOT.kGray , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="DY", NormSystematic=0.30
+fakes_DY : DYJetsToLL_M50_part1 + DYJetsToLL_M50_part2 + DYJetsToLL_M50_part3 + DYJetsToLL_M50_part4 + DYJetsToLL_M50_part5 + DYJetsToLL_M50_part6 + DYJetsToLL_M50_part7 + DYJetsToLL_M50_part8 + DYJetsToLL_M50_part9 + DYJetsToLL_M50_part10 + DYJetsToLL_M50_part11 + DYJetsToLL_M50_part12 + DYJetsToLL_M50_part13 + DYJetsToLL_M50_part14 + DYJetsToLL_M50_part15 + DYJetsToLL_M50_part16 + DYJetsToLL_M50_part17 + DYJetsToLL_M50_part18 + DYJetsToLL_M50_part19 + DYJetsToLL_M50_part20 + DYJetsToLL_M50_part21 + DYJetsToLL_M50_part22 + DYJetsToLL_M50_part23 : xsec ; FillColor=ROOT.kGray , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="DY", NormSystematic=0.30
+
+fakes_TT : TTTo2L2Nu_part1 + TTTo2L2Nu_part2 + TTTo2L2Nu_part3 + TTTo2L2Nu_part4 + TTTo2L2Nu_part5 + TTTo2L2Nu_part6 + TTTo2L2Nu_part7 + TTTo2L2Nu_part8 + TTTo2L2Nu_part9 + TTTo2L2Nu_part10 + TTTo2L2Nu_part11 + TTTo2L2Nu_part12 + TTTo2L2Nu_part13 + TTTo2L2Nu_part14 + TTTo2L2Nu_part15 + TTTo2L2Nu_part16 + TTTo2L2Nu_part17 + TTTo2L2Nu_part18 + TTTo2L2Nu_part19 + TTTo2L2Nu_part20 + TTTo2L2Nu_part21 + TTTo2L2Nu_part22 + TTTo2L2Nu_part23  : xsec ; FillColor=ROOT.kGray+2 , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="TT", NormSystematic=0.30
+fakes_TT : TTToSemiLeptonic_part1 + TTToSemiLeptonic_part2 + TTToSemiLeptonic_part3 + TTToSemiLeptonic_part4 + TTToSemiLeptonic_part5 + TTToSemiLeptonic_part6 + TTToSemiLeptonic_part7 + TTToSemiLeptonic_part8 : xsec ; FillColor=ROOT.kGray+2 , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="TT", NormSystematic=0.30
+
+fakes_T : TW : xsec ; FillColor=ROOT.kGray-2 , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="ST", NormSystematic=0.30
+fakes_T : TbarW : xsec ; FillColor=ROOT.kGray-2 , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="ST", NormSystematic=0.30
+fakes_T : T_tch_part4 + T_tch_part1 + T_tch_part2 + T_tch_part3 : xsec ; FillColor=ROOT.kGray-2 , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="ST", NormSystematic=0.30
+fakes_T : Tbar_tch_part2 + Tbar_tch_part1 + Tbar_tch_part3 : xsec ; FillColor=ROOT.kGray-2 , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="ST", NormSystematic=0.30
+
+
+fakes_VV : WWTo2L2Nu : xsec ; FillColor=ROOT.kGray+9 , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="VV", NormSystematic=0.30
+fakes_VV : WZTo2L2Q_part1 + WZTo2L2Q_part2 + WZTo2L2Q_part3 + WZTo2L2Q_part4 + WZTo2L2Q_part5 : xsec ; FillColor=ROOT.kGray+9 , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="VV", NormSystematic=0.30
+fakes_VV : ZZTo2L2Q_part1 + ZZTo2L2Q_part2 +ZZTo2L2Q_part3 + ZZTo2L2Q_part4 + ZZTo2L2Q_part5 + ZZTo2L2Q_part6 : xsec ; FillColor=ROOT.kGray+9 , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="VV", NormSystematic=0.30
+fakes_VV : ZZTo2L2Nu_part2 + ZZTo2L2Nu_part1 : xsec ; FillColor=ROOT.kGray+9 , FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt", Label="VV", NormSystematic=0.30
+
+data : DoubleEG_Run2017B ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleEG_Run2017C_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleEG_Run2017C_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleEG_Run2017D ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleEG_Run2017E_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleEG_Run2017E_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleEG_Run2017F_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleEG_Run2017F_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+
+data : DoubleMuon_Run2017B ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleMuon_Run2017C_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleMuon_Run2017C_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleMuon_Run2017D ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleMuon_Run2017E_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleMuon_Run2017E_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleMuon_Run2017E_part3 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleMuon_Run2017F_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleMuon_Run2017F_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : DoubleMuon_Run2017F_part3 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+
+data : MuonEG_Run2017B ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : MuonEG_Run2017D ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : MuonEG_Run2017C ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : MuonEG_Run2017E ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : MuonEG_Run2017F ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+
+data : SingleElectron_Run2017B ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleElectron_Run2017C_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleElectron_Run2017C_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleElectron_Run2017D ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleElectron_Run2017E_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleElectron_Run2017E_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleElectron_Run2017F_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleElectron_Run2017F_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+
+data : SingleMuon_Run2017B ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleMuon_Run2017C_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleMuon_Run2017C_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleMuon_Run2017D ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleMuon_Run2017E_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleMuon_Run2017E_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleMuon_Run2017F_part1 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleMuon_Run2017F_part2 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+data : SingleMuon_Run2017F_part3 ; Label="Data", FakeRate="RunII_SM_WZ/2017/fakerate_standard_central.txt" 
+

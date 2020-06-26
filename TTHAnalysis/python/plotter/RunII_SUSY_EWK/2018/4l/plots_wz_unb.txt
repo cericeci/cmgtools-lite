@@ -1,0 +1,87 @@
+## Signal regions
+SR4lG: SR4lGplot(mt2davis_mass(pt_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), eta_2(LepSel_conePt[mll_i1[0]],LepSel_eta[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_mass[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_eta[mll_i2[0]],LepSel_phi[mll_i2[0]],LepSel_mass[mll_i2[0]]), phi_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), pt_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]), eta_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 2)]), phi_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]), MET_pt_nom, MET_phi_nom, 91.16), MET_pt_nom, mass_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)], LepSel_eta[unused4(mll_i1[0], mll_i2[0], 1)], LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)], LepSel_mass[unused4(mll_i1[0], mll_i2[0], 1)], LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)], LepSel_eta[unused4(mll_i1[0], mll_i2[0], 2)], LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)], LepSel_mass[unused4(mll_i1[0], mll_i2[0], 2)])) :  5, 0.5,5.5 ; XTitle="SR 4lG", IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+Z1_pt : pt_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]) : 20,0,200 ; XTitle="p_{T} (Z1) [GeV]"  , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+Z1_eta : eta_2(LepSel_conePt[mll_i1[0]],LepSel_eta[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_mass[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_eta[mll_i2[0]],LepSel_phi[mll_i2[0]],LepSel_mass[mll_i2[0]]) : 20,-5.0,5.0 ; XTitle="#eta (Z1)"  , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+Z1_phi : phi_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]) : 20,-3.14,3.14 ; XTitle="#phi (Z1)"  , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+Z1_mass : mass_2(LepSel_conePt[mll_i1[0]],LepSel_eta[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_mass[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_eta[mll_i2[0]],LepSel_phi[mll_i2[0]],LepSel_mass[mll_i2[0]]) : 20,0.0,200.0 ; XTitle="m(Z1)"  , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+Z2_pt : pt_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]) : 20,0,200 ; XTitle="p_{T} (Z2) [GeV]"  , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+Z2_eta : eta_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 2)]) : 20,-5.0,5.0 ; XTitle="#eta (Z2)"  , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+Z2_phi : phi_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]) : 20,-3.14,3.14 ; XTitle="#phi (Z2)"  , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+Z2_mass : mass_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 2)]) : 20,0.0,200.0 ; XTitle="m(Z2)"  , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+
+lepZ11_pt          : LepSel_conePt[mll_i1[0]]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lepZ1. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ12_pt          : LepSel_conePt[mll_i2[0]]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lepZ1. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ21_pt           : LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lepZ2. 1)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ22_pt           : LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lepZ2. 2)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ11_eta         : LepSel_eta[mll_i1[0]]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lepZ1. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ12_eta         : LepSel_eta[mll_i2[0]]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lepZ1. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ21_eta         : LepSel_eta[unused4(mll_i1[0], mll_i2[0], 1)]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lepZ2. 1)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ22_eta         : LepSel_eta[unused4(mll_i1[0], mll_i2[0], 2)]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lepZ2. 2)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ11_phi         : LepSel_phi[mll_i1[0]]         : 10,-3.14,3.14 ; YTitle="Leptons", XTitle="#phi(lepZ1. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ12_phi         : LepSel_phi[mll_i2[0]]         : 10,-3.14,3.14 ; YTitle="Leptons", XTitle="#phi(lepZ1. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ21_phi         : LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)]         : 10,-3.14,3.14 ; YTitle="Leptons", XTitle="#phi(lepZ2. 1)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lepZ22_phi         : LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]         : 10,-3.14,3.14 ; YTitle="Leptons", XTitle="#phi(lepZ2. 2)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+
+
+
+## basic lepton observables
+## ----------------------------------------------------------
+
+el_pt     : if3(abs(LepSel_pdgId)==11,LepSel_conePt,-1) : 20,0,200    ; YTitle="Electrons", XTitle="p_{T\,cone}(e)"   , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+mu_pt     : if3(abs(LepSel_pdgId)==13,LepSel_conePt,-1) : 20,0,200    ; YTitle="Muons"    , XTitle="p_{T\,cone}(#mu)" , IncludeOverflows=False, IncludeOverflow=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+el_eta    : if3(abs(LepSel_pdgId)==11,LepSel_eta,-999)  : 10,-2.5,2.5 ; YTitle="Electrons", XTitle="#eta(e)"   , IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=100000
+mu_eta    : if3(abs(LepSel_pdgId)==13,LepSel_eta,-999)  : 10,-2.5,2.5 ; YTitle="Muons"    , XTitle="#eta(#mu)" , IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=100000
+
+el_phi    : if3(abs(LepSel_pdgId)==11,LepSel_phi,-999)  : 10,-3.14,3.14 ; YTitle="Electrons", XTitle="#phi(e)"   , IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+mu_phi    : if3(abs(LepSel_pdgId)==13,LepSel_phi,-999)  : 10,-3.14,3.14 ; YTitle="Muons"    , XTitle="#phi(#mu)" , IncludeOverflows=False, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=50000
+
+## further lepton observables
+## ----------------------------------------------------------
+
+lep1_pt          : LepSel_conePt[0]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lep. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep2_pt          : LepSel_conePt[1]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lep. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep3_pt           : LepSel_conePt[2]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lep. 3)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep4_pt           : LepSel_conePt[3]      : 30,0,300   ; YTitle="Leptons", XTitle="p_{T\,cone}(lep. 4)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep1_eta         : LepSel_eta[0]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lep. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep2_eta         : LepSel_eta[1]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lep. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep3_eta         : LepSel_eta[2]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lep. 3)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep4_eta         : LepSel_eta[3]         : 10,-2.5,2.5 ; YTitle="Leptons", XTitle="#eta(lep. 4)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep1_phi         : LepSel_phi[0]         : 10,-3.14,3.14 ; YTitle="Leptons", XTitle="#phi(lep. 1)"   , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep2_phi         : LepSel_phi[1]         : 10,-3.14,3.14 ; YTitle="Leptons", XTitle="#phi(lep. 2)", LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep3_phi         : LepSel_phi[2]         : 10,-3.14,3.14 ; YTitle="Leptons", XTitle="#phi(lep. 3)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+lep4_phi         : LepSel_phi[3]         : 10,-3.14,3.14 ; YTitle="Leptons", XTitle="#phi(lep. 4)"     , LegendCutoff=1e-4, YMin=1, YMax=50000, Logy
+
+
+## event observables
+## ----------------------------------------------------------
+
+
+metcr    : MET_pt_nom    : 10,0,50   ; XTitle="p_{T}^{miss}  (GeV)"         , LegendCutoff=1e-4, Logy, YMin=1, YMax=100000, Legend="TR"
+
+
+mll4l      : mll_4l        : 30,30,150    ; XTitle="M_{ll} (GeV)"                , LegendCutoff=1e-4, Logy, YMin=1, YMax=5000000, Legend="TR"
+
+
+
+flavor4l   : (abs(LepSel1_pdgId)+abs(LepSel2_pdgId)+abs(LepSel3_pdgId)+abs(LepSel4_pdgId)-44)/2  : [-1,1,3,5] ; XTitle="flavor", xBinLabels="eeee\,ee#mu#mu\,#mu#mu#mu#mu", Legend="TL", LegendCutoff=1e-4, MoreY=3.0
+
+
+CR_mt2ZZ : mt2davis_mass(pt_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), eta_2(LepSel_conePt[mll_i1[0]],LepSel_eta[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_mass[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_eta[mll_i2[0]],LepSel_phi[mll_i2[0]],LepSel_mass[mll_i2[0]]), phi_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), pt_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]), eta_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 2)]), phi_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]), MET_pt_nom, MET_phi_nom, 91.16) : 15,60,210 ; XTitle="M_{T2}(ZZ') (GeV)", IncludeOverflows=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=5000
+
+
+
+G_mt2ZZ : mt2davis_mass(pt_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), eta_2(LepSel_conePt[mll_i1[0]],LepSel_eta[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_mass[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_eta[mll_i2[0]],LepSel_phi[mll_i2[0]],LepSel_mass[mll_i2[0]]), phi_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), pt_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]), eta_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 2)]), phi_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]), MET_pt_nom, MET_phi_nom, 91.16) : 12,60,420 ; XTitle="M_{T2}(ZZ') (GeV)", IncludeOverflows=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=5000
+
+
+G_mt2ZZ_massivemid : mt2davis_mass_propmid(pt_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), eta_2(LepSel_conePt[mll_i1[0]],LepSel_eta[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_mass[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_eta[mll_i2[0]],LepSel_phi[mll_i2[0]],LepSel_mass[mll_i2[0]]), phi_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), pt_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]), eta_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 2)]), phi_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]), MET_pt_nom, MET_phi_nom, 91.16) : 10,0,500 ;XTitle="M_{T2}(ZZ') (GeV)", IncludeOverflows=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=5000
+
+G_mt2ZZ_massless : mt2davis_mass(pt_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), eta_2(LepSel_conePt[mll_i1[0]],LepSel_eta[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_mass[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_eta[mll_i2[0]],LepSel_phi[mll_i2[0]],LepSel_mass[mll_i2[0]]), phi_2(LepSel_conePt[mll_i1[0]],LepSel_phi[mll_i1[0]],LepSel_conePt[mll_i2[0]],LepSel_phi[mll_i2[0]]), pt_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]), eta_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_eta[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_mass[unused4(mll_i1[0], mll_i2[0], 2)]), phi_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)],LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)],LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)]), MET_pt_nom, MET_phi_nom, 0.) : 10,0,500 ;XTitle="M_{T2}(ZZ') (GeV)", IncludeOverflows=True, LegendCutoff=1e-4, Logy, YMin=1e-1, YMax=5000
+
+G_mZ2 : mass_2(LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 1)], LepSel_eta[unused4(mll_i1[0], mll_i2[0], 1)], LepSel_phi[unused4(mll_i1[0], mll_i2[0], 1)], LepSel_mass[unused4(mll_i1[0], mll_i2[0], 1)], LepSel_conePt[unused4(mll_i1[0], mll_i2[0], 2)], LepSel_eta[unused4(mll_i1[0], mll_i2[0], 2)], LepSel_phi[unused4(mll_i1[0], mll_i2[0], 2)], LepSel_mass[unused4(mll_i1[0], mll_i2[0], 2)]) : 12,0,120; XTitle="M_{Z2} (GeV)", IncludeOverflows=True, LegendCutoff=1e-4, Logy, YMin=1, YMax=100000, Lgend="TL"
+ 
+G_met :  MET_pt_nom: 12,0,300; XTitle="p_{T}^{miss} (GeV)" , LegendCutoff=1e-4, Logy, YMin=0.1, YMax=5000, Legend="TR"
+

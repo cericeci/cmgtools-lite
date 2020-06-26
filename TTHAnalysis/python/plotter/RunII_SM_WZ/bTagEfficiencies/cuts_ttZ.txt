@@ -1,0 +1,9 @@
+alwaystrue: 1
+trigger   : $DATA{Triggers_ee || Triggers_em || Triggers_mm } $MC{Triggers_ee || Triggers_em || Triggers_mm} $FASTSIM{1}
+3l        : nLepSel >= 3
+lowmass   : minMllSFOS_Mini > 12 || minMllSFOS_Mini == -1
+sanity    : passPtMll && is_3l && LepSel_conePt[0] >= 40 && LepSel_conePt[1] >= 20 && LepSel_conePt[2] >= 10
+SRevent   : allTight(3, LepSel_isTight[0], LepSel_isTight[1], LepSel_isTight[2])
+alllight  : BR == 1
+mll : abs(mllL_3l - 91.16) < 10
+nJet : nJet30_Mini >= 3

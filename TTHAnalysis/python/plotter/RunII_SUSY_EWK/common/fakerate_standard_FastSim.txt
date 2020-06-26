@@ -1,0 +1,5 @@
+weight    : 1
+change    : puWeight\b : puWeight_auto
+change    : puWeightDown\b : puWeightDown_auto
+change    : puWeightUp\b : puWeightUp_auto
+change : bTagWeightDeepCSVT_nom : bTagWeightDeepCSVT

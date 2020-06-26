@@ -1,0 +1,12 @@
+weight: 1.0
+
+change: MET_pt\b: MET_pt_jesTotalDown
+change: MET_pt_nom\b: MET_pt_jesTotalDown
+change: MET_phi\b: MET_phi_jesTotalDown
+
+
+change: METFixEE2017_pt\b: MET_pt_jesTotalDown
+change: METFixEE2017_phi\b: MET_phi_jesTotalDown
+change    : puWeight\b : puWeight_auto
+change    : puWeightUp\b : puWeightUp_auto
+change    : puWeightDown\b : puWeightDown_auto

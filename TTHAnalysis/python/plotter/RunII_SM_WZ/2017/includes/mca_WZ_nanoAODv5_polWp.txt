@@ -1,0 +1,7 @@
+prompt_WZ_WfL+ : WZTo3LNu_powv2 : xsec*1.124 : WZ_weight_Wp16(cos_genThetaWDn_HE, -1)*(genThetaWDn_HE != -99) ; FillColor=ROOT.kOrange-1 , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="WZ_{L} (k-2016)", NormSystematic=0.12,  LineColor=ROOT.kOrange-1
+
+prompt_WZ_WfR+ : WZTo3LNu_powv2 : xsec*1.124 : WZ_weight_Wp16(cos_genThetaWDn_HE, +1)*(genThetaWDn_HE != -99) ; FillColor=ROOT.kOrange+1 , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="WZ_{R} (k-2016)", NormSystematic=0.12,LineColor=ROOT.kOrange+1
+
+prompt_WZ_WfO+ : WZTo3LNu_powv2 : xsec*1.124 : WZ_weight_Wp16(cos_genThetaWDn_HE, 0)*(genThetaWDn_HE != -99) ; FillColor=ROOT.kOrange , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="WZ_{O} (k-2016)", NormSystematic=0.12, LineColor=ROOT.kOrange
+
+prompt_WZ_other : WZTo3LNu_powv2 : xsec*1.124 : (genThetaWDn_HE == -99) ; FillColor=ROOT.kBlack , FakeRate="RunII_SM_WZ/common/fakerate_standard_central.txt\,RunII_SM_WZ/common/fakerate_load_isprompt.txt", Label="WZ not-matched", NormSystematic=0.12, LineColor=ROOT.kBlack

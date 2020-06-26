@@ -1,0 +1,35 @@
+prompt_WZ : WZTo3LNu_pow : xsec*1.145 ; FillColor=ROOT.kOrange , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="WZ", NormSystematic=0.05
+
+prompt_hZZ : HZZ : xsec*1.7 ; FillColor=ROOT.kGreen-1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="hZZ", NormSystematic=0.08
+prompt_ZZ : ZZTo4L_part0 + ZZTo4L_part1 : xsec ; FillColor=ROOT.kGreen+1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="qqZZ", NormSystematic=0.08
+prompt_ggZZ : GluGluToContinToZZTo2e2mu   : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ggZZ", NormSystematic=0.08
+prompt_ggZZ : GluGluToContinToZZTo2e2nu   : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ggZZ", NormSystematic=0.08
+prompt_ggZZ : GluGluToContinToZZTo2e2tau  : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ggZZ", NormSystematic=0.08
+prompt_ggZZ : GluGluToContinToZZTo2mu2nu  : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ggZZ", NormSystematic=0.08
+prompt_ggZZ : GluGluToContinToZZTo2mu2tau : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ggZZ", NormSystematic=0.08
+prompt_ggZZ : GluGluToContinToZZTo4e      : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ggZZ", NormSystematic=0.08
+prompt_ggZZ : GluGluToContinToZZTo4mu     : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ggZZ", NormSystematic=0.08
+prompt_ggZZ : GluGluToContinToZZTo4tau    : xsec*1.7 ; FillColor=ROOT.kGreen, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ggZZ", NormSystematic=0.08
+
+
+prompt_TTX : TTHnonbb : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ttX", NormSystematic=0.15
+prompt_TTX : TTWToLNu               : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ttX", NormSystematic=0.15
+prompt_TTX : TTZToLLNuNu : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ttX", NormSystematic=0.15
+prompt_TTX : TTGJets : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ttG", NormSystematic=0.15
+prompt_TTX : TTZToLLNuNu_m1to10 : xsec ; FillColor=ROOT.kViolet-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="ttX", NormSystematic=0.15
+
+prompt_TZQ : tZq_ll_part0 + tZq_ll_part1 + tZq_ll_part2 + tZq_ll_part3 + tZq_ll_part4 + tZq_ll_part5   : xsec ; FillColor=ROOT.kCyan , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="tZq", NormSystematic=0.35
+
+prompt_VH : VHToNonbb : xsec ; FillColor=ROOT.kRed-1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="VH", NormSystematic=0.25
+
+prompt_VVV : WWW : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="VVV", NormSystematic=0.50
+prompt_VVV : WWZ : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="VVV", NormSystematic=0.50
+prompt_VVV : WZZ : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="VVV", NormSystematic=0.50
+prompt_VVV : ZZZ : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="VVV", NormSystematic=0.50
+prompt_VVV : WZG : xsec ; FillColor=ROOT.kRed + 1, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isprompt_lepgood.txt", Label="VVV", NormSystematic=0.50
+
+
+convs : TTGJets  : xsec*1.12 ; FillColor=ROOT.kOrange-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isconv_lepgood.txt", Label="X+g", NormSystematic=0.10
+convs : WGToLNuG : xsec*1.12 ; FillColor=ROOT.kOrange-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isconv_lepgood.txt", Label="X+g", NormSystematic=0.10
+convs : WZG      : xsec*1.12 ; FillColor=ROOT.kOrange-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isconv_lepgood.txt", Label="X+g", NormSystematic=0.10
+convs : ZGTo2LG_part1 + ZGTo2LG_part2 + ZGTo2LG_part0 : xsec*1.12 ; FillColor=ROOT.kOrange-3 , FakeRate="RunII_SUSY_EWK/common/fakerate_standard_central.txt\,RunII_SUSY_EWK/common/fakerate_load_isconv_lepgood.txt", Label="X+g", NormSystematic=0.10

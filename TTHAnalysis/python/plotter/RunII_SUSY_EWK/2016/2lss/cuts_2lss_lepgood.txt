@@ -1,0 +1,8 @@
+alwaystrue: 1
+trigger   : $DATA{Trigger_3l_2016} $MC{Trigger_3l_2016} $FASTSIM{1}
+2l        : nLepGood == 2
+ptcuts    : LepGood_pt[0] >= (20 + 5*(abs(LepGood_pdgId[0])==11)) && LepGood_pt[1] >= (10 + 5*(abs(LepGood_pdgId[1])==11))
+samesign  : LepGood_pdgId[0]*LepGood_pdgId[1] > 0 
+met       : MET_pt_nom >= 60
+offZpeak  : abs(mass_2(LepGood_pt[0], LepGood_eta[0], LepGood_phi[0], LepGood_mass[0], LepGood_pt[1], LepGood_eta[1], LepGood_phi[1], LepGood_mass[1]) - 91.16) > 15 || abs(LepGood_pdgId[0]) == 13 || abs(LepGood_pdgId[1]) == 13
+#jetveto   : Jet_pt_nom[1] <= 30

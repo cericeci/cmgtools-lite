@@ -1,0 +1,17 @@
+prompt_WZ_nominal   : WZTo3LNu_pow : xsec*1.124 ; FillColor=ROOT.kGreen , LineColor=ROOT.kGreen, FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", Label="Nominal", NormSystematic=0.09
+
+prompt_WZ_Up+   : WZTo3LNu_pow : xsec*1.124 ; AddWeight="wzweight(MET_pt\, mT_3l\, 1)", FillColor=ROOT.kOrange, LineColor=ROOT.kOrange , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", Label="WZ Up", NormSystematic=0.09
+
+
+prompt_WZ_Dn+   : WZTo3LNu_pow : xsec*1.124 ; AddWeight="wzweight(MET_pt\, mT_3l\, -1)", FillColor=ROOT.kOrange, LineColor=ROOT.kOrange , FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt", Label="WZ Down", NormSystematic=0.09
+
+
+TChiWZ_600_100+ : TChiWZ_600_100 : 20.1372*0.10099/1000. ; FillColor=ROOT.kBlue, Label="TChiWZ 600-100"
+#TChiWZ_250_150+ : TChiWZ_250_150 : 782.487*0.10099/1000. ; FillColor=ROOT.kBlack, Label="TChiWZ 250-160"
+#TChiWZ_400_300+ : TChiWZ_400_300 : 121.013*0.10099/1000. ; FillColor=ROOT.kRed, Label="TChiWZ 400-300"
+
+
+TChiWZ_600_100+ : WZTo3LNu_pow : xsec*1.124 ; FillColor=ROOT.kBlue, Label="TChiWZ 600-100", FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt"
+#TChiWZ_250_150+ : WZTo3LNu_pow : xsec*1.124 ; FillColor=ROOT.kBlack, Label="TChiWZ 250-160", FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt"
+#TChiWZ_400_300+ : WZTo3LNu_pow : xsec*1.124 ; FillColor=ROOT.kRed, Label="TChiWZ 400-300", FakeRate="RunII_SM_WZ/2016/fakerate_standard_central.txt"
+

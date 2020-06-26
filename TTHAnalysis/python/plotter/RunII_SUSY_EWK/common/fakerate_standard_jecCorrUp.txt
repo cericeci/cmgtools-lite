@@ -1,0 +1,51 @@
+weight : 1
+change: MET_pt_central\b: MET_pt_jesTotalCorrUp
+change: MET_pt_nom\b: MET_pt_jesTotalCorrUp
+change: MET_pt\b: MET_pt_jesTotalCorrUp
+change: METFixEE2017_pt_nom\b : METFixEE2017_pt_nom_jesTotalCorrUp
+
+change : imT_3l\b  : imT_3l_jesTotalCorrUp
+change : imTL_3l\b : imTL_3l_jesTotalCorrUp
+change : imTT_3l\b : imTT_3l_jesTotalCorrUp
+change : mT_3l\b   : mT_3l_jesTotalCorrUp
+change : mTL_3l\b  : mTL_3l_jesTotalCorrUp
+change : mTT_3l\b  : mTT_3l_jesTotalCorrUp
+change : mT2L_3l\b : mT2L_3l_jesTotalCorrUp
+change : mT2T_3l\b : mTLT_3l_jesTotalCorrUp
+change : mT2WZ_3l\b: mT2WZ_3l_jesTotalCorrUp
+change : imT_4l\b  : imT_4l_jesTotalCorrUp
+change : imTL_4l\b : imTL_4l_jesTotalCorrUp
+change : imTT_4l\b : imTT_4l_jesTotalCorrUp
+change : mT_4l\b   : mT_4l_jesTotalCorrUp
+change : mTL_4l\b  : mTL_4l_jesTotalCorrUp
+change : mTT_4l\b  : mTT_4l_jesTotalCorrUp
+change : mT2L_4l\b : mT2L_4l_jesTotalCorrUp
+change : mT2T_4l\b : mTLT_4l_jesTotalCorrUp
+change : mT2WZ_4l\b: mT2WZ_4l_jesTotalCorrUp
+
+change : nJetSel_Mini\b : nJetSel_Mini_jesTotalCorrUp 
+change : iJSel_Mini\b : iJSel_Mini_jesTotalCorrUp
+change : nDiscJetSel_Mini\b : nDiscJetSel_Mini_jesTotalCorrUp
+change : iDiscJSel_Mini\b : iDiscJSel_Mini_jesTotalCorrUp
+
+change: nBJetTight25_Mini\b: nBJetTight25_Mini_jesTotalCorrUp
+change: nBJetTight25\b: nBJetTight25_Mini_jesTotalCorrUp
+change: nBJetMedium25_Mini\b: nBJetMedium25_Mini_jesTotalCorrUp
+change: nBJetMedium25\b: nBJetMedium25_Mini_jesTotalCorrUp
+change: nBJetLoose25_Mini\b: nBJetLoose25_Mini_jesTotalCorrUp
+change: nBJetLoose25\b: nBJetLoose25_Mini_jesTotalCorrUp
+
+change: nJet30_Mini\b : nJet30_Mini_jesTotalCorrUp
+change: htJet30j_Mini\b : htJet30j_Mini_jesTotalCorrUp
+change: mhtJet30_Mini\b : mhtJet30_Mini_jesTotalCorrUp
+change: nJet25_Mini\b : nJet25_Mini_jesTotalCorrUp
+change: htJet25j_Mini\b : htJet25j_Mini_jesTotalCorrUp
+change: mhtJet25_Mini\b : mhtJet25_Mini_jesTotalCorrUp
+
+change: nBJetTight30_Mini\b: nBJetTight30_Mini_jesTotalCorrUp
+change: nBJetTight30\b: nBJetTight30_Mini_jesTotalCorrUp
+change: nBJetMedium30_Mini\b: nBJetMedium30_Mini_jesTotalCorrUp
+change: nBJetMedium30\b: nBJetMedium30_Mini_jesTotalCorrUp
+change: nBJetLoose30_Mini\b: nBJetLoose30_Mini_jesTotalCorrUp
+change: nBJetLoose30\b: nBJetLoose30_Mini_jesTotalCorrUp
+

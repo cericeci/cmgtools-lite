@@ -1,0 +1,24 @@
+## Data
+## -----------------------------------------------------------
+incl_data      : + ; IncludeMca="RunII_SUSY_EWK/2018/3l/includes/mca_data_2018_nanoAODv5.txt"
+
+## Signals
+incl_signals : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_18.txt"
+
+# Backgrounds
+## -----------------------------------------------------------
+incl_prompts         : + ; IncludeMca="RunII_SUSY_EWK/2018/3l/includes/mca_prompts_nanoAODv5.txt"
+#incl_mcfakes          : + ; IncludeMca="RunII_SUSY_EWK/2018/3l/includes/mca_mcfakes_nanoAODv5.txt"
+incl_datafakes       : + ; IncludeMca="RunII_SUSY_EWK/2018/3l/includes/mca_datafakes_nanoAODv5.txt"
+incl_promptsub       : + ; IncludeMca="RunII_SUSY_EWK/2018/3l/includes/mca_promptsub_nanoAODv5.txt"
+
+
+#TChiWH_150_1+ : TChiWH_150_1 : 5180.86*0.03634/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim18.txt", Label="TChiWH 150_1", FillColor=ROOT.kBlack, LineColor=ROOT.kBlack
+#TChiHH_150_1+ : TChiHH_150_1 : 3832.30737305*0.09/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim18.txt", Label="TChiHH 150_1", FillColor=ROOT.kRed, LineColor=ROOT.kRed
+
+
+#TChiTESlepSnu_x0p5_900_1+ : TChiTESlepSnu_x0p5_900_1 : 2.49667*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim18.txt", FillColor=ROOT.kBlack, LineColor=ROOT.kBlack, LineStyle=3,  Label="TE SlepSnu_x0p5_900_1"
+#TChiTESlepSnu_x0p5_600_300+ : TChiTESlepSnu_x0p5_600_300 : 20.1372*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim18.txt",  FillColor=ROOT.kRed, LineColor=ROOT.kRed, LineStyle=3, Label="TE SlepSnu_x0p5_600_300"
+
+#TChiStau_x0p5_500_1+ : TChiStau_x0p5_500_1 : 46.3533*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim18.txt", Label="TD SlepSnu_x0p5_500_1", FillColor=ROOT.kBlack, LineColor=ROOT.kBlack
+#TChiStau_x0p5_225_125+ : TChiStau_x0p5_225_125 : 1165.09*1.0/1000.; isFastSim=True, FakeRate="RunII_SUSY_EWK/common/fakerate_standard_FastSim18.txt", Label="TD SlepSnu_x0p5_225_125", FillColor=ROOT.kRed, LineColor=ROOT.kRed

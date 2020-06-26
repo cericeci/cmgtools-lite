@@ -1,0 +1,53 @@
+weight: 1
+
+change: MET_pt_central\b: MET_pt_jesTotalDown
+change: MET_pt_nom\b: MET_pt_jesTotalDown
+change: MET_pt\b: MET_pt_jesTotalDown
+change: METFixEE2017_pt_nom\b : METFixEE2017_pt_nom_jesTotalDown
+
+change : imT_3l\b  : imT_3l_jesTotalDown
+change : imTL_3l\b : imTL_3l_jesTotalDown
+change : imTT_3l\b : imTT_3l_jesTotalDown
+change : mT_3l\b   : mT_3l_jesTotalDown
+change : mTL_3l\b  : mTL_3l_jesTotalDown
+change : mTT_3l\b  : mTT_3l_jesTotalDown
+change : mT2L_3l\b : mT2L_3l_jesTotalDown
+change : mT2T_3l\b : mTLT_3l_jesTotalDown
+change : mT2WZ_3l\b: mT2WZ_3l_jesTotalDown
+change : imT_4l\b  : imT_4l_jesTotalDown
+change : imTL_4l\b : imTL_4l_jesTotalDown
+change : imTT_4l\b : imTT_4l_jesTotalDown
+change : mT_4l\b   : mT_4l_jesTotalDown
+change : mTL_4l\b  : mTL_4l_jesTotalDown
+change : mTT_4l\b  : mTT_4l_jesTotalDown
+change : mT2L_4l\b : mT2L_4l_jesTotalDown
+change : mT2T_4l\b : mTLT_4l_jesTotalDown
+change : mT2WZ_4l\b: mT2WZ_4l_jesTotalDown
+
+change : nJetSel_Mini\b : nJetSel_Mini_jesTotalDown 
+change : iJSel_Mini\b : iJSel_Mini_jesTotalDown
+change : nDiscJetSel_Mini\b : nDiscJetSel_Mini_jesTotalDown
+change : iDiscJSel_Mini\b : iDiscJSel_Mini_jesTotalDown
+
+change: nBJetTight25_Mini\b: nBJetTight25_Mini_jesTotalDown
+change: nBJetTight25\b: nBJetTight25_Mini_jesTotalDown
+change: nBJetMedium25_Mini\b: nBJetMedium25_Mini_jesTotalDown
+change: nBJetMedium25\b: nBJetMedium25_Mini_jesTotalDown
+change: nBJetLoose25_Mini\b: nBJetLoose25_Mini_jesTotalDown
+change: nBJetLoose25\b: nBJetLoose25_Mini_jesTotalDown
+
+change: nJet30_Mini\b : nJet30_Mini_jesTotalDown
+change: htJet30j_Mini\b : htJet30j_Mini_jesTotalDown
+change: mhtJet30_Mini\b : mhtJet30_Mini_jesTotalDown
+change: nJet25_Mini\b : nJet25_Mini_jesTotalDown
+change: htJet25j_Mini\b : htJet25j_Mini_jesTotalDown
+change: mhtJet25_Mini\b : mhtJet25_Mini_jesTotalDown
+
+change: nBJetTight30_Mini\b: nBJetTight30_Mini_jesTotalDown
+change: nBJetTight30\b: nBJetTight30_Mini_jesTotalDown
+change: nBJetMedium30_Mini\b: nBJetMedium30_Mini_jesTotalDown
+change: nBJetMedium30\b: nBJetMedium30_Mini_jesTotalDown
+change: nBJetLoose30_Mini\b: nBJetLoose30_Mini_jesTotalDown
+change: nBJetLoose30\b: nBJetLoose30_Mini_jesTotalDown
+
+

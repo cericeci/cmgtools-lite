@@ -1,0 +1,12 @@
+alwaystrue: 1
+filters   : $DATA{Flag_goodVertices && Flag_globalSuperTightHalo2016Filter && Flag_HBHENoiseFilter && Flag_HBHENoiseIsoFilter && Flag_EcalDeadCellTriggerPrimitiveFilter && Flag_BadPFMuonFilter && Flag_BadChargedCandidateFilter && Flag_eeBadScFilter && Flag_ecalBadCalibFilter} $MC{1} $FASTSIM{1}
+trigger   : Trigger_3l_2016
+3l        : nLepGood >= 3
+BRevent   : abs(LepGood_pdgId[0]) < 15 && abs(LepGood_pdgId[1]) < 15 && abs(LepGood_pdgId[2]) < 15 
+
+lepPt     : LepGood_pt[0] >= 25  && LepGood_pt[2] >= 10  && LepGood_pt[1] >= 25 
+
+#Testing with LepGood instead of LepGood
+SRWZ      :   nLepGood < 4; Disable=True
+
+

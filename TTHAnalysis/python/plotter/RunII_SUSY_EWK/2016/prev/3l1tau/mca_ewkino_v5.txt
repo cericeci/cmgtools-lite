@@ -1,0 +1,15 @@
+## Data
+## -----------------------------------------------------------
+incl_data      : + ; IncludeMca="RunII_SUSY_EWK/2016/3l1tau/includes/mca_data_2016_nanoAODv5.txt"
+
+## Signals
+incl_signals : + ; IncludeMca="RunII_SUSY_EWK/signals/mca_signals_16.txt"
+
+## Backgrounds
+## -----------------------------------------------------------
+incl_prompts        : + ; IncludeMca="RunII_SUSY_EWK/2016/3l1tau/includes/mca_prompts_nanoAODv5.txt"
+incl_promptsub        : + ; IncludeMca="RunII_SUSY_EWK/2016/3l1tau/includes/mca_promptsub_nanoAODv5.txt"
+incl_datafakes      : + ; IncludeMca="RunII_SUSY_EWK/2016/3l1tau/includes/mca_datafakes_nanoAODv5.txt"
+#incl_mcfakes          : + ; IncludeMca="RunII_SUSY_EWK/2016/3l1tau/includes/mca_mcfakes_nanoAODv5.txt"
+
+

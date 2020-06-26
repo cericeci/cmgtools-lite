@@ -1,0 +1,6 @@
+jetFlavour    : Jet_hadronFlavour[iJSel_Mini]  : 6,-0.5,5.5  ; XTitle="Jet MC Flavour (all jets in the event)", Legend="TR", IncludeOverflows=False, Logy, YMin=1, YMax=20000, YTitle="Jets"
+
+nBJ25_CSV    : nBJet25eventBTagSFCSVM  : 6,-0.5,5.5  ; XTitle="N_{b\, CSV M}(p_{T} > 25 GeV)", Legend="TR", IncludeOverflows=False, Logy, YMin=1, YMax=10000
+nBJ30_CSV    : nBJet30eventBTagSFCSVM  : 6,-0.5,5.5  ; XTitle="N_{b\, CSV M}(p_{T} > 30 GeV)", Legend="TR", IncludeOverflows=False, Logy, YMin=1, YMax=10000
+nBJ40_CSV    : nBJet40eventBTagSFCSVM  : 6,-0.5,5.5  ; XTitle="N_{b\, CSV M}(p_{T} > 40 GeV)", Legend="TR", IncludeOverflows=False, Logy, YMin=1, YMax=10000
+
