@@ -1,0 +1,25 @@
+alwaystrue: 1
+
+#These are common cuts requiring minimal quality criteria in data
+filters: $DATA{(Flag_EcalDeadCellTriggerPrimitiveFilter && Flag_HBHENoiseIsoFilter && Flag_HBHENoiseFilter && Flag_eeBadScFilter && Flag_goodVertices && Flag_globalTightHalo2016Filter && Flag_badChargedHadronFilter)} $MC{1} $FASTSIM{1} 
+
+#Passing the triggers
+triggers: $DATA{(Triggers_ee || Triggers_mm || Triggers_em)} $MC{(Triggers_ee || Triggers_mm || Triggers_em)} $FASTSIM{ 1 }
+
+#Require exactly three light leptons
+threelightlep: nLepSel>=3 && abs(LepSel1_pdgId)<14 && abs(LepSel2_pdgId)<14 && abs(LepSel3_pdgId)<14
+
+#Leptons are tight
+MVAVT: LepSel1_isTight && LepSel2_isTight && LepSel3_isTight
+
+#And pass minimal pT criteria
+ptWZ          : LepSel_pt[max(iZ1,0)]>25 && LepSel_pt[max(iZ2,0)]>10 && LepSel_pt[max(iW,0)] >25
+
+#Veto low mass resonances
+lowMll: minMllAFAS > 12
+
+#Have an OSSF lepton pair
+hasOSSF: nOSSF>0   
+
+#Regions
+SREWK : met_pt > 50    && nBJetMedium30 == 0  &&  nLepSel<4  && abs(m3L-91.16) > 15 ; Disable=True

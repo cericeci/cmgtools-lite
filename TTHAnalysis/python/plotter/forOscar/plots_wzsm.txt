@@ -1,0 +1,26 @@
+#### Lepton--RELATED VARIABLES
+
+ptZ1     : LepSel_pt[max(iZ1,0)]  : 40,0,400     ; XTitle="p_{T}(leading Z lepton) [GeV]", LegendCutoff=1e-5, YTitle='Events/10GeV'
+ptZ2     : LepSel_pt[max(iZ2,0)]  : 30,0,150     ; XTitle="p_{T}(subleading Z lepton) [GeV]", LegendCutoff=1e-5
+ptW      : LepSel_pt[max(iW,0)]   : 25,0,250     ; XTitle="p_{T}(W lepton) [GeV]", LegendCutoff=1e-5
+
+etaZ1     : LepSel_eta[max(iZ1,0)]  : 25,-2.5,2.5    ; XTitle="#eta(leading Z lepton)", LegendCutoff=1e-5, YTitle='Events/10GeV'
+etaZ2     : LepSel_eta[max(iZ2,0)]  : 25,-2.5,2.5     ; XTitle="#eta(subleading Z lepton)", LegendCutoff=1e-5
+etaW      : LepSel_eta[max(iW,0)]   : 25,-2.5,2.5     ; XTitle="#eta(W lepton)", LegendCutoff=1e-5
+
+phiZ1     : LepSel_phi[max(iZ1,0)]  : 20,-3.14,3.14     ; XTitle="#phi(leading Z lepton)", LegendCutoff=1e-5, YTitle='Events/10GeV'
+phiZ2     : LepSel_phi[max(iZ2,0)]  : 20,-3.14,3.14     ; XTitle="#phi(subleading Z lepton)", LegendCutoff=1e-5
+phiW      : LepSel_phi[max(iW,0)]   : 20,-3.14,3.14     ; XTitle="#phi(W lepton)", LegendCutoff=1e-5
+
+flavor:	 (abs(LepSel1_pdgId)==13)+(abs(LepSel2_pdgId)==13)+(abs(LepSel3_pdgId)==13) : [-0.5,0.5,1.5,2.5,3.5]; XTitle="Lepton flavour composition 3L", XNDiv=004, xBinLabels="eee\,ee#mu\,#mu#mue\,#mu#mu#mu", Legend='TL', LegendCutoff=1e-5, YTitle='Events/bin'
+
+nJet30 	   : nJet30               : 9,-0.5,8.5  ; XTitle='N_{jet}', LegendCutoff=1e-5, XNDiv=011
+
+MET        : met_pt               : 23,20,250    ; XTitle="p_{T}^{miss} [GeV]", LegendCutoff=1e-5
+
+mT_3l      : mt_2(LepSel_pt[max(iW,0)], LepSel_phi[max(iW,0)], met_pt, met_phi)  : 30,0,300; XTitle="M_{T}(l_{W}p_{T}^{miss}) [GeV]", LegendCutoff=1e-5, Legend='TR', Logy=True
+
+m3l  : m3L    : 12, 60, 300; XTitle="M_{3L} [GeV]", LegendCutoff=1e-5, Legend='TL'
+
+mll  : mass_2(LepSel_pt[max(iZ1,0)], LepSel_eta[max(iZ1,0)], LepSel_phi[max(iZ1,0)], LepSel_mass[max(iZ1,0)], LepSel_pt[max(iZ2,0)], LepSel_eta[max(iZ2,0)], LepSel_phi[max(iZ2,0)], LepSel_mass[max(iZ2,0)]) : 22,1.16,221.16; XTitle="M(l_{Z1}l_{Z2}) [GeV]", LegendCutoff=1e-5, Logy, Legend='TL', IncludeOverFlows=False
+

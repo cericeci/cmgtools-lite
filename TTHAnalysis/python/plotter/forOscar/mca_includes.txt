@@ -1,0 +1,16 @@
+## Data
+## -----------------------------------------------------------
+incl_data : + ; IncludeMca="wzsm/includes/mca_data.txt"
+
+## MC WZ and backgrounds
+## -----------------------------------------------------------
+prompt_WZ               : WZTo3LNu                        : xsec*1.09 : ((LepSel_mcUCSX[0]==0 || LepSel_mcUCSX[0]==1) && (LepSel_mcUCSX[1]==0 || LepSel_mcUCSX[1]==1) && (LepSel_mcUCSX[2]==0 || LepSel_mcUCSX[2]==1))  ;  FillColor=ROOT.kOrange  , Label="WZ", NormSystematic=0.10
+
+
+sig_TChiWZ_150_100+: TChiNeuWZ_150_100 : 5180.86*0.10099/1000. : 1  ;  FillColor=ROOT.kBlack  , Label="TChiWZ 150-100", isFastSim=True
+sig_TChiWZ_175_85+: TChiNeuWZ_175_85 : 2953.28*0.10099/1000. : 1  ;  FillColor=ROOT.kRed  , Label="TChiWZ 175-85", isFastSim=True
+sig_TChiWZ_200_1+: TChiNeuWZ_200_1 :  1807.39*0.10099/1000. : 1  ;  FillColor=ROOT.kBlue  , Label="TChiWZ 200-1", isFastSim=True
+
+incl_prompts            : + ; IncludeMca="wzsm/includes/mca_prompts.txt"
+incl_promptsub          : + ; IncludeMca="wzsm/includes/mca_promptsub.txt"
+incl_fakes_appldata     : + ; IncludeMca="wzsm/includes/mca_fakesappl.txt"
