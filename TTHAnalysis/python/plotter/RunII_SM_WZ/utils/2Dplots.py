@@ -5,23 +5,23 @@ import CMS_lumi
 #Build Histo 
 par1 = "fO" #X AXIS
 par3 = "fLR" #Y AXIS
-par1Pret = "f_{O}^{W}"
+par1Pret = "f_{O}^{Z}"
 par3Pret = "f_{L} - f_{R}"
 par2 = "fLR"
-par2Pret = "f_{L}^{W} - f_{R}^{W}"
+par2Pret = "f_{L}^{Z} - f_{R}^{Z}"
 
 DONE = False 
 TOFLIP = True
 REBIN = 2
 if not DONE:
-  inFile = ROOT.TFile("fOfRLscan.root", "READ")
-  d3 = 0.0025
-  d1 = 0.0025
+  inFile = ROOT.TFile("Zfitted.root", "READ")
+  d3 = 0.8/200
+  d1 = 0.2/200
   d2 = 0.0025
-  min1 = -1.
-  max1 = +1.
-  min3 = -1.
-  max3 = +1.
+  min1 = 0.15
+  max1 = 0.35
+  min3 = -0.4
+  max3 = 0.4
   min2 = -1.
   max2 = +1.
   n1 = int((max1-min1)/d1)
@@ -110,7 +110,8 @@ q99.SetLineStyle(7)
 ROOT.gROOT.SetBatch(True)
 canvas = ROOT.TCanvas("c", "c", 1600, 1080)
 canvas.cd()
-leg = ROOT.TLegend(0.55, 0.8, 0.75, 0.9);
+leg = ROOT.TLegend(0.6, 0.74, 0.75, 0.9);
+leg.SetTextSize(0.032)
 ROOT.gStyle.SetOptStat(0);
 ROOT.gStyle.SetPaintTextFormat("4.2f")
 ROOT.gStyle.SetOptTitle(0)
@@ -122,8 +123,8 @@ canvas.SetRightMargin (0.19)
 canvas.SetTopMargin   (0.06)
 canvas.SetLeftMargin  (0.14)
 canvas.SetBottomMargin(0.14)
-q68.GetYaxis().SetRangeUser(0.,0.5)
-q68.GetXaxis().SetRangeUser(-0.3,0.1)
+q68.GetYaxis().SetRangeUser(0.15,0.35)
+q68.GetXaxis().SetRangeUser(-0.35,0.35)
 
 q68.GetYaxis().SetTitle(par1Pret)
 q68.GetXaxis().SetTitle(par2Pret)
@@ -151,16 +152,38 @@ q68.Draw("cont3")
 q95.Draw("cont3 same")
 q99.Draw("cont3 same")
 
-leg.AddEntry(q68, "Legacy Expected, 68% CL","l")
-leg.AddEntry(q95, "Legacy Expected, 95% CL","l")
-leg.AddEntry(q99, "Legacy Expected, 99% CL","l")
+leg.AddEntry(q68, "Observed, 68% CL","l")
+leg.AddEntry(q95, "Observed, 95% CL","l")
+leg.AddEntry(q99, "Observed, 99% CL","l")
+
+
+if True:
+    p2b = array.array('d',[-0.038])
+    p1b = array.array('d',[0.245])
+    pCen = ROOT.TGraph(1,p2b,p1b)
+    pCen.SetMarkerColor(ROOT.kBlack)
+    pCen.SetMarkerStyle(34)
+    pCen.SetMarkerSize(3)
+    leg.AddEntry(pCen, "Best Fit", "p")
+    pCen.Draw("p same")
+
+    p2be = array.array('d',[-0.116])
+    p1be = array.array('d',[0.258])
+    pCene = ROOT.TGraph(1,p2be,p1be)
+    pCene.SetMarkerColor(ROOT.kBlack)
+    pCene.SetMarkerStyle(27)
+    pCene.SetMarkerSize(3)
+    leg.AddEntry(pCene, "Powheg+Pythia", "p")
+    pCene.Draw("p same")
+
+
 leg.SetFillColor(ROOT.kWhite)
 leg.SetBorderSize(0);
 leg.Draw("same")
 
 
 CMS_lumi.writeExtraText = True
-CMS_lumi.lumi_13TeV = "%.1f fb^{-1}" % (35.9+41.3+59.8)
+CMS_lumi.lumi_13TeV = "%.1f fb^{-1}" % (137.2)
 CMS_lumi.extraText  = "Preliminary"
 CMS_lumi.lumi_sqrtS = "13"
 CMS_lumi.CMS_lumi(canvas, 4, 0, 0.035)
