@@ -3,21 +3,21 @@ import ROOT
 from coeffsHelper2D import*
 
 #Config options, likely not worth to add a proper parser
-fileName = ["/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_2016_gendressed_estructure/allgen/evVarFriend_WZTo3LNu_powheg_part*root","/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_2017_gendressed_estructure/allgen/evVarFriend_WZTo3LNu_powheg_part*root","/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_2018_gendressed_estructure/allgen/evVarFriend_WZTo3LNu_powheg_part*root"]#["/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_gendressed_estructure/allgen_notdressed/evVarFriend_WZTo3LNu_powheg_part0.root","/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_gendressed_estructure/allgen_notdressed/evVarFriend_WZTo3LNu_powheg_part1.root"]#["/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_unSkimmed_estructure/allgen/evVarFriend_WZTo3LNu_pow_part*.root"] #["/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_gendressed_estructure/allgen/evVarFriend_WZTo3LNu_powheg_part0.root","/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_gendressed_estructure/allgen/evVarFriend_WZTo3LNu_powheg_part1.root"]#["/pool/ciencias/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_unSkimmed_estructure/bosonPolarizationGEN/*pow*root"]
+fileName = ["/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_2016_gendressed_estructure/allgen/evVarFriend_WZTo3LNu_powheg_part*root","/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_2017_gendressed_estructure/allgen/evVarFriend_WZTo3LNu_powheg_part*root","/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_2018_gendressed_estructure/allgen/evVarFriend_WZTo3LNu_powheg_part*root"]#["/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_gendressed_estructure/allgen_notdressed/evVarFriend_WZTo3LNu_powheg_part0.root","/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_gendressed_estructure/allgen_notdressed/evVarFriend_WZTo3LNu_powheg_part1.root"]#["/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_unSkimmed_estructure/allgen/evVarFriend_WZTo3LNu_pow_part*.root"] #["/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_gendressed_estructure/allgen/evVarFriend_WZTo3LNu_powheg_part0.root","/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_gendressed_estructure/allgen/evVarFriend_WZTo3LNu_powheg_part1.root"]#["/pool/ciencias/HeppyTrees/RA7/nanoAODv5_20RunII_nondressed_unSkimmed_estructure/bosonPolarizationGEN/*pow*root"]
 
-#fileName = ["/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_2016_unSkimmed_estructure/bosonPolarizationGEN/evVarFriend_WZTo3LNu_pow_part*root","/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_2017_unSkimmed_estructure/bosonPolarizationGEN/evVarFriend_WZTo3LNu_pow_*root","/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_2018_unSkimmed_estructure/bosonPolarizationGEN/evVarFriend_WZTo3LNu_pow_part*root"]
+#fileName = ["/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_2016_unSkimmed_estructure/bosonPolarizationGEN/evVarFriend_WZTo3LNu_pow_part*root","/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_2017_unSkimmed_estructure/bosonPolarizationGEN/evVarFriend_WZTo3LNu_pow_*root","/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_2018_unSkimmed_estructure/bosonPolarizationGEN/evVarFriend_WZTo3LNu_pow_part*root"]
 
-#fileName = ["/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_2017_unSkimmed_estructure/bosonPolarizationGEN/evVarFriend_WZTo3LNu_pow_*root","/pool/cienciasrw/HeppyTrees/RA7/nanoAODv5_2018_unSkimmed_estructure/bosonPolarizationGEN/evVarFriend_WZTo3LNu_pow_part*root"]
+#fileName = ["/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_2017_unSkimmed_estructure/bosonPolarizationGEN/evVarFriend_WZTo3LNu_pow_*root","/lustrefs/hdd_pool_dir/HeppyTrees/RA7/nanoAODv5_2018_unSkimmed_estructure/bosonPolarizationGEN/evVarFriend_WZTo3LNu_pow_part*root"]
 
-varTags   = ["Pol_W_Pol_Z_RunII_nondressed"]#, "Pol_Z_RunII_nondressed" , "Pol_WP_RunII_nondressed", "Pol_WM_RunII_nondressed" , "Pol_ZP_RunII_nondressed", "Pol_ZM_RunII_nondressed"]
+varTags   = ["Pol_W_Pol_Z_RunII_nondressed", "Pol_WP_Pol_Z_RunII_nondressed", "Pol_Z_Pol_Z_RunII_nondressed"]#, "Pol_Z_RunII_nondressed" , "Pol_WP_RunII_nondressed", "Pol_WM_RunII_nondressed" , "Pol_ZP_RunII_nondressed", "Pol_ZM_RunII_nondressed"]
 lumi = "137.2 fb^{-1}"
 
 treeName = "sf/t"
-treeVars  = ["cos_genThetaZDn_HE:cos_genThetaWDn_HE"]#,"cos_genThetaZDn_HE","cos_genThetaWDn_HE","cos_genThetaWDn_HE","cos_genThetaZDn_HE","cos_genThetaZDn_HE"] #["genThetaZ_CS","charge*genThetaW_CS", "genThetaZ_CS","genThetaZ_CS","charge*genThetaW_CS", "charge*genThetaW_CS"]#,"charge*cos(genThetaWDn_HE_CM)","cos(genThetaZDn_HE_CM)","cos(genThetaZDn_HE_CM)"]
+treeVars  = ["cos_genThetaZDn_HE:cos_genThetaWDn_HE", "cos_genThetaZDn_HE:cos_genThetaWDn_HE", "cos_genThetaZDn_HE:cos_genThetaWDn_HE"]#,"cos_genThetaZDn_HE","cos_genThetaWDn_HE","cos_genThetaWDn_HE","cos_genThetaZDn_HE","cos_genThetaZDn_HE"] #["genThetaZ_CS","charge*genThetaW_CS", "genThetaZ_CS","genThetaZ_CS","charge*genThetaW_CS", "charge*genThetaW_CS"]#,"charge*cos(genThetaWDn_HE_CM)","cos(genThetaZDn_HE_CM)","cos(genThetaZDn_HE_CM)"]
 #treeVars  = ["cos_genThetaWDn_CS", "cos_genThetaZDn_CS","cos_genThetaWDn_CS","cos_genThetaWDn_CS","cos_genThetaZDn_CS","cos_genThetaZDn_CS"]
 baseCut   = "status == -1 && mll_3l_gen >= 60 &&  mll_3l_gen <= 120"
 fiducialCut = "status == -1 && mll_3l_gen >= 75 &&  mll_3l_gen <= 105 && genLepZ1_eta <= 2.4  && genLepZ2_eta <= 2.4 && genLepW_eta <= 2.4 && genLepZ2_pt >= 10 && genLepZ1_pt >= 25 && genLepW_pt >= 25" 
-extracuts = [""]#, ""," && charge==1", " && charge==-1", " && charge==1", " && charge==-1"]
+extracuts = [""," && charge==1", " && charge==-1"]#, ""," && charge==1", " && charge==-1", " && charge==1", " && charge==-1"]
 mode     = "quad"
 drawControlPlots = True
 doReport = True
@@ -47,5 +47,7 @@ for o in theObjs:
     o.load()
 
 for o in theObjs:
-    if drawControlPlots: o.doControl()
-    if doReport: o.doReport()
+    if drawControlPlots: 
+        o.doControl("W")
+        o.doControl("Z")
+    #if doReport: o.doReport()

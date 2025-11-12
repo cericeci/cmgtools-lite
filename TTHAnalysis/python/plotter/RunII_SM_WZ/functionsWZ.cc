@@ -225,6 +225,50 @@ Float_t WZ_weight_Zp16(Float_t c, Int_t mode)
     if (mode ==  1) return 3./8.*(1 +2*c*alpha + c*c)*fRSM/den;
 }
 
+Float_t WZ_weight_WZ(Float_t cW, Float_t cZ, Int_t mode){
+    Float_t alpha = 0.213;
+    Float_t fLL = 0.1853; 
+    Float_t fLR = 0.0738;
+    Float_t fLO = 0.0737;
+    Float_t fRL = 0.1320;
+    Float_t fRR = 0.1451;
+    Float_t fRO = 0.1121;
+    Float_t fOL = 0.1534;
+    Float_t fOR = 0.0714;
+    Float_t fOO = 0.0532;
+    Float_t den = 3./8. * ( fLL*(1+cW)*(1+cW)*(1+2*alpha*cZ+cZ*cZ) + fLR*(1+cW)*(1+cW)*(1-2*alpha*cZ+cZ*cZ)+ 2*fLO*(1+cW)*(1+cW)*(1-cZ*cZ) + fRL*(1-cW)*(1-cW)*(1+2*alpha*cZ+cZ*cZ) + fRR*(1-cW)*(1-cW)*(1-2*alpha*cZ+cZ*cZ)+ 2*fRO*(1-cW)*(1-cW)*(1-cZ*cZ) + 2*fOL*(1+cW*cW)*(1+2*alpha*cZ+cZ*cZ) + 2*fOR*(1+cW*cW)*(1-2*alpha*cZ+cZ*cZ)+ 4*fOO*(1+cW*cW)*(1-cZ*cZ));
+    if (mode == 0) return 3*fOO*(1+cW*cW)*(1-cZ*cZ)/(2*den); // This is component OO
+    if (mode == 1) return 3*(fOL*(1+cW*cW)*(1+2*alpha*cZ+cZ*cZ) + fOR*(1+cW*cW)*(1-2*alpha*cZ+cZ*cZ))/(4*den); // This is component OT
+    if (mode == 2) return 3*(fLO*(1+cW)*(1+cW)*(1-cZ*cZ)+fRO*(1-cW)*(1-cW)*(1-cZ*cZ))/(4*den); // This is component TO
+    if (mode == 3) return 3*(fLL*(1+cW)*(1+cW)*(1+2*alpha*cZ+cZ*cZ) + fLR*(1+cW)*(1+cW)*(1-2*alpha*cZ+cZ*cZ)+fRL*(1-cW)*(1-cW)*(1+2*alpha*cZ+cZ*cZ) + fRR*(1-cW)*(1-cW)*(1-2*alpha*cZ+cZ*cZ))/(8*den); // This is component TT
+}
+
+Float_t bincWcZ(Float_t cW, Float_t cZ){
+    return floor((cW+1)*5./2.) + floor((cZ + 1)*5/2.)*5.;
+}
+
+Float_t WZ_weight_WZ_all(Float_t cW, Float_t cZ, Int_t mode){
+    Float_t alpha = 0.213;
+    Float_t fLL = 0.1853;
+    Float_t fLR = 0.0738;
+    Float_t fLO = 0.0737;
+    Float_t fRL = 0.1320;
+    Float_t fRR = 0.1451;
+    Float_t fRO = 0.1121;
+    Float_t fOL = 0.1534;
+    Float_t fOR = 0.0714;
+    Float_t fOO = 0.0532;
+    Float_t den = 3./8. * ( fLL*(1+cW)*(1+cW)*(1+2*alpha*cZ+cZ*cZ) + fLR*(1+cW)*(1+cW)*(1-2*alpha*cZ+cZ*cZ)+ 2*fLO*(1+cW)*(1+cW)*(1-cZ*cZ) + fRL*(1-cW)*(1-cW)*(1+2*alpha*cZ+cZ*cZ) + fRR*(1-cW)*(1-cW)*(1-2*alpha*cZ+cZ*cZ)+ 2*fRO*(1-cW)*(1-cW)*(1-cZ*cZ) + 2*fOL*(1+cW*cW)*(1+2*alpha*cZ+cZ*cZ) + 2*fOR*(1+cW*cW)*(1-2*alpha*cZ+cZ*cZ)+ 4*fOO*(1+cW*cW)*(1-cZ*cZ));
+    if (mode == 0) return 4*fOO*(1+cW*cW)*(1-cZ*cZ)/(den); // This is component OO
+    if (mode == 1) return 2*(fOL*(1+cW*cW)*(1+2*alpha*cZ+cZ*cZ))/(den); // This is component OL
+    if (mode == 2) return 2*fOR*(1+cW*cW)*(1-2*alpha*cZ+cZ*cZ)/den; // This is component OR
+    if (mode == 3) return 2*fRO*(1-cW)*(1-cW)*(1-cZ*cZ)/den; // This is component RO
+    if (mode == 4) return fRR*(1-cW)*(1-cW)*(1-2*alpha*cZ+cZ*cZ)/den; // This is component OR
+    if (mode == 5) return fRL*(1-cW)*(1-cW)*(1+2*alpha*cZ+cZ*cZ)/den; // This is component OR
+    if (mode == 6) return 2*fLO*(1+cW)*(1+cW)*(1-cZ*cZ)/den; // This is component OR
+    if (mode == 7) return fLR*(1+cW)*(1+cW)*(1-2*alpha*cZ+cZ*cZ)/den; // This is component OR
+    if (mode == 8) return fLL*(1+cW)*(1+cW)*(1+2*alpha*cZ+cZ*cZ)/den; // This is component OR
+}
 
 /*Float_t WZ_weight_Z(Float_t c, Int_t mode)
 {

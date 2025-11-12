@@ -25,7 +25,7 @@ class coeffs(object):
             self.f0 = ROOT.TF1("f0" + tag, "2*(1-x*x)*[0]", -1.0,1.)
             self.fL = ROOT.TF1("fL" + tag, "(1-2*0.213*x+x*x)*[0]", -1.0,1.0)
             self.fR = ROOT.TF1("fR" + tag, "(1+2*0.213*x+x*x)*[0]", -1.0,1.0)
-
+        print(self.histoc, self.histoc2, self.histofid)
     def load(self):
         self.ic = self.histoc.GetMean()
         self.icErr = self.histoc.GetMeanError()
@@ -162,9 +162,9 @@ class coeffs(object):
         theLState.SetHeader("pp#rightarrowW^{#minus}Z" if (("WM" in self.tag) or ("ZM" in self.tag)) else "pp#rightarrowW^{+}Z" if (("WP" in self.tag) or ("ZP" in self.tag)) else "pp#rightarrowW^{#pm}Z","C")
         theLState.SetTextSize(0.090)
         theLState.Draw("same")
-        c.SaveAs("/nfs/fanae/user/carlosec/www/public/wz/Legacy/polPlots/"+self.tag + ".pdf")
-        c.SaveAs("/nfs/fanae/user/carlosec/www/public/wz/Legacy/polPlots/"+self.tag + ".png")
-        c.SaveAs("/nfs/fanae/user/carlosec/www/public/wz/Legacy/polPlots/"+self.tag + ".root")
+        c.SaveAs("/nfs/fanae/user/carlosec/www/public/wz/Legacy/polPlots_Oct2025/"+self.tag + ".pdf")
+        c.SaveAs("/nfs/fanae/user/carlosec/www/public/wz/Legacy/polPlots_Oct2025/"+self.tag + ".png")
+        c.SaveAs("/nfs/fanae/user/carlosec/www/public/wz/Legacy/polPlots_Oct2025/"+self.tag + ".root")
   
     def doReport(self):
         print "-------------------------------------------------------------------------------------------------------------------------"
